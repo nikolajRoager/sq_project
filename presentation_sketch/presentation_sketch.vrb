@@ -1,0 +1,18 @@
+\frametitle{The ODE implementation}
+%\only<1>{%
+\begin{lstlisting}
+auto ODE = [...](const state_type Data, state_type &dDatadt, const double t)
+{
+    //Extract position and velocity from data
+    ...
+
+    //Get current force
+    vec F = Charge*(Fields.get_Efield(pos,t)+
+        cross(velocity,Fields.get_Bfield(pos,t)));
+
+    vec dVdt = F*Inv_mass;  //get acceleration
+
+    //Save derivative of data
+    ...
+};
+\end{lstlisting}

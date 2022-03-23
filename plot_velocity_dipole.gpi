@@ -1,0 +1,12 @@
+set terminal pdf
+set fontsize 1.6
+set palette red ,  blue , purple, black, orange , green , magenta , red ,   purple, black, orange , green, magenta
+set key below
+set output 'dipoleSpeed.pdf'
+set size ratio 0.65
+set ylabel '$|\vec{v}|/ m/\mu s$'
+set xlabel '$t/\mu s$'
+set  title 'speed over time should be constant'
+plot [][0:0.02]\
+'out/out_small/particles0.tsv' index 0 using 1:(sqrt(($5)*($5)+($6)*($6)+($7)*($7))) with lines  title 'Far particle',\
+'out/out_small/particles1.tsv' index 0 using 1:(sqrt(($5)*($5)+($6)*($6)+($7)*($7))) with lines  title 'Near particle'

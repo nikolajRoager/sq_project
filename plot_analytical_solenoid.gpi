@@ -1,0 +1,28 @@
+set terminal pdf
+set palette red ,  blue , purple, black, orange , green , magenta , red ,   purple, black, orange , green, magenta
+set fontsize 1.6
+
+set size ratio 0.5
+set output 'AN_solenoid_xz_view.pdf'
+set xlabel 'x/m'
+set ylabel 'z/m'
+#set key out
+set  title 'Analytical: proton in a solenoid, side/front-view'
+plot [-3.0:3.0][-0.6:0.6] 'out/out_solenoid_analytic/particles0.tsv' index 0 using 2:4 with lines notitle
+set output 'AN_solenoid_tz.pdf'
+set  title 'Analytical: proton in a solenoid'
+set ylabel '$z/ m$'
+set xlabel '$t/\mu s$'
+plot[0:10.439684835648404] 'out/out_solenoid_analytic/particles0.tsv' index 0 using 1:4 with lines  notitle
+set output 'AN_solenoid_speed.pdf'
+set  title 'Analytical: proton in a solenoid, speed'
+set ylabel '$|\vec{v}|/ m/\mu s$'
+set xlabel '$t/\mu s$'
+plot[0:10.439684835648404][0:1] 'line.tsv' index 0 using (10.439684835648404*$1):(0.31951554756336453*$2) with lines  notitle
+#Front view
+set terminal pdf
+set size ratio 1.0
+set output 'AN_solenoid_yz_view.pdf'
+set xlabel 'y/m'
+set ylabel 'z/m'
+plot [-0.6:0.6][-0.6:0.6]  'out/out_solenoid_analytic/particles0.tsv' index 0 using 3:4 with lines notitle

@@ -1,0 +1,31 @@
+#Lines starting with numbersign are comments, this file encodes units, constants and the setup
+#Base unit names
+distance_unit m
+mass_unit u
+charge_unit e
+Epotential_unit u m^2 μs^−2 e^−1
+time_unit μs
+force_unit u m/μs^2
+
+mu0 1.942591983088792e-17
+
+write_txt
+
+#Simulation always starts at t=0, end at time t=T, use either Nt for number of timesteps or dt for length of steps
+T 500
+dt 0.0001
+
+#Solonoid, though (0,0,0) in the direction (0,0,1) with an internal field calculated to match with 1000 turns per m and current 5 A and radius 5 m
+field B solenoid1 0 0 0 0 0 1 0.6062352745211712 3.0
+
+field E cyclotron_gab 3.0 0.2 9.648534061671654e-02 0.6018558420197118 0.0
+
+save_dt 0.05
+
+#set these if we want to print the electric and magnetic field for later display, format: field_res min max steps, prints a binary file with the electric and magnetic field from [min,min,min] to [max,max,max] with steps step in each direction
+#printfield B
+#printfield E
+field_res -5 5 15
+
+particle 1.0072765472987066 1.0 -0.1 0.0 0.0 0.0 0.0 0.0
+

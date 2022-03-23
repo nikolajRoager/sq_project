@@ -1,0 +1,12 @@
+display_E_field , False
+display_B_field , False
+field_min , -10
+field_max , 10
+field_steps , 11
+T, 100
+dt, 1e-07
+particles , 2
+name , proton 
+timesteps , 4416
+name , proton 
+timesteps , 7330

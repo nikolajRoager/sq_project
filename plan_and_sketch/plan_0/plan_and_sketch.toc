@@ -1,0 +1,23 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\selectlanguage *{english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {1}Introduction, and this document}{1}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Topic, and why is this interesting}{1}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {2}Plan}{2}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {3}Theory}{2}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {4}Electric- and magnetic fields and forces}{2}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}To be done}{3}{section.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {5}The simulation}{3}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}The differential equation solver}{3}{section.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Testing the simulation}{4}{section.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{References}{6}{section*.3}%

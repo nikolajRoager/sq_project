@@ -1,0 +1,24 @@
+set terminal pdf
+set size ratio 1.0
+set fontsize 1.6
+set key out
+set output 'Earth0.pdf'
+set xlabel '$t/ms$'
+set ylabel '$|v|/ m/ms$'
+set  title 'speed over time'
+plot  'out/out_Earth/particles0.tsv' index 0 using 1:(sqrt($5*$5+$6*$6+$7*$7)) with lines  title ''
+set output 'Earth1.pdf'
+set xlabel '$x/m$'
+set ylabel '$z/m$'
+set  title 'position '
+plot  'out/out_Earth/particles0.tsv' index 0 using 2:4 with lines  title ''
+set output 'Earth2.pdf'
+set xlabel '$t/ms$'
+set ylabel '$x/ m$'
+set  title 'speed over time'
+plot  'out/out_Earth/particles0.tsv' index 0 using 1:2 with lines  title ''
+set output 'Earth2.pdf'
+set xlabel '$t/ms$'
+set ylabel '$x/ m/ms$'
+set  title 'speed over time'
+plot  'out/out_Earth/particles0.tsv' index 0 using 1:5 with lines  title ''

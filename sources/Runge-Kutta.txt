@@ -1,0 +1,5 @@
+L. Zheng, X. Zhang, in Modeling and Analysis of Modern Fluid Problems, 2017
+
+1: Martha L. Abell, James P. Braselton, in Differential Equations with Mathematica (Fourth Edition), 2016
+
+2:  Bernard P. Zeigler, ... Ernesto Kofman Theory of Modeling and Simulation (Third edition)

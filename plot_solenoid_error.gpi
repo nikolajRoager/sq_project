@@ -1,0 +1,99 @@
+set terminal pdf
+set size ratio 1.0
+set output 'solenoid_euler_yz_view.pdf'
+set xlabel 'y/m'
+set ylabel 'z/m'
+set key out
+set  title 'Euler method, front-view'
+plot [-1:1][-1:1] 'out/out_euler_timesteps/particles0.tsv' index 0 using 3:4 with lines  title '$h=0.01 \mu s$',\
+'out/out_euler_timesteps/particles31.tsv' index 0 using 3:4 with lines  title '$h=0.32 \mu s$',\
+'out/out_euler_timesteps/particles63.tsv' index 0 using 3:4 with lines  title '$h=0.64 \mu s$',\
+'out/out_euler_timesteps/particles95.tsv' index 0 using 3:4 with lines  title '$h=0.96 \mu s$',\
+'out/out_euler_timesteps/particles127.tsv' index 0 using 3:4 with lines  title '$h=1.28 \mu s$'
+
+
+
+set  title 'RK4, front-view'
+set output 'solenoid_RK_yz_view.pdf'
+plot [-1:1][-1:1] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 3:4 with lines  title '$h=0.01 \mu s$',\
+'out/out_RK4_timesteps/particles31.tsv' index 0 using 3:4 with lines  title '$h=0.32 \mu s$',\
+'out/out_RK4_timesteps/particles63.tsv' index 0 using 3:4 with lines  title '$h=0.64 \mu s$',\
+'out/out_RK4_timesteps/particles95.tsv' index 0 using 3:4 with lines  title '$h=0.96 \mu s$',\
+'out/out_RK4_timesteps/particles127.tsv' index 0 using 3:4 with lines  title '$h=1.28 \mu s$'
+
+
+set output 'solenoid_RK4_Xt.pdf'
+set ylabel 'x error $/x_{an}$'
+set xlabel '$t/\mu s$'
+set  title 'Runge Kutta 4 method, V relative error'
+plot [][-1:1] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.01 \mu s$',\
+'out/out_RK4_timesteps/particles31.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1)  with lines  title '$h=0.32 \mu s$',\
+'out/out_RK4_timesteps/particles63.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.64 \mu s$',\
+'out/out_RK4_timesteps/particles95.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.96 \mu s$',\
+'out/out_RK4_timesteps/particles127.tsv' index 0 using 1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=1.28 \mu s$'
+
+
+
+set output 'solenoid_RK4_Xt.pdf'
+set ylabel 'x error $/x_{an}$'
+set xlabel '$t/\mu s$'
+set  title 'Runge Kutta 4 method, x(t) relative error'
+plot [][-0.1:0.1] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.01 \mu s$',\
+'out/out_RK4_timesteps/particles31.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1)  with lines  title '$h=0.32 \mu s$',\
+'out/out_RK4_timesteps/particles63.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.64 \mu s$',\
+'out/out_RK4_timesteps/particles95.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.96 \mu s$',\
+'out/out_RK4_timesteps/particles127.tsv' index 0 using 1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=1.28 \mu s$'
+
+
+set output 'solenoid_RK4_Xt_abs.pdf'
+set ylabel 'x error $/m$'
+set xlabel '$t/\mu s$'
+set  title 'Runge Kutta 4 method, x(t) error'
+plot [][-0.1:0.1] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 1:($2-$1*0.1597577737816823+2.5) with lines  title '$h=0.01 \mu s$',\
+'out/out_RK4_timesteps/particles31.tsv' index 0 using  1:($2-$1*0.1597577737816823+2.5)  with lines  title '$h=0.32 \mu s$',\
+'out/out_RK4_timesteps/particles63.tsv' index 0 using  1:($2-$1*0.1597577737816823+2.5) with lines  title '$h=0.64 \mu s$',\
+'out/out_RK4_timesteps/particles95.tsv' index 0 using  1:($2-$1*0.1597577737816823+2.5) with lines  title '$h=0.96 \mu s$',\
+'out/out_RK4_timesteps/particles127.tsv' index 0 using 1:($2-$1*0.1597577737816823+2.5) with lines  title '$h=1.28 \mu s$'
+
+
+
+set size ratio 0.5
+set output 'solenoid_RK4_Rt.pdf'
+set logscale y
+set ylabel 'R error $/R$'
+set xlabel '$t/\mu s$'
+set  title 'Runge Kutta 4 method, R relative error'
+plot [][] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.01 \mu s$',\
+'out/out_RK4_timesteps/particles31.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1)  with lines  title '$h=0.32 \mu s$',\
+'out/out_RK4_timesteps/particles63.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.64 \mu s$',\
+'out/out_RK4_timesteps/particles95.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.96 \mu s$',\
+'out/out_RK4_timesteps/particles127.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=1.28 \mu s$'
+set output 'solenoid_euler_Rt.pdf'
+set ylabel 'R error $/R$'
+set xlabel '$t/\mu s$'
+set  title 'Euler method, R relative error'
+plot [][] 'out/out_euler_timesteps/particles0.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.01 \mu s$',\
+'out/out_euler_timesteps/particles31.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1)  with lines  title '$h=0.32 \mu s$',\
+'out/out_euler_timesteps/particles63.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.64 \mu s$',\
+'out/out_euler_timesteps/particles95.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.96 \mu s$',\
+'out/out_euler_timesteps/particles127.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=1.28 \mu s$'
+
+
+set output 'solenoid_RK4_Vt.pdf'
+set ylabel 'V error $/V_0$'
+set xlabel '$t/\mu s$'
+set  title 'Runge Kutta 4 method, V relative error'
+plot [][] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.31951554756336453-1) with lines  title '$h=0.01 \mu s$',\
+'out/out_RK4_timesteps/particles31.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.31951554756336453-1)  with lines  title '$h=0.32 \mu s$',\
+'out/out_RK4_timesteps/particles63.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.31951554756336453-1) with lines  title '$h=0.64 \mu s$',\
+'out/out_RK4_timesteps/particles95.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.31951554756336453-1) with lines  title '$h=0.96 \mu s$',\
+'out/out_RK4_timesteps/particles127.tsv' index 0 using 1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.31951554756336453-1) with lines  title '$h=1.28 \mu s$'
+set output 'solenoid_euler_Vt.pdf'
+set ylabel 'V error $/V_0$'
+set xlabel '$t/\mu s$'
+set  title 'Euler method, V relative error'
+plot [][] 'out/out_euler_timesteps/particles0.tsv' index 0 using 1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.31951554756336453-1) with lines  title '$h=0.01 \mu s$',\
+'out/out_euler_timesteps/particles31.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.31951554756336453-1)  with lines  title '$h=0.32 \mu s$',\
+'out/out_euler_timesteps/particles63.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.31951554756336453-1) with lines  title '$h=0.64 \mu s$',\
+'out/out_euler_timesteps/particles95.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.31951554756336453-1) with lines  title '$h=0.96 \mu s$',\
+'out/out_euler_timesteps/particles127.tsv' index 0 using 1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.31951554756336453-1) with lines  title '$h=1.28 \mu s$'

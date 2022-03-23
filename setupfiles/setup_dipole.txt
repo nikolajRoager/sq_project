@@ -1,0 +1,36 @@
+#Lines starting with numbersign are comments, this file encodes units, constants and the setup
+#Base unit names
+distance_unit m
+mass_unit kg
+charge_unit C
+Epotential_unit V
+time_unit s
+
+#Simulation always starts at t=0, end at time t=T, use either Nt for number of timesteps or dt for length of steps
+T 10
+nT 100000
+
+#Dipole field, first the factor mu0/4pi in whatever units we want to use, then the magnetic dipole moment as a vector
+field B dipole 1 0 0 1
+#field B constant 0 0 1
+
+#set these if we want to print the electric and magnetic field for later display, format: field_res min max steps, prints a binary file with the electric and magnetic field from [min,min,min] to [max,max,max] with steps step in each direction
+printfield B
+field_res -5.0 5.0 8
+
+particle 1 1 -5 0 4 2 0 0
+particle 1 1 -5 0 2 2 0 0
+particle 1 1 -5 0 0 2 0 0
+particle 1 1 -5 0 -2 2 0 0
+particle 1 1 -5 0 -4 2 0 0
+#particle 1 1 -5 -2 4 2 0 0
+#particle 1 1 -5 -2 2 2 0 0
+#particle 1 1 -5 -2 0 2 0 0
+#particle 1 1 -5 -2 -2 2 0 0
+#particle 1 1 -5 -2 -4 2 0 0
+#particle 1 1 -5 2 4 2 0 0
+#particle 1 1 -5 2 2 2 0 0
+#particle 1 1 -5 2 0 2 0 0
+#particle 1 1 -5 2 -2 2 0 0
+#particle 1 1 -5 2 -4 2 0 0
+

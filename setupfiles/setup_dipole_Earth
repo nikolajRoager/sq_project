@@ -1,0 +1,37 @@
+
+#Lines starting with numbersign are comments, this file encodes units, constants and the setup
+#Base unit names
+distance_unit m
+mass_unit u
+charge_unit e
+Epotential_unit u m^2 μs^−2 e^−1
+time_unit μs
+force_unit u m/μs^2
+
+extra earth.txt
+
+
+write_txt
+
+#Simulation always starts at t=0, end at time t=T, use either Nt for number of timesteps or dt for length of steps
+T 10000000
+dt 0.01
+
+#Solonoid, though (0,0,0) in the direction (0,0,1) with an internal field calculated to match with 1000 turns per m and current 5 A and radius 5 m
+field B Earth 6370000 3.010342627241556
+
+
+save_dt 100.0
+
+#set these if we want to print the electric and magnetic field for later display, format: field_res min max steps, prints a binary file with the electric and magnetic field from [min,min,min] to [max,max,max] with steps step in each direction
+printfield B
+#printfield E
+field_res -65000000 65000000 11
+
+
+#250 km/s = 0.250 m/ms, somewhat "slow" for the solar wind, hence why I use ms instead of micro sends as base unit
+particle 1.0072765472987066 1.0  -65000000 0.0 20000000 250 0.0 0.0
+particle 1.0072765472987066 0.0  -65000000 0.0 20000000 250 0.0 0.0
+#particle 1.0072765472987066 1.0  -63805766.92409816 0.0 12402584.699475413 0.245406795861916 0.0 0.0477022488441362
+#particle 1.0072765472987066 0.0  -63805766.92409816 0.0 12402584.699475413 0.245406795861916 0.0 0.0477022488441362
+

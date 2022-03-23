@@ -1,0 +1,26 @@
+set terminal pdf
+set fontsize 1.6
+set palette black, black, red, blue, red
+set size ratio 1.33
+set keycolumns 3
+set key below
+set output 'euler_demo0.pdf'
+set xlabel 't'
+set ylabel 'X'
+plot[0:1.5][0:2] 'line.tsv' using (1.1*$2):(2*$1) with lines linetype 2 title '$t_i$ and $t_{i+1}$',\
+'line.tsv' using (1.2*$2):(2*$1) with lines linetype 2 notitle,\
+'plot_axis.tsv' using (1.1*$1):(sin(1.7*1.1*$1+cos(1.5*1.1*$1*2.42+sin(1.5*1.1*$1*5))) ) with lines linetype 1 title '$X(t)$',\
+'line.tsv' using (1.5*$1):(1.5*$1*(-1.163211644627599) +2.1566244) with lines linetype 3 title '$\dot{X}(t_i)$'
+set output 'euler_demo1.pdf'
+plot[0:1.5][0:2] 'line.tsv' using (1.1*$2):(2*$1) with lines linetype 2 title '$t_i$ and $t_{i+1}$',\
+'line.tsv' using (1.2*$2):(2*$1) with lines linetype 2 notitle,\
+'plot_axis.tsv' using (1.1*$1):(sin(1.7*1.1*$1+cos(1.5*1.1*$1*2.42+sin(1.5*1.1*$1*5))) ) with lines linetype 1 title '$X(t)$',\
+'line.tsv' using (1.5*$1):(1.5*$1*(-1.163211644627599) +2.1566244) with lines linetype 3 title '$\dot{X}(t_i)$',\
+'plot_axis.tsv' using (1.1+(0.1*$1)):($1*(0.76077-0.8771) +0.8771) with lines linetype 4 notitle
+set output 'euler_demo2.pdf'
+set palette black, black, red, blue, red
+plot[0:1.5][0:2] 'line.tsv' using (1.1*$2):(2*$1) with lines linetype 2 title '$t_i$ and $t_{i+1}$',\
+'line.tsv' using (1.2*$2):(2*$1) with lines linetype 2 notitle,\
+'plot_axis.tsv' using (1.5*$1):(sin(1.7*1.5*$1+cos(1.5*1.5*$1*2.42+sin(1.5*1.5*$1*5))) ) with lines linetype 1 title '$X(t)$',\
+'line.tsv' using (1.5*$1):(1.5*$1*(-1.163211644627599) +2.1566244) with lines linetype 3 title '$\dot{X}(t_i)$',\
+'plot_axis.tsv' using (1.1+(0.1*$1)):($1*(0.76077-0.8771) +0.8771) with lines linetype 4 notitle

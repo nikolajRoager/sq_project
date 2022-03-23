@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Introduction (3 minutes)}{2}{0}{1}
+\beamer@sectionintoc {2}{Theory and background (13 minutes)}{15}{0}{2}
+\beamer@sectionintoc {3}{Steering particles with $\vec {B}$ fields (14 min)}{40}{0}{3}
+\beamer@sectionintoc {4}{Introducing Electric fields (10 min)}{66}{0}{4}
+\beamer@sectionintoc {5}{Conclusion and Questions(5 min)}{76}{0}{5}

@@ -1,0 +1,180 @@
+\documentclass[a4paper,12pt,article]{memoir}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathspec}
+\usepackage{xltxtra}
+\usepackage{polyglossia}
+\usepackage{MnSymbol}
+\usepackage{siunitx,cancel,graphicx}
+\usepackage{enumitem}
+\usepackage{hyperref,graphicx}
+\usepackage{icomma}
+\usepackage{float}
+\usepackage{mleftright}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage[
+backend=biber,
+style=numeric,
+citestyle=numeric,
+sorting=none
+]{biblatex}
+\addbibresource{resources.bib}
+
+
+% This is the color used for MATLAB comments below
+\definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0}
+\definecolor{Blue}{rgb}{0.0,0.0,1.0}
+\definecolor{Purple}{rgb}{1.0,0.0,1.0}
+
+\colorlet{mygray}{black!30}
+\colorlet{mygreen}{green!60!blue}
+\colorlet{mymauve}{red!60!blue}
+
+\lstset{
+  backgroundcolor=\color{gray!10},
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{mygreen},
+  extendedchars=true,
+  frame=single,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  language=c++,
+  numbers=none,
+  numbersep=5pt,
+  numberstyle=\tiny\color{blue},
+  rulecolor=\color{mygray},
+  showspaces=false,
+  showtabs=false,
+  stepnumber=5,
+  stringstyle=\color{mymauve},
+  tabsize=3,
+  title=\lstname
+}
+
+
+
+
+
+
+\setdefaultlanguage{english}
+
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+%\setmainfont[Numbers=Lowercase]{Minion Pro}
+%\setsansfont[Numbers=Lowercase]{Myriad Pro}
+%\setmonofont{Menlo}
+%\setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Minion Pro}
+
+\sisetup{%
+  output-decimal-marker = {,},
+  per-mode = symbol,
+  %round-mode = places,
+  %round-precision = 5
+}
+
+
+
+\setlrmarginsandblock{2.5cm}{2.5cm}{*}
+\setulmarginsandblock{1.5cm}{2cm}{*}
+\checkandfixthelayout
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+
+\newcommand{\f}{\fancybreak}
+
+\DeclareSIUnit \electronvolt {\ensuremath{eV}}
+\DeclareSIUnit \lightspeed {\ensuremath{c}}
+\DeclareSIUnit \dalton{\ensuremath{u}}
+\DeclareSIUnit \echarge{\ensuremath{e}}
+
+
+\newcommand{\mvec}[2]{
+\ensuremath{\left(
+\begin{array}{c}
+#1\\
+#2\\
+\end{array}
+\right)}
+}
+
+\newcommand{\Span}{\ensuremath{\mathrm{Span}}}
+\newcommand{\Mat}{\ensuremath{\mathrm{Mat}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Rno}{\ensuremath{\mathbb{R}\backslash\{0\}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\ol}[1]{\ensuremath{\overline{#1} } }
+\newcommand{\F}[1]{\ensuremath{\mathbb{F}_{#1} } }
+
+\title{Student Colloquium, Simulating particles in a torus}
+\author{Nikolaj Roager Christensen}
+\date{\today} %
+
+\begin{document}
+
+\maketitle
+
+
+\tableofcontents*
+
+\chapter{Progress this week}
+This week, I applied my simulation to particles traveling in torus, and a somewhat arbitrary converging and diverging field and implemented the Runga-Kutta method.
+
+I also made some attempts at displaying the field using lines calculated in C++ rather than python vector plots, though it is still ugly.
+
+
+\chapter{The field in a toroidal Solenoid}
+The field in a torus is constant, the field in a torus shaped solenoid is not, it depends on the cylindrical coordinate $r$ (distance from central axis), and is:
+
+\begin{equation}
+\vec{B}(z,r,\phi)=\vec{\phi}\mu_0\frac{N_{tot} 2\pi I}{2\pi r}.
+\end{equation}
+
+Where $N_{tot}$ is the total number of windings, not windings per unit length.
+
+This can be found from Ampere's law by drawing a circle $C$ at constant $r$, as in figure \ref{fig:tor_field}. Firstly $\vec{B}$ is uniform over different $\phi$ due to symmetry, then Amperes law is (inside the torus):
+
+\begin{equation}
+\oint_C \vec{B}\cdot d\vec{r}=2\pi B_{\phi} r = \mu_0 I_{encl} = \mu_0 N I.
+\end{equation}
+
+We can do some more paths and symmetry to show that the other components are 0. This gives us the field from before, or:
+
+
+\begin{equation}
+\vec{B}(z,r,\phi)=\vec{\phi}\mu_0\frac{N_{tot} 2\pi I}{2\pi R} \frac{R}{r}=B(R)\frac{R}{r}.
+\end{equation}
+
+for some reference length, which can be choosen to be the center to the torus.
+
+the last example example I used a specific setup to get a field, this time, I just want to reuse the field strength from before, at the center of the solenoid $B(R)=\SI{6.28 }{\milli\tesla}=\SI{0.61}{\dalton\per\micro\second\echarge}$. In this experiment I let the  radius of solenoid to be \SI{1}{\meter} and the radius of the torus (from $r=0$ to the center of the solenoid) be \SI{10}{\meter}.
+
+\section{Particles in a Torus}
+
+%\printbibliography
+
+\end{document}
+
+
+1 kg = 6.0221412901167394e+26  u
+1 C  = 6.241509074460763e+18  e
+1 s  = 1000000.0  μs
+1 T  = 96.48534061671654  kg/(μs e)
+
+m_p  = 1.672621911e-27 kg  1.0072765472987066  u
+q_p  = 1.602176634e-19 C  1.0  e
+
+v  = 319515.54756336455 m/s  0.31951554756336453  m/(μs)
+ω  = 601855.8420197117  1/s  0.6018558420197118  1/(μs)
+T  = 1.6615274459149445e-06  s  1.6615274459149445  (μs)
+r  = 0.5308838516730721  m  0.5308838516730721  m
+B  = 0.006283185307179587  T  0.6062352745211712  kg/(μs e)
+

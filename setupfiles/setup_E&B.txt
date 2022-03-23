@@ -1,0 +1,22 @@
+#Lines starting with numbersign are comments, this file encodes units, constants and the setup
+#Base unit names
+distance_unit m
+mass_unit kg
+charge_unit C
+Epotential_unit V
+time_unit s
+
+#Simulation always starts at t=0, end at time t=T, use either Nt for number of timesteps or dt for length of steps
+T 31.4
+nT 100000
+
+field B constant 0 0 1
+field E constant 1 0 0
+
+#set these if we want to print the electric and magnetic field for later display, format: field_res min max steps, prints a binary file with the electric and magnetic field from [min,min,min] to [max,max,max] with steps step in each direction
+printfield E
+printfield B
+field_res -15 15 11
+
+#Particles should be added in after the time resolution has been defined, format: particle mass charge position velocity
+particle 1 1 0 15 0 0 0 0

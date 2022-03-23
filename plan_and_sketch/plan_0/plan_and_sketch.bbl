@@ -1,0 +1,109 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{griff}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ca66bbf3ab1a52eadeefc36dc52dc408}{%
+           family={Griffiths},
+           familyi={G\bibinitperiod},
+           given={D.\bibnamedelimi J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{ca66bbf3ab1a52eadeefc36dc52dc408}
+      \strng{fullhash}{ca66bbf3ab1a52eadeefc36dc52dc408}
+      \strng{bibnamehash}{ca66bbf3ab1a52eadeefc36dc52dc408}
+      \strng{authorbibnamehash}{ca66bbf3ab1a52eadeefc36dc52dc408}
+      \strng{authornamehash}{ca66bbf3ab1a52eadeefc36dc52dc408}
+      \strng{authorfullhash}{ca66bbf3ab1a52eadeefc36dc52dc408}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{title}{Introduction to Electrodynamics}
+      \field{year}{(2017)}
+    \endentry
+    \entry{wikidipole}{online}{}
+      \name{author}{1}{}{%
+        {{hash=82df41632da476065ce2997900554442}{%
+           family={community},
+           familyi={c\bibinitperiod}}}%
+      }
+      \strng{namehash}{82df41632da476065ce2997900554442}
+      \strng{fullhash}{82df41632da476065ce2997900554442}
+      \strng{bibnamehash}{82df41632da476065ce2997900554442}
+      \strng{authorbibnamehash}{82df41632da476065ce2997900554442}
+      \strng{authornamehash}{82df41632da476065ce2997900554442}
+      \strng{authorfullhash}{82df41632da476065ce2997900554442}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Website online February 2022}
+      \field{title}{wikidia on the Dipole model}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Dipole_model_of_the_Earth%27s_magnetic_fiel://en.wikipedia.org/wiki/Dipole_model_of_the_Earth%27s_magnetic_field
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Dipole_model_of_the_Earth%27s_magnetic_fiel://en.wikipedia.org/wiki/Dipole_model_of_the_Earth%27s_magnetic_field
+      \endverb
+    \endentry
+    \entry{odeint}{online}{}
+      \name{author}{2}{}{%
+        {{hash=eead9f2863470d5092a93bbec3fe5541}{%
+           family={Ahnert},
+           familyi={A\bibinitperiod},
+           given={Karsten},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f1f6360a1be1ac9585aee9635b56f52a}{%
+           family={Mulansky},
+           familyi={M\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa509f862994bfcdcdec6afcdf3d7d51}
+      \strng{fullhash}{aa509f862994bfcdcdec6afcdf3d7d51}
+      \strng{bibnamehash}{aa509f862994bfcdcdec6afcdf3d7d51}
+      \strng{authorbibnamehash}{aa509f862994bfcdcdec6afcdf3d7d51}
+      \strng{authornamehash}{aa509f862994bfcdcdec6afcdf3d7d51}
+      \strng{authorfullhash}{aa509f862994bfcdcdec6afcdf3d7d51}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{Website online February 2022}
+      \field{title}{The odeint library}
+      \field{year}{2009}
+      \verb{urlraw}
+      \verb http://headmyshoulder.github.io/odeint-v2/index.html
+      \endverb
+      \verb{url}
+      \verb http://headmyshoulder.github.io/odeint-v2/index.html
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

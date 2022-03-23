@@ -1,0 +1,22 @@
+display_E_field , False
+display_B_field , True
+field_min , -2.5
+field_max , 2.5
+field_steps , 10
+T, 16.6153
+dt, 0.01
+particles , 7
+name , 60^\circ 
+timesteps , 151
+name , 0^\circ 
+timesteps , 75
+name , 90^\circ 
+timesteps , 80
+name , 30^\circ 
+timesteps , 87
+name , 45^\circ 
+timesteps , 107
+name , 15^\circ 
+timesteps , 78
+name , 75^\circ 
+timesteps , 290

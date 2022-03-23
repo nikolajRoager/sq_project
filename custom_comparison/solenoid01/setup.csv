@@ -1,0 +1,14 @@
+display_E_field , False
+display_B_field , True
+field_min , -2.5
+field_max , 2.5
+field_steps , 10
+T, 16.6153
+dt, 0.01
+particles , 3
+name , Analytical
+timesteps , 156
+name , Euler
+timesteps , 240
+name , RK 4
+timesteps , 240

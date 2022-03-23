@@ -1,0 +1,17 @@
+set terminal pdf
+set fontsize 1.6
+set size ratio 1.0
+set xlabel '$x/m$'
+set ylabel '$y/m$'
+set palette black, black, blue, red
+set output 'torus_xyview0.pdf'
+set  title 'Top view'
+plot [-11:11][-11:11] 'circle.tsv' index 0 using (11*($1)):(11*($2)) with lines  notitle,\
+ 'circle.tsv' index 0 using (9*($1)):(9*($2)) with lines  notitle,\
+ 'line.tsv' index 0 using (7*($1)+7):(10*($2)) with lines linetype 1 notitle
+set output 'torus_xyview1.pdf'
+set  title 'Top view-magnetic field'
+plot [-11:11][-11:11] 'circle.tsv' index 0 using (11*($1)):(11*($2)) with lines  notitle,\
+ 'circle.tsv' index 0 using (9*($1)):(9*($2)) with lines  notitle,\
+ 'line.tsv' index 0 using (7*($1)+7):(10*($2)) with lines linetype 1 notitle,\
+ 'circle.tsv' index 0 using (10*($1)):(10*($2)) with lines linetype 3  notitle

@@ -1,0 +1,17 @@
+[0] Config.pm:312> INFO - This is Biber 2.15
+[0] Config.pm:315> INFO - Logfile is 'plan_and_sketch.blg'
+[73] biber:330> INFO - === Sat Feb 12, 2022, 21:56:55
+[87] Biber.pm:415> INFO - Reading 'plan_and_sketch.bcf'
+[150] Biber.pm:952> INFO - Found 3 citekeys in bib section 0
+[163] Biber.pm:4334> INFO - Processing section 0
+[173] Biber.pm:4523> INFO - Looking for bibtex format file 'resources.bib' for section 0
+[173] bibtex.pm:1682> INFO - LaTeX decoding ...
+[177] bibtex.pm:1494> INFO - Found BibTeX data source 'resources.bib'
+[207] Utils.pm:395> WARN - year field '(2017)' in entry 'griff' is not an integer - this will probably not sort properly.
+[253] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[253] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[253] Biber.pm:4162> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[253] Biber.pm:4168> INFO - No sort tailoring available for locale 'en-US'
+[303] bbl.pm:651> INFO - Writing 'plan_and_sketch.bbl' with encoding 'UTF-8'
+[305] bbl.pm:754> INFO - Output to plan_and_sketch.bbl
+[305] Biber.pm:128> INFO - WARNINGS: 1
