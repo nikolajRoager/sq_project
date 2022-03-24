@@ -119,7 +119,7 @@ TITLEIMAGE
 
 
 
-\section{Introduction TIME 3 minutes TIME}
+\section{Introduction [3 MIN]}
 
 \begin{frame}
 \frametitle{MAINTITLE}
@@ -165,7 +165,7 @@ TITLEIMAGE
 \end{frame}
 
 
-\section{Theory and physical background TIME 10 minutes TIME}
+\section{Theory and physical background [10 MIN]}
 
 \begin{frame}
 \frametitle{Theory: Classical non-relativistic particles}
@@ -265,7 +265,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta) \quad T=\frac{2\pi}{\omega_c} \approx \SI
 \end{columns}
 \end{frame}
 
-\section{Eulers Method and the 4th order Runge-Kutta Method TIME 10 minutes TIME}
+\section{Eulers Method and the 4th order Runge-Kutta Method [10 MIN]}
 %What are they, what are not they
 
 \begin{frame}
@@ -423,7 +423,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 
 \item<1-> With: $\mathbf{K}_1 =  f_{ode}(\mathbf{X}(t_i),t_i)$, $\mathbf{K}_2 =  f_{ode}(\mathbf{X}(t_i)+ha_{21}\mathbf{K}_{1},t_i+c_2h)$ etc.
 
-\item<2-> Can be found with taylor expansion of $\mathbf{X}(t_{i})$.
+\item<2-> Want exact to $p$'th order. Can be found with taylor expansion of $\mathbf{X}(t_{i})$.
 
 \item<3-> 2nd order (Heun's method):
 
@@ -469,8 +469,38 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \end{columns}
 \end{frame}
 
+\begin{frame}
+\frametitle{The General explicit Runge Kutta method}
+\begin{itemize}
+
+\item<1-> General explicit, single step, fixed size, Runge Kutta method
+
+\begin{align*}
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j \mathbf{K}_j\\
+\mathbf{k}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
+\mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+ha_{21} \mathbf{k}_1,t_i+c_2 h)\\
+\mathbf{k}_3 &= f_{ode}(\mathbf{X}(t_i)+ha_{31} \mathbf{k}_1+ha_{32} \mathbf{k}_2,t_i+c_3 h)
+&\vdots
+\end{align*}
+
+\item<2-> Expressed in Butcher tableu:
+
+\begin{tabular}{l | @{\quad} c @{\quad} c @{\quad} c}
+$c_1=0$ \\
+$c_2$ & $a_{21}$\\
+$c_3$ & $a_{31}$ &  $a_{32}$\\
+$c_n$ & $a_{n1}$ &  $a_{n2}$ & $\hdots$\\
+\midrule
+& $b_1$ & $b_2$ & $\hdots$
+\end{tabular}
+
+
+\end{itemize}
+\end{frame}
+
+
 \begin{frame}[fragile]
-\frametitle{Euler Implementations}[fragile]
+\frametitle{Euler Implementations}
 \begin{lstlisting}
 state_type Data = Data0;
 state_type dDatadt;
@@ -645,14 +675,25 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \end{frame}
 
 \begin{frame}
-\frametitle{Order of the error}
+\frametitle{Error as function of $h$}
 \only<1>{\includegraphics[width=\linewidth]{solenoid_Rh.pdf}}%
 \end{frame}
+
 \section{Introducing Adaptive step size [5 MIN]}
 
 
 \begin{frame}
-\frametitle{Adaptive step size, introduce it + when it fails}
+\frametitle{Adaptive step size, why}
+\begin{itemize}
+\item <1-> $h$ must be small ``enough"
+
+\item <2-> Hard to pick, and may change:
+
+\item <3-> Example: Inhomogeneous fields
+
+\item <4-> Example: the cyclotron
+
+\end{itemize}
 \end{frame}
 
 \subsection{When adaptive step-size fails}

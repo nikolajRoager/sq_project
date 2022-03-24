@@ -43,52 +43,54 @@
 \headcommand {\beamer@subsectionentry {0}{3}{2}{52}{4th order Runge Kutta}}
 \headcommand {\slideentry {3}{2}{1}{52/53}{4th order Runge Kutta}{0}}
 \headcommand {\beamer@framepages {52}{53}}
-\headcommand {\slideentry {3}{2}{2}{54/54}{4th order Runge Kutta}{0}}
-\headcommand {\beamer@framepages {54}{54}}
-\headcommand {\slideentry {3}{2}{3}{55/55}{4th order Runge Kutta}{0}}
-\headcommand {\beamer@framepages {55}{55}}
-\headcommand {\slideentry {3}{2}{4}{56/56}{4th order Runge Kutta}{0}}
+\headcommand {\slideentry {3}{2}{2}{54/55}{4th order Runge Kutta}{0}}
+\headcommand {\beamer@framepages {54}{55}}
+\headcommand {\slideentry {3}{2}{3}{56/56}{4th order Runge Kutta}{0}}
 \headcommand {\beamer@framepages {56}{56}}
-\headcommand {\slideentry {3}{2}{5}{57/57}{4th order Runge Kutta}{0}}
+\headcommand {\slideentry {3}{2}{4}{57/57}{4th order Runge Kutta}{0}}
 \headcommand {\beamer@framepages {57}{57}}
-\headcommand {\beamer@sectionpages {29}{57}}
-\headcommand {\beamer@subsectionpages {52}{57}}
-\headcommand {\sectionentry {4}{Testing the methods [5 MIN]}{58}{Testing the methods [5 MIN]}{0}}
-\headcommand {\slideentry {4}{0}{1}{58/61}{}{0}}
-\headcommand {\beamer@framepages {58}{61}}
-\headcommand {\slideentry {4}{0}{2}{62/62}{}{0}}
-\headcommand {\beamer@framepages {62}{62}}
-\headcommand {\slideentry {4}{0}{3}{63/63}{}{0}}
-\headcommand {\beamer@framepages {63}{63}}
-\headcommand {\slideentry {4}{0}{4}{64/64}{}{0}}
+\headcommand {\slideentry {3}{2}{5}{58/58}{4th order Runge Kutta}{0}}
+\headcommand {\beamer@framepages {58}{58}}
+\headcommand {\slideentry {3}{2}{6}{59/59}{4th order Runge Kutta}{0}}
+\headcommand {\beamer@framepages {59}{59}}
+\headcommand {\beamer@sectionpages {29}{59}}
+\headcommand {\beamer@subsectionpages {52}{59}}
+\headcommand {\sectionentry {4}{Testing the methods [5 MIN]}{60}{Testing the methods [5 MIN]}{0}}
+\headcommand {\slideentry {4}{0}{1}{60/63}{}{0}}
+\headcommand {\beamer@framepages {60}{63}}
+\headcommand {\slideentry {4}{0}{2}{64/64}{}{0}}
 \headcommand {\beamer@framepages {64}{64}}
-\headcommand {\slideentry {4}{0}{5}{65/66}{}{0}}
-\headcommand {\beamer@framepages {65}{66}}
-\headcommand {\slideentry {4}{0}{6}{67/68}{}{0}}
+\headcommand {\slideentry {4}{0}{3}{65/65}{}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\slideentry {4}{0}{4}{66/66}{}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\slideentry {4}{0}{5}{67/68}{}{0}}
 \headcommand {\beamer@framepages {67}{68}}
-\headcommand {\slideentry {4}{0}{7}{69/70}{}{0}}
+\headcommand {\slideentry {4}{0}{6}{69/70}{}{0}}
 \headcommand {\beamer@framepages {69}{70}}
-\headcommand {\slideentry {4}{0}{8}{71/71}{}{0}}
-\headcommand {\beamer@framepages {71}{71}}
-\headcommand {\beamer@sectionpages {58}{71}}
-\headcommand {\beamer@subsectionpages {58}{71}}
-\headcommand {\sectionentry {5}{Introducing Adaptive step size [5 MIN]}{72}{Introducing Adaptive step size [5 MIN]}{0}}
-\headcommand {\slideentry {5}{0}{1}{72/72}{}{0}}
-\headcommand {\beamer@framepages {72}{72}}
-\headcommand {\beamer@subsectionpages {72}{72}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{73}{When adaptive step-size fails}}
-\headcommand {\beamer@sectionpages {72}{72}}
-\headcommand {\beamer@subsectionpages {73}{72}}
-\headcommand {\sectionentry {6}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{73}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{0}}
-\headcommand {\slideentry {6}{0}{1}{73/73}{}{0}}
+\headcommand {\slideentry {4}{0}{7}{71/72}{}{0}}
+\headcommand {\beamer@framepages {71}{72}}
+\headcommand {\slideentry {4}{0}{8}{73/73}{}{0}}
 \headcommand {\beamer@framepages {73}{73}}
-\headcommand {\beamer@sectionpages {73}{73}}
-\headcommand {\beamer@subsectionpages {73}{73}}
-\headcommand {\sectionentry {7}{Conclusion and question}{74}{Conclusion and question}{0}}
-\headcommand {\slideentry {7}{0}{1}{74/74}{}{0}}
+\headcommand {\beamer@sectionpages {60}{73}}
+\headcommand {\beamer@subsectionpages {60}{73}}
+\headcommand {\sectionentry {5}{Introducing Adaptive step size [5 MIN]}{74}{Introducing Adaptive step size [5 MIN]}{0}}
+\headcommand {\slideentry {5}{0}{1}{74/74}{}{0}}
 \headcommand {\beamer@framepages {74}{74}}
-\headcommand {\beamer@partpages {1}{74}}
 \headcommand {\beamer@subsectionpages {74}{74}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{75}{When adaptive step-size fails}}
 \headcommand {\beamer@sectionpages {74}{74}}
-\headcommand {\beamer@documentpages {74}}
-\headcommand {\gdef \inserttotalframenumber {30}}
+\headcommand {\beamer@subsectionpages {75}{74}}
+\headcommand {\sectionentry {6}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{75}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{0}}
+\headcommand {\slideentry {6}{0}{1}{75/75}{}{0}}
+\headcommand {\beamer@framepages {75}{75}}
+\headcommand {\beamer@sectionpages {75}{75}}
+\headcommand {\beamer@subsectionpages {75}{75}}
+\headcommand {\sectionentry {7}{Conclusion and question}{76}{Conclusion and question}{0}}
+\headcommand {\slideentry {7}{0}{1}{76/76}{}{0}}
+\headcommand {\beamer@framepages {76}{76}}
+\headcommand {\beamer@partpages {1}{76}}
+\headcommand {\beamer@subsectionpages {76}{76}}
+\headcommand {\beamer@sectionpages {76}{76}}
+\headcommand {\beamer@documentpages {76}}
+\headcommand {\gdef \inserttotalframenumber {31}}

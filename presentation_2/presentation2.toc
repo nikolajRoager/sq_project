@@ -4,8 +4,8 @@
 \beamer@sectionintoc {3}{Eulers Method and the 4th order Runge-Kutta Method TIME 10 minutes TIME}{29}{0}{3}
 \beamer@subsectionintoc {3}{1}{Euler's Method}{33}{0}{3}
 \beamer@subsectionintoc {3}{2}{4th order Runge Kutta}{52}{0}{3}
-\beamer@sectionintoc {4}{Testing the methods [5 MIN]}{58}{0}{4}
-\beamer@sectionintoc {5}{Introducing Adaptive step size [5 MIN]}{72}{0}{5}
-\beamer@subsectionintoc {5}{1}{When adaptive step-size fails}{73}{0}{5}
-\beamer@sectionintoc {6}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{73}{0}{6}
-\beamer@sectionintoc {7}{Conclusion and question}{74}{0}{7}
+\beamer@sectionintoc {4}{Testing the methods [5 MIN]}{60}{0}{4}
+\beamer@sectionintoc {5}{Introducing Adaptive step size [5 MIN]}{74}{0}{5}
+\beamer@subsectionintoc {5}{1}{When adaptive step-size fails}{75}{0}{5}
+\beamer@sectionintoc {6}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{75}{0}{6}
+\beamer@sectionintoc {7}{Conclusion and question}{76}{0}{7}
