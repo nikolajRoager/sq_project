@@ -2,7 +2,7 @@
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\beamer@sectionpages {1}{1}}
 \headcommand {\beamer@subsectionpages {1}{1}}
-\headcommand {\sectionentry {1}{Introduction TIME 3 minutes TIME}{2}{Introduction TIME 3 minutes TIME}{0}}
+\headcommand {\sectionentry {1}{Introduction [3 MIN]}{2}{Introduction [3 MIN]}{0}}
 \headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
 \headcommand {\slideentry {1}{0}{2}{3/5}{}{0}}
@@ -11,7 +11,7 @@
 \headcommand {\beamer@framepages {6}{10}}
 \headcommand {\beamer@sectionpages {2}{10}}
 \headcommand {\beamer@subsectionpages {2}{10}}
-\headcommand {\sectionentry {2}{Theory and physical background TIME 10 minutes TIME}{11}{Theory and physical background TIME 10 minutes TIME}{0}}
+\headcommand {\sectionentry {2}{Theory and physical background [10 MIN]}{11}{Theory and physical background [10 MIN]}{0}}
 \headcommand {\slideentry {2}{0}{1}{11/14}{}{0}}
 \headcommand {\beamer@framepages {11}{14}}
 \headcommand {\beamer@subsectionpages {11}{14}}
@@ -24,7 +24,7 @@
 \headcommand {\beamer@framepages {25}{28}}
 \headcommand {\beamer@sectionpages {11}{28}}
 \headcommand {\beamer@subsectionpages {15}{28}}
-\headcommand {\sectionentry {3}{Eulers Method and the 4th order Runge-Kutta Method TIME 10 minutes TIME}{29}{Eulers Method and the 4th order Runge-Kutta Method TIME 10 minutes TIME}{0}}
+\headcommand {\sectionentry {3}{Eulers Method and the 4th order Runge-Kutta Method [10 MIN]}{29}{Eulers Method and the 4th order Runge-Kutta Method [10 MIN]}{0}}
 \headcommand {\slideentry {3}{0}{1}{29/31}{}{0}}
 \headcommand {\beamer@framepages {29}{31}}
 \headcommand {\slideentry {3}{0}{2}{32/32}{}{0}}
@@ -75,22 +75,28 @@
 \headcommand {\beamer@sectionpages {60}{73}}
 \headcommand {\beamer@subsectionpages {60}{73}}
 \headcommand {\sectionentry {5}{Introducing Adaptive step size [5 MIN]}{74}{Introducing Adaptive step size [5 MIN]}{0}}
-\headcommand {\slideentry {5}{0}{1}{74/74}{}{0}}
-\headcommand {\beamer@framepages {74}{74}}
-\headcommand {\beamer@subsectionpages {74}{74}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{75}{When adaptive step-size fails}}
-\headcommand {\beamer@sectionpages {74}{74}}
-\headcommand {\beamer@subsectionpages {75}{74}}
-\headcommand {\sectionentry {6}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{75}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{0}}
-\headcommand {\slideentry {6}{0}{1}{75/75}{}{0}}
-\headcommand {\beamer@framepages {75}{75}}
-\headcommand {\beamer@sectionpages {75}{75}}
-\headcommand {\beamer@subsectionpages {75}{75}}
-\headcommand {\sectionentry {7}{Conclusion and question}{76}{Conclusion and question}{0}}
-\headcommand {\slideentry {7}{0}{1}{76/76}{}{0}}
-\headcommand {\beamer@framepages {76}{76}}
-\headcommand {\beamer@partpages {1}{76}}
-\headcommand {\beamer@subsectionpages {76}{76}}
-\headcommand {\beamer@sectionpages {76}{76}}
-\headcommand {\beamer@documentpages {76}}
-\headcommand {\gdef \inserttotalframenumber {31}}
+\headcommand {\slideentry {5}{0}{1}{74/78}{}{0}}
+\headcommand {\beamer@framepages {74}{78}}
+\headcommand {\slideentry {5}{0}{2}{79/82}{}{0}}
+\headcommand {\beamer@framepages {79}{82}}
+\headcommand {\slideentry {5}{0}{3}{83/84}{}{0}}
+\headcommand {\beamer@framepages {83}{84}}
+\headcommand {\slideentry {5}{0}{4}{85/85}{}{0}}
+\headcommand {\beamer@framepages {85}{85}}
+\headcommand {\beamer@subsectionpages {74}{85}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{86}{When adaptive step-size fails}}
+\headcommand {\beamer@sectionpages {74}{85}}
+\headcommand {\beamer@subsectionpages {86}{85}}
+\headcommand {\sectionentry {6}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{86}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{0}}
+\headcommand {\slideentry {6}{0}{1}{86/86}{}{0}}
+\headcommand {\beamer@framepages {86}{86}}
+\headcommand {\beamer@sectionpages {86}{86}}
+\headcommand {\beamer@subsectionpages {86}{86}}
+\headcommand {\sectionentry {7}{Conclusion and question}{87}{Conclusion and question}{0}}
+\headcommand {\slideentry {7}{0}{1}{87/87}{}{0}}
+\headcommand {\beamer@framepages {87}{87}}
+\headcommand {\beamer@partpages {1}{87}}
+\headcommand {\beamer@subsectionpages {87}{87}}
+\headcommand {\beamer@sectionpages {87}{87}}
+\headcommand {\beamer@documentpages {87}}
+\headcommand {\gdef \inserttotalframenumber {34}}

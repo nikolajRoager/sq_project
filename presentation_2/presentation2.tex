@@ -684,19 +684,203 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \begin{frame}
 \frametitle{Adaptive step size, why}
+
+
+
+\begin{columns}
+\begin{column}{0.5\linewidth}
 \begin{itemize}
 \item <1-> $h$ must be small ``enough"
 
 \item <2-> Hard to pick, and may change:
 
-\item <3-> Example: Inhomogeneous fields
+\item <3-> Inhomogeneous fields (here Earth magnetic field)
 
-\item <4-> Example: the cyclotron
+\item <4-> time dependent fields (here the cyclotron)
 
+\item <5-> Let the computer pick $h$.
+
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+
+
+\only<3>{%
+\includegraphics[width=0.8\linewidth]{Structure_of_the_magnetosphere_Nasa.pdf}%
+
+{\color{gray} Illustration originally from Nasa. Published on wikipedia, in Public Domain (Cropped to fit page) }
+}%
+
+
+\only<4>{%
+\includegraphics[width=\linewidth]{ Cyclotron_patent.png}
+
+{\color{gray} Ernest O. Lawrence, 1934, U.S. Patent 1,948,384; image in Public Domain.}
+}%
+
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Runge-Kutta Adaptive step size, how}
+\begin{itemize}
+\item <1-> Reduce $h$ until the ``error" is small enough
+
+\item <2-> Use 2 different methods, $\mathbf{x}(t_{i+1})$, $\mathbf{x}'(t_{i+1})$.
+
+\item <3-> Approximate ``Error" as  $|\mathbf{x}(t_{i+1})-\mathbf{x}'(t_{i+1})|$.
+
+\item <4-> Most often order 4 and 5 with same $\mathbf{k}_i$.
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Runge-Kutta Dormund Prince 4-5, }
+
+\begin{itemize}
+
+
+\item <1->\lstinline{ode45} in Matlab , \lstinline{RungeKutta_dopri5} in \lstinline{boost::odeint}.
+\begin{align*}
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j \mathbf{k}_j\\
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j' \mathbf{k}_j
+\end{align*}
+
+\begin{align*}
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j \mathbf{K}_j\\
+\mathbf{k}_i &= f_{ode}(\mathbf{X}(t_i)+h \sum_j^{i-1} a_{ki} \mathbf{k}_i+ha_{32},t_i+c_3 h)
+&\vdots
+\end{align*}
+
+\item<2-> 4th and 5th order, hence ode 45. Keeps 5th order term if error less than absolute and relative threshold.
+
+{\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Butcher Tableu of Dormund Prince 4/5}
+\begin{tabular}{c | @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c}
+$c_i$ & $a_{ij}$ & $\hdots$\\
+\midrule
+$0$ \\
+$\frac{1}{5}$ & $\frac{1}{5}$\\
+$\frac{3}{10}$ & $\frac{3}{40}$ &  $\frac{9}{40}$\\
+$\frac{4}{5}$ & $\frac{40}{45}$ &  $-\frac{56}{15}$  &  $-\frac{32}{9}$\\
+$\frac{8}{9}$ & $\frac{19372}{6561}$ & $−\frac{25360}{2187}$ & $\frac{64448}{6561}$ & $−\frac{212}{729}$\\
+$1$ & $\frac{9017}{3168}$ & $-\frac{355}{33}$ & $\frac{46732}{5247}$ & $\frac{49}{176}$  & $-\frac{5103}{18656}$\\
+$1$ & $\frac{35}{384}$  & $0$	 & $\frac{500}{1113}$ & $\frac{125}{192}$ & $-\frac{2187}{6784}$ & $\frac{11}{84}$\\
+\midrule
+$/b$  & $\frac{35}{384}$ & $0$ & $\frac{500}{1113}$ & $\frac{125}{192}$ & $-\frac{2187}{6784}$ & $\frac{11}{84}$ & $0$\\
+$/b'$ & $\frac{5179}{57600}$ & $0$ & $\frac{7571}{16695}$ & & $\frac{393}{640}$ & $-\frac{92097}{339200}$& $\frac{187}{2100}$ & $\frac{1}{40}$\\
+\end{tabular}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Testing adaptive step-size}
+\begin{lstlisting}
+#include <boost/array.hpp>
+#include <boost/numeric/odeint.hpp>
+using namespace boost::numeric::odeint;
+typedef boost::array< double, 6 > state_type;
+...
+size_t steps = integrate_adaptive(
+    runge_kutta_dopri5< state_type >(),
+    ODE,   //Lorentz-force
+    Data0 ,//{pos0,v0}
+    0.0 ,  //t0=0
+    T ,    //max time
+    timestep ,//length of each step (initial)
+    save_step //User defined save data function
+);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Testing adaptive step-size}
+\begin{lstlisting}
+#include <boost/array.hpp>
+#include <boost/numeric/odeint.hpp>
+using namespace boost::numeric::odeint;
+typedef boost::array< double, 6 > state_type;
+...
+size_t steps = integrate_adaptive(
+    make_controled( absErr, relErr , runge_kutta_dopri5< state_type >() ),
+    ODE,   //Lorentz-force
+    Data0 ,//{pos0,v0}
+    0.0 ,  //t0=0
+    T ,    //max time
+    timestep ,//length of each step (initial)
+    save_step //User defined save data function
+);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Testing adaptive step-size}
+\begin{lstlisting}
+#include <boost/array.hpp>
+#include <boost/numeric/odeint.hpp>
+using namespace boost::numeric::odeint;
+typedef boost::array< double, 6 > state_type;
+...
+size_t steps = integrate_adaptive(
+    make_controled( absErr, relErr , runge_kutta_dopri5< state_type >() ),
+    ODE,   //Lorentz-force
+    Data0 ,//{pos0,v0}
+    0.0 ,  //t0=0
+    T ,    //max time
+    timestep ,//length of each step (initial)
+    save_step //User defined save data function
+);
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Example, cyclotron}
+\begin{columns}
+\begin{column}{0.5\linewidth}
+\begin{itemize}
+\item<1-> Electric field accelerates, magnetic contains.
+
+\item<2-> Single gab, oscillating field.
+
+\item<3-> Uses Cyclotron frequency
+
+\item<4-> Analytical final speed, in principle path.
+
+\begin{equation*}
+\frac{R|q|B}{m} = v_\perp
+\end{equation*}
+
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+\includegraphics[width=\linewidth]{ Cyclotron_patent.png}
+{\color{gray} Ernest O. Lawrence, 1934, U.S. Patent 1,948,384; image in Public Domain.}
+\end{column}
+\end{columns}
+\end{frame}
+
 \subsection{When adaptive step-size fails}
+
+\begin{frame}[fragile]
+\frametitle{Naive setup}
+\begin{lstlisting}
+size_t steps = integrate_adaptive(
+    runge_kutta_dopri5< state_type >(),
+    ODE      , //Lorentz-force
+    Data0    , //{pos0,v0}
+    0.0      , //t0=0
+    T        , //max time
+    timestep , //length of each step (initial)
+    save_step);//User defined save data function
+\end{lstlisting}
+\end{frame}
+
 
 \section{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}
 

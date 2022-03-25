@@ -422,7 +422,7 @@ void particle::calculate(const composite_field& Fields, double T, double dt)
     };
 
 
-/*
+
     //All these things live in the namespace boost::numeric::odeint
     size_t steps = integrate_adaptive(
         runge_kutta_dopri5< state_type >(),
@@ -434,7 +434,8 @@ void particle::calculate(const composite_field& Fields, double T, double dt)
         dt ,   //Initial dt, odeint will change if it needs to
         save_step //User defined save data function
     );
-*/
+
+/*
 size_t steps = integrate_const(
     runge_kutta4< state_type >(),
     ODE,   //Lorentz-force
@@ -444,7 +445,7 @@ size_t steps = integrate_const(
     dt,//length of each step
     save_step //User defined save data function
 );
-
+*/
 
     cout<<"Solved in "<<steps<<" steps (t=0 "<<constants::get_name_time()<<" to t="<<T<<' '<<constants::get_name_time()<<')'<<endl;
 
