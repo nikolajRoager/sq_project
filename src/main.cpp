@@ -1309,7 +1309,7 @@ int main(int argc, char* argv[])
     data_setup_file<<"dt, "<<dt<<endl;
 
 //I needed to get some data asap, so I hardcoded this, YES HARDCODED, I know it is really bad, but sorry, uncomment this to only do one particle but get NSTEPS timestep sizes
-#define CRUNCH_DT
+//#define CRUNCH_DT
 
 #ifndef CRUNCH_DT
     data_setup_file<<"particles , "<<particles.size()<<endl;

@@ -827,8 +827,7 @@ size_t steps = integrate_adaptive(
 using namespace boost::numeric::odeint;
 typedef boost::array< double, 6 > state_type;
 ...
-size_t steps = integrate_adaptive(
-    make_controled( absErr, relErr , runge_kutta_dopri5< state_type >() ),
+size_t steps = integrate(
     ODE,   //Lorentz-force
     Data0 ,//{pos0,v0}
     0.0 ,  //t0=0
@@ -870,15 +869,81 @@ size_t steps = integrate_adaptive(
 \begin{frame}[fragile]
 \frametitle{Naive setup}
 \begin{lstlisting}
-size_t steps = integrate_adaptive(
-    runge_kutta_dopri5< state_type >(),
+size_t steps = integrate(
+//Default to adaptive- Dopri5, this is fine
     ODE      , //Lorentz-force
     Data0    , //{pos0,v0}
     0.0      , //t0=0
-    T        , //max time
-    timestep , //length of each step (initial)
+    T        , //Here 500 micro second
+    timestep , //Here 0.1 (intentionally too large)
     save_step);//User defined save data function
 \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{Does it help/work}
+\begin{columns}
+\begin{column}{0.5\linewidth}
+\begin{itemize}
+\item<1-> With fixed step size (Same method, accept all) 4999 points
+
+\item<2-> Trust default setup:
+
+\item<2-> Epic fail Why?
+
+
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+\only<1>{%
+\includegraphics[width=\linewidth]{ cyclotron_noadapt_xy-view.pdf}%
+
+4999 points!}%
+\only<2->{%
+\includegraphics[width=\linewidth]{ cyclotron_badadapt_xy-view.pdf}%
+
+2070 points}%
+
+
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+\only<1>{%
+\includegraphics[width=0.7\linewidth]{ cyclotron_badadapt_xy-view.pdf}%
+
+Default choice,  2070 points.
+}%
+\only<2->{%
+\includegraphics[width=0.7\linewidth]{ cyclotron_badadapt_xy1-view.pdf}%
+
+Default choice,  2070 points.
+}%
+\only<3->{%
+\includegraphics[width=0.7\linewidth]{ cyclotron_badadapt_xy2-view.pdf}%
+
+\lstinline{make_controlled( 1E-7 , 1E-7 , runge_kutta_dopri5< state_type >() )},  3714 points.
+}%
+\only<4->{%
+\includegraphics[width=0.7\linewidth]{ cyclotron_badadapt_xy3-view.pdf}%
+
+\lstinline{make_controlled( 1E-7 , 1E-7 , runge_kutta_dopri5< state_type >() )},  3714 points.
+}%
+\only<5->{%
+\includegraphics[width=0.7\linewidth]{ cyclotron_badadapt_xy4-view.pdf}%
+
+\lstinline{make_controlled( 1E-12 , 1E-12 , runge_kutta_dopri5< state_type >() )},  23850 points.
+}%
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analytic agreement}
+...
 \end{frame}
 
 

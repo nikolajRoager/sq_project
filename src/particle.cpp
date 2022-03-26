@@ -421,12 +421,12 @@ void particle::calculate(const composite_field& Fields, double T, double dt)
         }
     };
 
-
+    cout<<"Using odeint "<<flush;
 
     //All these things live in the namespace boost::numeric::odeint
     size_t steps = integrate_adaptive(
-        runge_kutta_dopri5< state_type >(),
-        //make_controlled( 1E-12 , 1E-12 , runge_kutta_dopri5< state_type >() ) ,//Create stepper
+        //runge_kutta_dopri5< state_type >(),
+        make_controlled( 1E-12 , 1E-12 , runge_kutta_dopri5< state_type >() ) ,//Create stepper
         ODE,   //Lorentz-force
         Data0 ,//{pos0,v0}
         0.0 ,  //t0=0

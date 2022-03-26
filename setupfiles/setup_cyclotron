@@ -13,7 +13,7 @@ write_txt
 
 #Simulation always starts at t=0, end at time t=T, use either Nt for number of timesteps or dt for length of steps
 T 500
-dt 0.0001
+dt 0.1
 
 #Solonoid, though (0,0,0) in the direction (0,0,1) with an internal field calculated to match with 1000 turns per m and current 5 A and radius 5 m
 field B solenoid1 0 0 0 0 0 1 0.6062352745211712 3.0

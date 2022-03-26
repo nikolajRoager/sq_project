@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.2)  25 MAR 2022 09:15
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.2)  25 MAR 2022 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1569,9 +1569,19 @@ File: solenoid_Rh.pdf Graphic file (type pdf)
 
 ] [75
 
-] [76
+]
+File: Structure_of_the_magnetosphere_Nasa.pdf Graphic file (type pdf)
+<use Structure_of_the_magnetosphere_Nasa.pdf>
 
-] [77
+Overfull \vbox (17.78415pt too high) detected at line 723
+ []
+
+[76
+
+]
+File: Cyclotron_patent.png Graphic file (type bmp)
+<Cyclotron_patent.png>
+ [77
 
 ] [78
 
@@ -1584,13 +1594,13 @@ File: solenoid_Rh.pdf Graphic file (type pdf)
 ] [82
 
 ]
-Overfull \vbox (31.83159pt too high) detected at line 749
+Overfull \vbox (13.9036pt too high) detected at line 761
  []
 
 [83
 
 ]
-Overfull \vbox (31.83159pt too high) detected at line 749
+Overfull \vbox (13.9036pt too high) detected at line 761
  []
 
 [84
@@ -1600,9 +1610,110 @@ Missing character: There is no − in font cmss10!
 Missing character: There is no − in font cmss10!
  [85
 
-] [86
+]
+\openout4 = `presentation2.vrb'.
 
-] [87
+ (./presentation2.vrb) [86
+
+]
+\openout4 = `presentation2.vrb'.
+
+ (./presentation2.vrb) [87
+
+]
+\openout4 = `presentation2.vrb'.
+
+
+(./presentation2.vrb) [88
+
+]
+File: Cyclotron_patent.png Graphic file (type bmp)
+<Cyclotron_patent.png>
+ [89
+
+]
+File: Cyclotron_patent.png Graphic file (type bmp)
+<Cyclotron_patent.png>
+ [90
+
+]
+File: Cyclotron_patent.png Graphic file (type bmp)
+<Cyclotron_patent.png>
+ [91
+
+]
+File: Cyclotron_patent.png Graphic file (type bmp)
+<Cyclotron_patent.png>
+ [92
+
+]
+\openout4 = `presentation2.vrb'.
+
+ (./presentation2.vrb) [93
+
+]
+File: cyclotron_noadapt_xy-view.pdf Graphic file (type pdf)
+<use cyclotron_noadapt_xy-view.pdf>
+
+[94
+
+]
+File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy-view.pdf>
+ [95
+
+]
+File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy-view.pdf>
+ [96
+
+]
+File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy1-view.pdf>
+ [97
+
+]
+File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy1-view.pdf>
+File: cyclotron_badadapt_xy2-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy2-view.pdf>
+
+Overfull \vbox (270.11421pt too high) detected at line 942
+ []
+
+[98
+
+]
+File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy1-view.pdf>
+File: cyclotron_badadapt_xy2-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy2-view.pdf>
+File: cyclotron_badadapt_xy3-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy3-view.pdf>
+
+Overfull \vbox (537.70038pt too high) detected at line 942
+ []
+
+[99
+
+]
+File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy1-view.pdf>
+File: cyclotron_badadapt_xy2-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy2-view.pdf>
+File: cyclotron_badadapt_xy3-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy3-view.pdf>
+File: cyclotron_badadapt_xy4-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy4-view.pdf>
+
+Overfull \vbox (805.28654pt too high) detected at line 942
+ []
+
+[100
+
+] [101
+
+] [102
 
 ]
 \tf@nav=\write6
@@ -1614,21 +1725,21 @@ Missing character: There is no − in font cmss10!
 \tf@snm=\write8
 \openout8 = `presentation2.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 790.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 790.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 965.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 965.
  (./presentation2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 790.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 790.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 965.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 965.
 Package rerunfilecheck Info: File `presentation2.out' has not changed.
-(rerunfilecheck)             Checksum: 985BF06556009B6215915666C7280283.
+(rerunfilecheck)             Checksum: A52343922045A368A8E8B32D0830BDA5.
  ) 
 Here is how much of TeX's memory you used:
- 34508 strings out of 492483
- 661068 string characters out of 6129483
+ 34593 strings out of 492483
+ 663342 string characters out of 6129483
  1021680 words of memory out of 5000000
- 38466 multiletter control sequences out of 15000+600000
+ 38536 multiletter control sequences out of 15000+600000
  543250 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,19n,60p,780b,1361s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presentation2.pdf (87 pages).
+Output written on presentation2.pdf (102 pages).

@@ -1,17 +1,11 @@
-\frametitle{``Correct" way}
+\frametitle{Naive setup}
 \begin{lstlisting}
-#include <boost/array.hpp>
-#include <boost/numeric/odeint.hpp>
-using namespace boost::numeric::odeint;
-typedef boost::array< double, 6 > state_type;
-...
-size_t steps = integrate_const(
-    runge_kutta4< state_type >(),
-    ODE,   //Lorentz-force
-    Data0 ,//{pos0,v0}
-    0.0 ,  //t0=0
-    T ,    //max time
-    timestep ,//length of each step
-    save_step //User defined save data function
-);
+size_t steps = integrate(
+//Default to adaptive- Dopri5, this is fine
+    ODE      , //Lorentz-force
+    Data0    , //{pos0,v0}
+    0.0      , //t0=0
+    T        , //Here 500 micro second
+    timestep , //Here 0.1 (intentionally too large)
+    save_step);//User defined save data function
 \end{lstlisting}

@@ -6,6 +6,6 @@
 \beamer@subsectionintoc {3}{2}{4th order Runge Kutta}{52}{0}{3}
 \beamer@sectionintoc {4}{Testing the methods [5 MIN]}{60}{0}{4}
 \beamer@sectionintoc {5}{Introducing Adaptive step size [5 MIN]}{74}{0}{5}
-\beamer@subsectionintoc {5}{1}{When adaptive step-size fails}{86}{0}{5}
-\beamer@sectionintoc {6}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{86}{0}{6}
-\beamer@sectionintoc {7}{Conclusion and question}{87}{0}{7}
+\beamer@subsectionintoc {5}{1}{When adaptive step-size fails}{93}{0}{5}
+\beamer@sectionintoc {6}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{101}{0}{6}
+\beamer@sectionintoc {7}{Conclusion and question}{102}{0}{7}
