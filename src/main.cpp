@@ -26,6 +26,7 @@ using vec = glm::dvec3;//Default to glm::douple precision 3D vector, by default 
 #include"field.hpp"
 #include"constants.hpp"
 #include"particle.hpp"
+#include"draw_field.hpp"
 
 //This is too long to write explicitly, shorten these down a little
 using namespace std;
@@ -57,6 +58,13 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+
+    bool alt_save_B_field = false;
+    bool alt_save_E_field = false;
+    vector<vec> alt_save_B_pos;
+    vector<vec> alt_save_E_pos;
+    string alt_save_B_name;
+    string alt_save_E_name;
 
     bool save_B_field=false;
     bool save_E_field=false;
@@ -868,6 +876,54 @@ int main(int argc, char* argv[])
                     }
 
                 }
+                else if (input.compare("save_field")==0)
+                {
+                    if(!(ss>>input))
+                    {
+                        cout<<'('<<setup_path.string()<<") line "<<line_count<<" missing argument "<<endl;
+                        cout<<"\""<<this_line<<"\""<<endl;
+                        return 1;
+                    }
+                    if (input.compare("B")==0)
+                        alt_save_B_field=true;
+                    else if (input.compare("E")==0)
+                        alt_save_E_field=true;
+                    else
+                    {
+                        cout<<'('<<setup_path.string()<<") line "<<line_count<<" argument should be B or E"<<endl;
+                        cout<<"\""<<this_line<<"\""<<endl;
+                        return 1;
+                    }
+
+                    if(alt_save_B_field)
+                    {
+                        if(!(ss>>alt_save_B_name))
+                        {
+                            cout<<'('<<setup_path.string()<<") line "<<line_count<<" missing 2nd argument "<<endl;
+                            cout<<"\""<<this_line<<"\""<<endl;
+                            return 1;
+                        }
+                    }
+                    else
+                        if(!(ss>>alt_save_E_name))
+                        {
+                            cout<<'('<<setup_path.string()<<") line "<<line_count<<" missing 2nd argument "<<endl;
+                            cout<<"\""<<this_line<<"\""<<endl;
+                            return 1;
+                        }
+
+                    vec V;
+                    while (ss>>V.x && ss>>V.y && ss>>V.z)
+                    {
+                        if(alt_save_B_field)
+                            alt_save_B_pos.push_back(V);
+                        else
+                            alt_save_E_pos.push_back(V);
+
+                    }
+
+
+                }
                 else if (input.compare("field_res")==0)
                 {
 
@@ -1256,6 +1312,30 @@ int main(int argc, char* argv[])
                 cout<<"E field could not be saved, file "<<(outpath/"E.bin").string()<<" could not be opened"<<endl;//Just carry on, maybe the rest of the things can be saved
             }
 
+        }
+
+    }
+
+    //If we need to use the alternative field saving function
+    if (alt_save_B_field)
+    {
+        ofstream B_file(outpath/alt_save_B_name);
+        if (B_file.is_open())
+        {
+
+            draw_field(alt_save_B_pos,Field, B_file, true);
+            B_file.close();
+        }
+    }
+
+    if (alt_save_E_field)
+    {
+        ofstream E_file(outpath/alt_save_E_name);
+        if (E_file.is_open())
+        {
+
+            draw_field(alt_save_E_pos,Field, E_file, false);
+            E_file.close();
         }
 
     }

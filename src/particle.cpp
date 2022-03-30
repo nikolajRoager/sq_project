@@ -32,7 +32,12 @@ void particle::dump_raw(std::ofstream& txt_output) const
         txt_output<<positions[i].z<<'\t';
         txt_output<<velocities[i].x<<'\t';
         txt_output<<velocities[i].y<<'\t';
-        txt_output<<velocities[i].z<<endl;
+        txt_output<<velocities[i].z;
+
+        if (i>0)
+            txt_output<<'\t'<< (timestamps[i]-timestamps[i-1]);
+        txt_output<<endl;
+
     }
 }
 
@@ -426,7 +431,7 @@ void particle::calculate(const composite_field& Fields, double T, double dt)
     //All these things live in the namespace boost::numeric::odeint
     size_t steps = integrate_adaptive(
         //runge_kutta_dopri5< state_type >(),
-        make_controlled( 1E-12 , 1E-12 , runge_kutta_dopri5< state_type >() ) ,//Create stepper
+        make_controlled( 1E-6 , 1E-6 , runge_kutta_dopri5< state_type >() ) ,//Create stepper
         ODE,   //Lorentz-force
         Data0 ,//{pos0,v0}
         0.0 ,  //t0=0

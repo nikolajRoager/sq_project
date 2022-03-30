@@ -1,0 +1,14 @@
+set terminal pdf
+set size ratio 0.4
+set fontsize 1.6
+set key out
+set output 'dipole_h.pdf'
+set xlabel '$t/\mu s$'
+set ylabel '$h =t_i-t_{i-1}/\mu s$'
+set  title 'dynamic timesteps'
+plot  'out/out_dipole/particles0.tsv' index 0 using 1:8 with lines  title ''
+set output 'dipole_R.pdf'
+set xlabel '$t/\mu s$'
+set ylabel '$r/m$'
+set  title 'distance to origin'
+plot  'out/out_dipole/particles0.tsv' index 0 using 1:sqrt($2*$2+$3*$3+$4*$4) with lines title ''

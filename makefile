@@ -13,7 +13,7 @@ CXXFLAGS=-std=c++17 -Wall -O2 -Wextra -Wpedantic -Wdouble-promotion -I$(IDIR)
 
 LIBS = -lSDL2 -lSDL2_image -lSDL2_mixer -lGLEW -lGL
 
-_OBJ = main.o field.o constants.o particle.o
+_OBJ = main.o field.o constants.o particle.o draw_field.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
@@ -39,6 +39,11 @@ $(ODIR)/constants.o: $(SRCDIR)/constants.cpp $(IDIR)/constants.hpp
 
 $(ODIR)/particle.o: $(SRCDIR)/particle.cpp $(IDIR)/constants.hpp $(IDIR)/field.hpp  $(IDIR)/particle.hpp
 ;$(CC) -c -o $@ $< $(CXXFLAGS)
+
+
+$(ODIR)/draw_field.o: $(SRCDIR)/draw_field.cpp $(IDIR)/constants.hpp $(IDIR)/field.hpp
+;$(CC) -c -o $@ $< $(CXXFLAGS)
+
 
 $(OUTDIR)/test_double_precision.exe: $(SRCDIR)/test_double_precision.cpp
 ;$(CC) -o $@ $< $(CXXFLAGS)

@@ -1,3 +1,5 @@
+#pragma once
+
 /*THIS FILE
 
 A charged particle

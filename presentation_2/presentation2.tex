@@ -696,7 +696,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \item <3-> Inhomogeneous fields (here Earth magnetic field)
 
-\item <4-> time dependent fields (here the cyclotron)
+\item <4-> time dependent fields (here the cyclotron, bad example)
 
 \item <5-> Let the computer pick $h$.
 
@@ -723,6 +723,43 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \end{frame}
 
 
+
+\begin{frame}
+\frametitle{Example, magnetic dipole}
+
+\begin{columns}
+\begin{column}{0.5\linewidth}
+\begin{itemize}
+
+\item <1- > Not good approximation of the Earth magnetic field.
+
+\item <1-> True dipole:
+
+\begin{align*}
+\vec{B} = \frac{\mu_0}{4\pi r^3} \left[3 \hat{\vec{r}}(\vec{m}\cdot\hat{\vec{r}} -\vec{m}) \right].
+\end{align*}
+
+\item <2-> Weak field, little change, long steps.
+
+\item <3-> strong field, large change, short steps.
+
+\item <4-> No analytical solution (afaik.)
+
+\item <4-> Arbitrarily set $\frac{\mu_0}{4\pi}|\vec{m}|= \SI{0.155}{\tesla\per\cubic\meter}$ .
+
+\item <4-> Protons with speed $\SI{30000}{\meter\per\second}$
+
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+
+
+\only<1>{\includegraphics[width=\linewidth]{dipole.pdf}}%
+\only<2>{\includegraphics[width=\linewidth]{dipole1.pdf}}%
+\end{column}
+\end{columns}
+\end{frame}
+
 \begin{frame}
 \frametitle{Runge-Kutta Adaptive step size, how}
 \begin{itemize}
@@ -736,8 +773,9 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \end{itemize}
 \end{frame}
 
+
 \begin{frame}
-\frametitle{Runge-Kutta Dormund Prince 4-5, }
+\frametitle{Runge-Kutta Dormand Prince 4-5}
 
 \begin{itemize}
 
@@ -756,13 +794,15 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \item<2-> 4th and 5th order, hence ode 45. Keeps 5th order term if error less than absolute and relative threshold.
 
+\item<2-> Should also decide to increase step size.
+
 {\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Butcher Tableu of Dormund Prince 4/5}
+\frametitle{Butcher Tableu of Dormand Prince 4/5}
 \begin{tabular}{c | @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c}
 $c_i$ & $a_{ij}$ & $\hdots$\\
 \midrule
@@ -780,27 +820,7 @@ $/b'$ & $\frac{5179}{57600}$ & $0$ & $\frac{7571}{16695}$ & & $\frac{393}{640}$ 
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Testing adaptive step-size}
-\begin{lstlisting}
-#include <boost/array.hpp>
-#include <boost/numeric/odeint.hpp>
-using namespace boost::numeric::odeint;
-typedef boost::array< double, 6 > state_type;
-...
-size_t steps = integrate_adaptive(
-    runge_kutta_dopri5< state_type >(),
-    ODE,   //Lorentz-force
-    Data0 ,//{pos0,v0}
-    0.0 ,  //t0=0
-    T ,    //max time
-    timestep ,//length of each step (initial)
-    save_step //User defined save data function
-);
-\end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Testing adaptive step-size}
+\frametitle{Adaptive step-size}
 \begin{lstlisting}
 #include <boost/array.hpp>
 #include <boost/numeric/odeint.hpp>
@@ -819,8 +839,9 @@ size_t steps = integrate_adaptive(
 \end{lstlisting}
 \end{frame}
 
+
 \begin{frame}[fragile]
-\frametitle{Testing adaptive step-size}
+\frametitle{Adaptive step-size}
 \begin{lstlisting}
 #include <boost/array.hpp>
 #include <boost/numeric/odeint.hpp>
@@ -837,6 +858,83 @@ size_t steps = integrate(
 );
 \end{lstlisting}
 \end{frame}
+
+\begin{frame}
+\frametitle{Does it work?}
+\begin{centering}
+\only<1>{%
+\noindent\includegraphics[width=\linewidth]{dipole_R.pdf}}%
+\only<2>{%
+\noindent\includegraphics[width=\linewidth]{dipole_h.pdf}}%
+
+\end{centering}
+
+Boost Odeint Dormand-Prince, relative and absolute error $10^{-6}$.
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Does it work? Another curious result}
+\begin{centering}
+\only<1>{%
+
+At most 62 points from $t=\SI{0}{\micro\second}$ to $t=\SI{600}{\micro\second}$, adaptive.
+}
+\only<2>{%
+\noindent\includegraphics[width=\linewidth]{dipole_h.pdf}
+
+Magnetic ``mirror" or ``bottle"
+}%
+\end{centering}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Extra examples-``if time permits" }
+\begin{itemize}
+\item<1-> The cyclotron
+
+\item<2-> Toroidal fields
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Extra examples-``if time permits" }
+\begin{itemize}
+\item<1-> The cyclotron
+
+\item<2-> Toroidal fields
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Example, cyclotron}
+\begin{columns}
+\begin{column}{0.5\linewidth}
+\begin{itemize}
+\item<1-> Electric field accelerates, magnetic contains.
+
+\item<2-> Single gab, oscillating field.
+
+\item<3-> Uses classical Cyclotron frequency
+
+\item<4-> Analytical final speed, in principle path.
+
+\begin{equation*}
+\frac{R|q|B}{m} = v_\perp
+\end{equation*}
+
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+\includegraphics[width=\linewidth]{ Cyclotron_patent.png}
+{\color{gray} Ernest O. Lawrence, 1934, U.S. Patent 1,948,384; image in Public Domain.}
+\end{column}
+\end{columns}
+\end{frame}
+
+
 
 \begin{frame}
 \frametitle{Example, cyclotron}
@@ -864,7 +962,6 @@ size_t steps = integrate(
 \end{columns}
 \end{frame}
 
-\subsection{When adaptive step-size fails}
 
 \begin{frame}[fragile]
 \frametitle{Naive setup}
@@ -880,6 +977,7 @@ size_t steps = integrate(
 \end{lstlisting}
 \end{frame}
 
+\subsection{When adaptive step-size fails}
 \begin{frame}
 \frametitle{Does it help/work}
 \begin{columns}
@@ -891,6 +989,7 @@ size_t steps = integrate(
 
 \item<2-> Epic fail Why?
 
+\item<2-> Discontinuous ODE is bad!
 
 \end{itemize}
 \end{column}
@@ -946,12 +1045,6 @@ Default choice,  2070 points.
 ...
 \end{frame}
 
-
-\section{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}
-
-\begin{frame}
-\frametitle{Non-analytic systems}
-\end{frame}
 
 \section{Conclusion and question}
 

@@ -79,38 +79,45 @@
 \headcommand {\beamer@framepages {74}{78}}
 \headcommand {\slideentry {5}{0}{2}{79/82}{}{0}}
 \headcommand {\beamer@framepages {79}{82}}
-\headcommand {\slideentry {5}{0}{3}{83/84}{}{0}}
-\headcommand {\beamer@framepages {83}{84}}
-\headcommand {\slideentry {5}{0}{4}{85/85}{}{0}}
-\headcommand {\beamer@framepages {85}{85}}
-\headcommand {\slideentry {5}{0}{5}{86/86}{}{0}}
-\headcommand {\beamer@framepages {86}{86}}
-\headcommand {\slideentry {5}{0}{6}{87/87}{}{0}}
-\headcommand {\beamer@framepages {87}{87}}
-\headcommand {\slideentry {5}{0}{7}{88/88}{}{0}}
-\headcommand {\beamer@framepages {88}{88}}
-\headcommand {\slideentry {5}{0}{8}{89/92}{}{0}}
-\headcommand {\beamer@framepages {89}{92}}
-\headcommand {\beamer@subsectionpages {74}{92}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{93}{When adaptive step-size fails}}
-\headcommand {\slideentry {5}{1}{1}{93/93}{When adaptive step-size fails}{0}}
-\headcommand {\beamer@framepages {93}{93}}
-\headcommand {\slideentry {5}{1}{2}{94/95}{When adaptive step-size fails}{0}}
+\headcommand {\slideentry {5}{0}{3}{83/86}{}{0}}
+\headcommand {\beamer@framepages {83}{86}}
+\headcommand {\slideentry {5}{0}{4}{87/88}{}{0}}
+\headcommand {\beamer@framepages {87}{88}}
+\headcommand {\slideentry {5}{0}{5}{89/89}{}{0}}
+\headcommand {\beamer@framepages {89}{89}}
+\headcommand {\slideentry {5}{0}{6}{90/90}{}{0}}
+\headcommand {\beamer@framepages {90}{90}}
+\headcommand {\slideentry {5}{0}{7}{91/91}{}{0}}
+\headcommand {\beamer@framepages {91}{91}}
+\headcommand {\slideentry {5}{0}{8}{92/93}{}{0}}
+\headcommand {\beamer@framepages {92}{93}}
+\headcommand {\slideentry {5}{0}{9}{94/95}{}{0}}
 \headcommand {\beamer@framepages {94}{95}}
-\headcommand {\slideentry {5}{1}{3}{96/100}{When adaptive step-size fails}{0}}
-\headcommand {\beamer@framepages {96}{100}}
-\headcommand {\beamer@sectionpages {74}{100}}
-\headcommand {\beamer@subsectionpages {93}{100}}
-\headcommand {\sectionentry {6}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{101}{Non-analytical systems: Toroidal coils and dipoles [10 MIN]}{0}}
-\headcommand {\slideentry {6}{0}{1}{101/101}{}{0}}
-\headcommand {\beamer@framepages {101}{101}}
-\headcommand {\beamer@sectionpages {101}{101}}
-\headcommand {\beamer@subsectionpages {101}{101}}
-\headcommand {\sectionentry {7}{Conclusion and question}{102}{Conclusion and question}{0}}
-\headcommand {\slideentry {7}{0}{1}{102/102}{}{0}}
-\headcommand {\beamer@framepages {102}{102}}
-\headcommand {\beamer@partpages {1}{102}}
-\headcommand {\beamer@subsectionpages {102}{102}}
-\headcommand {\beamer@sectionpages {102}{102}}
-\headcommand {\beamer@documentpages {102}}
-\headcommand {\gdef \inserttotalframenumber {41}}
+\headcommand {\slideentry {5}{0}{10}{96/97}{}{0}}
+\headcommand {\beamer@framepages {96}{97}}
+\headcommand {\slideentry {5}{0}{11}{98/99}{}{0}}
+\headcommand {\beamer@framepages {98}{99}}
+\headcommand {\slideentry {5}{0}{12}{100/103}{}{0}}
+\headcommand {\beamer@framepages {100}{103}}
+\headcommand {\slideentry {5}{0}{13}{104/107}{}{0}}
+\headcommand {\beamer@framepages {104}{107}}
+\headcommand {\slideentry {5}{0}{14}{108/108}{}{0}}
+\headcommand {\beamer@framepages {108}{108}}
+\headcommand {\beamer@subsectionpages {74}{108}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{109}{When adaptive step-size fails}}
+\headcommand {\slideentry {5}{1}{1}{109/110}{When adaptive step-size fails}{0}}
+\headcommand {\beamer@framepages {109}{110}}
+\headcommand {\slideentry {5}{1}{2}{111/115}{When adaptive step-size fails}{0}}
+\headcommand {\beamer@framepages {111}{115}}
+\headcommand {\slideentry {5}{1}{3}{116/116}{When adaptive step-size fails}{0}}
+\headcommand {\beamer@framepages {116}{116}}
+\headcommand {\beamer@sectionpages {74}{116}}
+\headcommand {\beamer@subsectionpages {109}{116}}
+\headcommand {\sectionentry {6}{Conclusion and question}{117}{Conclusion and question}{0}}
+\headcommand {\slideentry {6}{0}{1}{117/117}{}{0}}
+\headcommand {\beamer@framepages {117}{117}}
+\headcommand {\beamer@partpages {1}{117}}
+\headcommand {\beamer@subsectionpages {117}{117}}
+\headcommand {\beamer@sectionpages {117}{117}}
+\headcommand {\beamer@documentpages {117}}
+\headcommand {\gdef \inserttotalframenumber {46}}

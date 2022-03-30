@@ -47,10 +47,10 @@ vec Earth_dipole2::get_field(vec pos,double t) const
 
 void Earth_dipole2::log_info() const
 {
-    cout<<"Magnetic dipole Earth approximation at origin with factor "<<factor <<endl;
-    cout<<"Check  "<<get_field(vec(0,0,Re)).z<<" "<<get_field(vec(0,0,10*Re)).z<<endl;
+    cout<<"Magnetic dipole Earth approximation at origin with factor "<<factor << constants::get_name_B_field()<<endl;
+    cout<<"Check  "<<get_field(vec(0,0,Re)).z<<" "<<get_field(vec(0,0,Re)).z<<endl;
 
-    cout<<"Check  "<<get_field(vec(Re,0,0)).z<<" "<<get_field(vec(Re*10,0,0)).z<<endl;
+    cout<<"Check  "<<get_field(vec(Re,0,0)).z<<" "<<get_field(vec(Re,0,0)).z<<endl;
 }
 
 
@@ -77,7 +77,7 @@ vec Earth_dipole::get_field(vec pos,double t) const
 
 void Earth_dipole::log_info() const
 {
-    cout<<"Earth dipole model at origin with Earh radius "<<Re <<constants::get_name_distance()<<" Reference feild strength"<<constants::get_name_B_field() <<endl;
+    cout<<"Earth dipole model at origin with Earth radius "<<Re <<constants::get_name_distance()<<" Reference field strength"<<constants::get_name_B_field() <<endl;
 
     cout<<"Check  "<<get_field(vec(0,0,Re)).z<<" "<<get_field(vec(0,0,10*Re)).z<<endl;
 }

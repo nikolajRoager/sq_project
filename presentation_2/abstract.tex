@@ -16,6 +16,14 @@
 \usepackage{color}
 \usepackage{xcolor}
 
+\usepackage[
+backend=biber,
+style=numeric,
+citestyle=numeric,
+sorting=none
+]{biblatex}
+\addbibresource{resources.bib}
+
 
 % This is the color used for MATLAB comments below
 \definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0}
@@ -113,7 +121,7 @@
 
 \noindent Name: Nikolaj Roager Christensen (201805275)
 
-\noindent Title: Simulating particles in electric and magnetic fields
+\noindent Title: How numerical simulations work: Simulating particles in electric and magnetic fields
 
 \noindent Date and time for Student Colloquium: March 17, 2021
 
@@ -122,12 +130,18 @@
 
 \noindent Abstract:
 
-In this Student Colloquium, I wish to demonstrate a numerical simulation of single classical particles in various magnetic and electric setups. The main goal is to show why charged particles will follow the magnetic field, even though the magnetic force on a particle is perpendicular to the direction of the field. As a starting point, I will re-create the well-known behaviour of particles in a constant magnetic field, then I will demonstrate how and why magnetic fields can concentrate or trap charged particles, using as examples toroidal coils, such as the ones in  Tokamak-style fusion reactors, I will also explain how this relates to the naturally occurring magnetic field of the Earth. Finally I will use my simulation to demonstrate a classical cyclotron particle accelerator, as an example of combined electric and magnetic setups.
+Numerical simulations play an increasingly important role in physics.
+
+In this Student Colloquium, I wish to outline how I made a simulation of classical non relativistic particles in various electric and magnetic setups. My simulation is based on the Runge-Kutta method for solving ordinary differential equations, which I have implemented in C++ at various different orders.
+
+In this Colloquium I will both go through how and why the Runge-Kutta based simulation works, while also checking how large an error the method makes, when simulating an analytically solved system.
+
+I have used my simulation to explore a particle in a constant magnetic field -- an analytically solved system -- , a particle interacting with a magnetic dipole, a particle in a cyclotron accelerator and a particle in a toroidal coil.
 
 \begin{center}
-\includegraphics[width=0.8\linewidth]{cyclotron1_xy-view.pdf}
+\includegraphics[width=0.8\linewidth]{dipole1.pdf}
 
-A plot of the path of a particle in a classical cyclotron, from my simulation. This will be included in the presentation, and is my personal pick for the front-page
+
 \end{center}
 
 
