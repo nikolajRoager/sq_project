@@ -365,6 +365,123 @@ void particle::calculate_3rdparty_RK4(const composite_field& Fields, double T, d
 
 }
 
+void particle::calculate_RKDP45(const composite_field& Fields, double T, double dt)
+{
+    state_type Data0 = {pos0.x,pos0.y,pos0.z,v0.x,v0.y,v0.z};
+
+    //p_print=0;
+    double Charge = charge;
+    double Inv_mass= inv_mass;
+
+    //Declare the differential equation we want to solve
+    auto ODE = [Inv_mass,Charge,&Fields]( const state_type Data , state_type &dDatadt , const double t )
+    {
+        //Extract position and velocity from data
+        vec pos = vec(Data[0],Data[1],Data[2]);
+        vec velocity = vec(Data[3],Data[4],Data[5]);
+
+        //Get current force
+        vec dpdt = Charge*(Fields.get_Efield(pos,t)+glm::cross(velocity,Fields.get_Bfield(pos,t)));
+        //force -> acceleration
+        vec dV = dpdt*Inv_mass;
+
+        //Save acceleration as derivative of velocity
+        dDatadt[3] = dV.x;
+        dDatadt[4] = dV.y;
+        dDatadt[5] = dV.z;
+        //velocity as derivative of position
+        dDatadt[0] = Data[3];
+        dDatadt[1] = Data[4];
+        dDatadt[2] = Data[5];
+    };
+
+
+    vector<vec> position_out;
+    position_out.push_back(pos0);
+
+    vector<vec> velocity_out;
+    velocity_out.push_back(v0);
+
+    vector<double> time_out;
+    time_out.push_back(0);
+    double p_print = 0;
+    double Print_interval = print_interval;
+
+
+    auto save_step = [&p_print,Print_interval,&position_out,&velocity_out,&time_out]( const state_type& Data , const double t )
+    {   //Data[0]=position, Data[1]=velocity
+        if (t>p_print+Print_interval)
+        {
+            position_out.push_back(vec(Data[0],Data[1],Data[2]));//I do not know how many points there will be, so reserving is not possible, hopefully there will not be too many resizes, //The print inteval ensures that there will not be crazy much data to save
+            velocity_out.push_back(vec(Data[3],Data[4],Data[5]));
+            time_out.push_back(t);
+
+            p_print=t;
+        }
+    };
+
+    cout<<"Using odeint "<<flush;
+
+    size_t steps = 0;
+
+
+    double t=0,h=dt;
+
+    //Relative and absolute error on all the data
+    double relerror=10-7;
+    double abserror=10-7;
+
+    state_type Data = Data0;
+    state_type temp=Data0;
+    state_type K1,K2,K3,K4;
+    for (double t=0; t<T ;t+=h)
+    {
+
+        do
+        {
+
+            //substep 1
+            ODE(Data,K1,t);
+            for (uint i = 0; i<Data.size(); ++i)
+                temp[i]=Data[i]+h*K1[i]/2;
+
+            //substep 2
+            ODE(temp,K2,t+h/2);
+            for (uint i = 0; i<Data.size(); ++i)
+                temp[i]=Data[i]+h*K2[i]/2;
+
+            //substep 3
+            ODE(temp,K3,t+h/2);
+            for (uint i = 0; i<Data.size(); ++i)
+                temp[i]=Data[i]+h*K3[i];
+
+            //substep 4
+            ODE(temp,K4,t+h);
+
+            //Read data
+            for (uint i = 0; i<Data.size(); ++i)
+                Data[i]+=h*(K1[i]+2.0*K2[i]+2.0*K3[i]+K4[i])/6.0;
+
+            //Estimate the error
+
+
+            //Keep or recalculate
+
+        }
+        while(keep);
+
+        save_step( Data , i*dt );
+    }
+
+    cout<<"Solved in "<<steps<<" steps (t=0 "<<constants::get_name_time()<<" to t="<<T<<' '<<constants::get_name_time()<<')'<<endl;
+
+
+    //std::move only moves the pointer to the data, so it is much faster than the default copy assignment, which would be used if I just used =, ... in practice there is a good chance the compiler is smart enough to use move here instead, but being explicit never hurts
+    positions = std::move(position_out);
+    velocities = std::move(velocity_out);
+    timestamps = std::move(time_out);
+
+}
 
 
 void particle::calculate(const composite_field& Fields, double T, double dt)
