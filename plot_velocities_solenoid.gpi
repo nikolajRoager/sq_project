@@ -2,6 +2,13 @@ set terminal pdf
 set fontsize 1.6
 set palette red ,  blue , purple, black, orange , green , magenta , red ,   purple, black, orange , green, magenta
 set size ratio 0.5
+set output 'solenoid_pos_t.pdf'
+set xlabel '$x/m$'
+set ylabel '$t/\mu s$'
+set key out
+set  title 'Particles in a solenoid, x(t)'
+plot 'out/out_RK45/particles0.tsv' index 0 using 1:2 with lines  title 'DP 45'
+set size ratio 0.5
 set output 'solenoid_xz_view1.pdf'
 set xlabel 'x/m'
 set ylabel 'z/m'

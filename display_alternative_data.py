@@ -66,7 +66,7 @@ if exists(data_folder+'/extra.txt'):
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
-ax.set_aspect(0.5)
+#ax.set_aspect(0.5)
 
 
 X,Y = np.meshgrid(np.arange(-10,10,0.1) ,np.arange(-10,10,0.1) )

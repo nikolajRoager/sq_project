@@ -61,6 +61,8 @@ public:
 
     void calculate_RK4(const composite_field& Fields, double T, double dt);
 
+    void calculate_RKDP45(const composite_field& Fields, double T, double dt);
+
     void calculate_3rdparty_RK4(const composite_field& Fields, double T, double dt);
 
     void analytical_solenoid(const composite_field& Fields, double T, double dt);

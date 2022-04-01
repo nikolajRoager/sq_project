@@ -4,11 +4,11 @@ field_min , -10
 field_max , 10
 field_steps , 11
 T, 100
-dt, 2
+dt, 0.1
 particles , 3
 name , proton 
-timesteps , 150
+timesteps , 93
 name , proton 
-timesteps , 150
+timesteps , 70
 name , proton 
-timesteps , 150
+timesteps , 8

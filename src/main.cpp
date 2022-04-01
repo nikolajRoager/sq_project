@@ -124,7 +124,7 @@ int main(int argc, char* argv[])
                         cout<<"\""<<this_line<<"\""<<endl;
                         return 1;
                     }
-                    if (input.compare("RK45")==0)
+                    if (input.compare("RK45lib")==0)
                         engine_type =0;
                     else if (input.compare("euler")==0)
                         engine_type =1;
@@ -132,6 +132,8 @@ int main(int argc, char* argv[])
                         engine_type =2;
                     else if (input.compare("RK4lib")==0)
                         engine_type =3;
+                    else if (input.compare("RK45")==0)
+                        engine_type =4;
                     else
                     {
                         cout<<'('<<setup_path.string()<<") line "<<line_count<<" not valid engine"<<endl;
@@ -1358,6 +1360,8 @@ int main(int argc, char* argv[])
             P.calculate_RK4(Field,T_custom[i],dt);
         else if (engine_type ==3)
             P.calculate_3rdparty_RK4(Field,T_custom[i],dt);
+        else if (engine_type ==4)
+            P.calculate_RKDP45(Field,T_custom[i],dt);
 
         //Time crunch analytical solenoid, sorry
         //P.analytical_solenoid(Field,T_custom[i],dt);

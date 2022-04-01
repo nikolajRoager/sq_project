@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/Arch Linux) (preloaded format=xelatex 2021.10.11)  30 MAR 2022 09:43
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/Arch Linux) (preloaded format=xelatex 2021.10.11)  31 MAR 2022 19:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1511,32 +1511,22 @@ File: Cyclotron_patent.png Graphic file (type bmp)
 ]
 File: dipole.pdf Graphic file (type pdf)
 <use dipole.pdf>
-
-Overfull \vbox (11.644pt too high) detected at line 761
- []
-
-[79
+ [79
 
 ]
 File: dipole1.pdf Graphic file (type pdf)
 <use dipole1.pdf>
-
-Overfull \vbox (11.644pt too high) detected at line 761
- []
-
-[80
+ [80
 
 ]
-Overfull \vbox (11.644pt too high) detected at line 761
- []
-
-[81
+File: dipole1.pdf Graphic file (type pdf)
+<use dipole1.pdf>
+ [81
 
 ]
-Overfull \vbox (11.644pt too high) detected at line 761
- []
-
-[82
+File: dipole1.pdf Graphic file (type pdf)
+<use dipole1.pdf>
+ [82
 
 ] [83
 
@@ -1546,78 +1536,60 @@ Overfull \vbox (11.644pt too high) detected at line 761
 
 ] [86
 
+] [87
+
+] [88
+
 ]
-Overfull \vbox (27.5036pt too high) detected at line 801
+Overfull \hbox (23.15236pt too wide) in paragraph at lines 824--824
+[][]  
  []
 
-[87
+[89
+
+] [90
+
+] [91
+
+] [92
+
+] [93
 
 ]
-Overfull \vbox (27.5036pt too high) detected at line 801
- []
-
-[88
-
-]
-Missing character: There is no − ("2212) in font cmss10!
-Missing character: There is no − ("2212) in font cmss10!
- [89
+File: dipole2.pdf Graphic file (type pdf)
+<use dipole2.pdf>
+ [94
 
 ]
-\openout4 = `presentation2.vrb'.
-
- (./presentation2.vrb) [90
-
-]
-\openout4 = `presentation2.vrb'.
-
- (./presentation2.vrb) [91
+File: dipole3.pdf Graphic file (type pdf)
+<use dipole3.pdf>
+ [95
 
 ]
 File: dipole_R.pdf Graphic file (type pdf)
 <use dipole_R.pdf>
- [92
+ [96
 
 ]
 File: dipole_h.pdf Graphic file (type pdf)
 <use dipole_h.pdf>
- [93
-
-]
-[94
-
-]
-File: dipole_h.pdf Graphic file (type pdf)
-<use dipole_h.pdf>
- [95
-
-] [96
-
-] [97
+ [97
 
 ] [98
 
-] [99
+]
+File: dipole_h.pdf Graphic file (type pdf)
+<use dipole_h.pdf>
+ [99
+
+] [100
+
+] [101
+
+] [102
 
 ]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [100
-
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [101
-
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [102
-
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [103
+[103
 
 ]
 File: Cyclotron_patent.png Graphic file (type bmp)
@@ -1637,33 +1609,53 @@ File: Cyclotron_patent.png Graphic file (type bmp)
 ]
 File: Cyclotron_patent.png Graphic file (type bmp)
 <Cyclotron_patent.png>
+ [107
 
-[107
+]
+File: Cyclotron_patent.png Graphic file (type bmp)
+<Cyclotron_patent.png>
+ [108
+
+]
+File: Cyclotron_patent.png Graphic file (type bmp)
+<Cyclotron_patent.png>
+ [109
+
+]
+File: Cyclotron_patent.png Graphic file (type bmp)
+<Cyclotron_patent.png>
+ [110
+
+]
+File: Cyclotron_patent.png Graphic file (type bmp)
+<Cyclotron_patent.png>
+ [111
 
 ]
 \openout4 = `presentation2.vrb'.
 
- (./presentation2.vrb) [108
+ (./presentation2.vrb)
+[112
 
 ]
 File: cyclotron_noadapt_xy-view.pdf Graphic file (type pdf)
 <use cyclotron_noadapt_xy-view.pdf>
- [109
+ [113
 
 ]
 File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
 <use cyclotron_badadapt_xy-view.pdf>
- [110
+ [114
 
 ]
 File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
 <use cyclotron_badadapt_xy-view.pdf>
- [111
+ [115
 
 ]
 File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
 <use cyclotron_badadapt_xy1-view.pdf>
- [112
+ [116
 
 ]
 File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
@@ -1671,10 +1663,10 @@ File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
 File: cyclotron_badadapt_xy2-view.pdf Graphic file (type pdf)
 <use cyclotron_badadapt_xy2-view.pdf>
 
-Overfull \vbox (258.46996pt too high) detected at line 1041
+Overfull \vbox (258.46996pt too high) detected at line 1037
  []
 
-[113
+[117
 
 ]
 File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
@@ -1684,10 +1676,10 @@ File: cyclotron_badadapt_xy2-view.pdf Graphic file (type pdf)
 File: cyclotron_badadapt_xy3-view.pdf Graphic file (type pdf)
 <use cyclotron_badadapt_xy3-view.pdf>
 
-Overfull \vbox (526.05612pt too high) detected at line 1041
+Overfull \vbox (526.05612pt too high) detected at line 1037
  []
 
-[114
+[118
 
 ]
 File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
@@ -1699,14 +1691,14 @@ File: cyclotron_badadapt_xy3-view.pdf Graphic file (type pdf)
 File: cyclotron_badadapt_xy4-view.pdf Graphic file (type pdf)
 <use cyclotron_badadapt_xy4-view.pdf>
 
-Overfull \vbox (793.64229pt too high) detected at line 1041
+Overfull \vbox (793.64229pt too high) detected at line 1037
  []
 
-[115
+[119
 
-] [116
+] [120
 
-] [117
+] [121
 
 ]
 \tf@nav=\write6
@@ -1720,15 +1712,15 @@ Overfull \vbox (793.64229pt too high) detected at line 1041
 
  (./presentation2.aux)
 Package rerunfilecheck Info: File `presentation2.out' has not changed.
-(rerunfilecheck)             Checksum: 71B159BF01F2B6C93BB738FE804FD5AD;2017.
+(rerunfilecheck)             Checksum: 44D60985F30EA1D269565C087A1432CE;2017.
  ) 
 Here is how much of TeX's memory you used:
- 24515 strings out of 476919
- 471100 string characters out of 5827673
+ 24522 strings out of 476919
+ 471322 string characters out of 5827673
  1103258 words of memory out of 5000000
- 43936 multiletter control sequences out of 15000+600000
- 412841 words of font info for 93 fonts, out of 8000000 for 9000
+ 43939 multiletter control sequences out of 15000+600000
+ 412865 words of font info for 96 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,19n,132p,426b,1384s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presentation2.pdf (117 pages).
+Output written on presentation2.pdf (121 pages).

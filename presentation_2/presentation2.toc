@@ -6,5 +6,5 @@
 \beamer@subsectionintoc {3}{2}{4th order Runge Kutta}{52}{0}{3}
 \beamer@sectionintoc {4}{Testing the methods [5 MIN]}{60}{0}{4}
 \beamer@sectionintoc {5}{Introducing Adaptive step size [5 MIN]}{74}{0}{5}
-\beamer@subsectionintoc {5}{1}{When adaptive step-size fails}{109}{0}{5}
-\beamer@sectionintoc {6}{Conclusion and question}{117}{0}{6}
+\beamer@subsectionintoc {5}{1}{When adaptive step-size fails}{113}{0}{5}
+\beamer@sectionintoc {6}{Conclusion and question}{121}{0}{6}

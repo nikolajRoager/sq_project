@@ -745,9 +745,6 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \item <4-> No analytical solution (afaik.)
 
-\item <4-> Arbitrarily set $\frac{\mu_0}{4\pi}|\vec{m}|= \SI{0.155}{\tesla\per\cubic\meter}$ .
-
-\item <4-> Protons with speed $\SI{30000}{\meter\per\second}$
 
 \end{itemize}
 \end{column}
@@ -755,7 +752,14 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 
 \only<1>{\includegraphics[width=\linewidth]{dipole.pdf}}%
-\only<2>{\includegraphics[width=\linewidth]{dipole1.pdf}}%
+\only<2->{\includegraphics[width=\linewidth]{dipole1.pdf}
+
+{\color{gray}  Arbitrarily set $\frac{\mu_0}{4\pi}|\vec{m}|= \SI{0.155}{\tesla\per\cubic\meter}$ .
+
+ Protons with speed around $\SI{10000}{\meter\per\second}$}
+
+
+}%
 \end{column}
 \end{columns}
 \end{frame}
@@ -765,44 +769,44 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \begin{itemize}
 \item <1-> Reduce $h$ until the ``error" is small enough
 
-\item <2-> Use 2 different methods, $\mathbf{x}(t_{i+1})$, $\mathbf{x}'(t_{i+1})$.
+\item <2-> Use 2 different irder methods, $\mathbf{x}^{(p)}(t_{i+1})$, $\mathbf{x}^{(p)}(t_{i+1})$.
 
-\item <3-> Approximate ``Error" as  $|\mathbf{x}(t_{i+1})-\mathbf{x}'(t_{i+1})|$.
+\item <3-> Approximate ``Error" as  $\mathbf{E} = |\mathbf{x}^{(p+1)}(t_{i+1})-\mathbf{x}^{(p)}(t_{i+1})|$.
 
-\item <4-> Most often order 4 and 5 with same $\mathbf{k}_i$.
+\item <4-> Adjust step size to keep the error(s) small (Implementations differ!).
+
+{\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
+\begin{equation}
+\end{equation}
+
+
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Runge-Kutta Dormand Prince 4-5}
+\frametitle{Runge-Kutta Dormand Prince 5 (4)}
 
 \begin{itemize}
+\item <1->\lstinline{ode45} in Matlab, \lstinline{scipy.solve_ivp} in Python , \lstinline{RungeKutta_dopri5} in \lstinline{boost::odeint}.
 
-
-\item <1->\lstinline{ode45} in Matlab , \lstinline{RungeKutta_dopri5} in \lstinline{boost::odeint}.
 \begin{align*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j \mathbf{k}_j\\
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j' \mathbf{k}_j
+\mathbf{X}^{(5)}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j^{(5)} \mathbf{k}_j\\
+\mathbf{X}^{(4)}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j^{(4)} \mathbf{k}_j.
 \end{align*}
 
 \begin{align*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j \mathbf{K}_j\\
-\mathbf{k}_i &= f_{ode}(\mathbf{X}(t_i)+h \sum_j^{i-1} a_{ki} \mathbf{k}_i+ha_{32},t_i+c_3 h)
-&\vdots
+\mathbf{k}_i &= f_{ode}(\mathbf{X}(t_i)+h \sum_j^{i-1} a_{ki} \mathbf{k}_i+ha_{32},t_i+c_3 h).
 \end{align*}
 
-\item<2-> 4th and 5th order, hence ode 45. Keeps 5th order term if error less than absolute and relative threshold.
-
-\item<2-> Should also decide to increase step size.
+\item <2-> 7 $\mathbf{k}_i$'s (actually 6).
 
 {\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
 \end{itemize}
 \end{frame}
 
-
 \begin{frame}
-\frametitle{Butcher Tableu of Dormand Prince 4/5}
+\frametitle{Butcher Tableu of Dormand Prince (5) 4}
 \begin{tabular}{c | @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c}
 $c_i$ & $a_{ij}$ & $\hdots$\\
 \midrule
@@ -810,72 +814,64 @@ $0$ \\
 $\frac{1}{5}$ & $\frac{1}{5}$\\
 $\frac{3}{10}$ & $\frac{3}{40}$ &  $\frac{9}{40}$\\
 $\frac{4}{5}$ & $\frac{40}{45}$ &  $-\frac{56}{15}$  &  $-\frac{32}{9}$\\
-$\frac{8}{9}$ & $\frac{19372}{6561}$ & $−\frac{25360}{2187}$ & $\frac{64448}{6561}$ & $−\frac{212}{729}$\\
+$\frac{8}{9}$ & $\frac{19372}{6561}$ & $-\frac{25360}{2187}$ & $\frac{64448}{6561}$ & $-\frac{212}{729}$\\
 $1$ & $\frac{9017}{3168}$ & $-\frac{355}{33}$ & $\frac{46732}{5247}$ & $\frac{49}{176}$  & $-\frac{5103}{18656}$\\
 $1$ & $\frac{35}{384}$  & $0$	 & $\frac{500}{1113}$ & $\frac{125}{192}$ & $-\frac{2187}{6784}$ & $\frac{11}{84}$\\
 \midrule
-$/b$  & $\frac{35}{384}$ & $0$ & $\frac{500}{1113}$ & $\frac{125}{192}$ & $-\frac{2187}{6784}$ & $\frac{11}{84}$ & $0$\\
-$/b'$ & $\frac{5179}{57600}$ & $0$ & $\frac{7571}{16695}$ & & $\frac{393}{640}$ & $-\frac{92097}{339200}$& $\frac{187}{2100}$ & $\frac{1}{40}$\\
+$/b^{(5)}$  & $\frac{35}{384}$ & $0$ & $\frac{500}{1113}$ & $\frac{125}{192}$ & $-\frac{2187}{6784}$ & $\frac{11}{84}$ & $0$\\
+$/b^{(4)}$ & $\frac{5179}{57600}$ & $0$ & $\frac{7571}{16695}$ & & $\frac{393}{640}$ & $-\frac{92097}{339200}$& $\frac{187}{2100}$ & $\frac{1}{40}$
 \end{tabular}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Adaptive step-size}
-\begin{lstlisting}
-#include <boost/array.hpp>
-#include <boost/numeric/odeint.hpp>
-using namespace boost::numeric::odeint;
-typedef boost::array< double, 6 > state_type;
-...
-size_t steps = integrate_adaptive(
-    make_controled( absErr, relErr , runge_kutta_dopri5< state_type >() ),
-    ODE,   //Lorentz-force
-    Data0 ,//{pos0,v0}
-    0.0 ,  //t0=0
-    T ,    //max time
-    timestep ,//length of each step (initial)
-    save_step //User defined save data function
-);
-\end{lstlisting}
+\begin{frame}
+\frametitle{Runge-Kutta Dormand Prince 5 (4)}
+
+\begin{itemize}
+\item <1-> Step size correction (Dormand Prince):
+
+\begin{align*}
+h_{new} = 0.9 h_{old} \left[\frac{\delta h_{old}}{||\mathrm{E}||}\right]^{\frac{1}{p}}
+\end{align*}
+
+\item <2-> Step size correction (Me):
+
+\begin{align*}
+h_{new} &= \min_j \left(0.9 h_{old} \left[\frac{\delta_j\sqrt{h_{old}}}{\mathrm{E}_{j}}\right]^{\frac{1}{p}}\right), \quad \mathrm{E}_j>\delta_j : \mathrm{reject}\\
+\delta_j &=\delta_{abs}+|\mathbf{X}_j(t_{i})|\delta_{rel}.
+\end{align*}
+
+\item <3-> Worst case correction. Relative and absolute error.
+
+\item<4-> ``Fail safe" $\sqrt{h_{old}}$.
+
+{\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
+\end{itemize}
 \end{frame}
 
-
-\begin{frame}[fragile]
-\frametitle{Adaptive step-size}
-\begin{lstlisting}
-#include <boost/array.hpp>
-#include <boost/numeric/odeint.hpp>
-using namespace boost::numeric::odeint;
-typedef boost::array< double, 6 > state_type;
-...
-size_t steps = integrate(
-    ODE,   //Lorentz-force
-    Data0 ,//{pos0,v0}
-    0.0 ,  //t0=0
-    T ,    //max time
-    timestep ,//length of each step (initial)
-    save_step //User defined save data function
-);
-\end{lstlisting}
-\end{frame}
 
 \begin{frame}
 \frametitle{Does it work?}
 \begin{centering}
 \only<1>{%
-\noindent\includegraphics[width=\linewidth]{dipole_R.pdf}}%
+\noindent\includegraphics[width=0.8\linewidth]{dipole2.pdf}
+
+My version relative and absolute error $10^{-7}$. 49 steps (or 62).
+}%
 \only<2>{%
+\noindent\includegraphics[width=0.8\linewidth]{dipole3.pdf}
+
+Odeint library relative and absolute error $10^{-7}$. 92 steps.
+}%
+\only<3>{%
+\noindent\includegraphics[width=\linewidth]{dipole_R.pdf}}%
+\only<4>{%
 \noindent\includegraphics[width=\linewidth]{dipole_h.pdf}}%
-
 \end{centering}
-
-Boost Odeint Dormand-Prince, relative and absolute error $10^{-6}$.
-
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Does it work? Another curious result}
+\frametitle{Another curious result}
 \begin{centering}
 \only<1>{%
 

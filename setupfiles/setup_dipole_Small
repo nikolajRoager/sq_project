@@ -16,14 +16,14 @@ write_txt
 
 #Simulation always starts at t=0, end at time t=T, use either Nt for number of timesteps or dt for length of steps
 T 100
-dt 2.0
+dt 0.1
 
 #Solonoid, though (0,0,0) in the direction (0,0,1) with an internal field calculated to match with 1000 turns per m and current 5 A and radius 5 m
 
 
 field B Earth 1 30
 
-engine RK4
+engine RK45lib
 
 save_dt 0.0
 
