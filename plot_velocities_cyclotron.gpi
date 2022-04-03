@@ -7,17 +7,17 @@ set key below
 set output 'cyclotron_speed1.pdf'
 set  title 'speed over time'
 plot 'line.tsv' index 0 using ((1+$1)*250):(1.8055675260591355*($2)) with lines  title 'Theoretical speed limit',\
-'out/out_cyclotron_1/particles0.tsv' index 0 using 1:(sqrt(($5)*($5)+($6)*($6)+($7)*($7))) with lines  title 'speed'
+'out/out_cyclotron_myRK45/particles0.tsv' index 0 using 1:(sqrt(($5)*($5)+($6)*($6)+($7)*($7))) with lines  title 'speed'
 set output 'cyclotron_Et.pdf'
 set xlabel '$t/\mu s$'
 set ylabel '$y/\mu m$'
 set  title 'position over time'
-plot  'out/out_cyclotron_1/particles0.tsv' index 0 using 1:3 with lines title ''
+plot  'out/out_cyclotron_myRK45/particles0.tsv' index 0 using 1:3 with lines title ''
 set output 'cyclotron_Et.pdf'
 set xlabel '$t/\mu s$'
 set ylabel '$E$'
 set  title 'E field (simulation units)'
-plot  'out/out_cyclotron_1/particles0.tsv' index 0 using 1:(cos( ($1)*0.6018558420197118)) with lines  title ''
+plot  'out/out_cyclotron_myRK45/particles0.tsv' index 0 using 1:(cos( ($1)*0.6018558420197118)) with lines  title ''
 set output 'cyclotron1_xy-view.pdf'
 set size ratio 1.0
 set xlabel '$x/m$'
@@ -27,7 +27,7 @@ set  title 'Classical Cyclotron top view'
 plot [-4:4][-4:4] 'lines.tsv' index 0 using 1:2 with lines  title '',\
 'lines.tsv' index 0 using 1:3 with lines  title '',\
 'circle.tsv' index 0 using (3*($1)):(3*($2)) with lines  title '',\
-'out/out_cyclotron_1/particles0.tsv' index 0 using 2:3 with lines title ''
+'out/out_cyclotron_myRK45/particles0.tsv' index 0 using 2:3 with lines title ''
 set output 'cyclotron0_xy-view.pdf'
 set  title 'Classical Cyclotron top view'
 plot [-4:4][-4:4] 'lines.tsv' index 0 using 1:2 with lines  title '',\

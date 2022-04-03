@@ -88,8 +88,10 @@ for i in range(0,particle_number):
     particle_data = np.fromfile(data_folder+"/particles"+str(i)+".bin",  dtype=np.float64).reshape(timesteps[i],3);
     if (len(names)>0 and False):
         ax.plot(particle_data[:,0], particle_data[:,2],particle_colors[i], label=r'$'+(names[i])+'$')
+        ax.plot(particle_data[-1,0], particle_data[-1,2],particle_colors[i]+'x', label=r'$'+(names[i])+'$')
     else:
         ax.plot(particle_data[:,0], particle_data[:,2],particle_colors[i])
+        ax.plot(particle_data[-1,0], particle_data[-1,2],particle_colors[i]+'x')
 
 
 

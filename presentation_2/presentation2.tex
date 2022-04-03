@@ -99,7 +99,8 @@
 
 
 %Information to be included in the title page:
-\title{MAINTITLE}
+\title{How numerical simulations work: Simulating particles in electric and magnetic fields
+}
 \author{Nikolaj Roager Christensen}
 \institute{Student Colloquium in Physics and Astronomy, Aarhus University}
 \date{March 2021}
@@ -830,19 +831,17 @@ $/b^{(4)}$ & $\frac{5179}{57600}$ & $0$ & $\frac{7571}{16695}$ & & $\frac{393}{6
 \item <1-> Step size correction (Dormand Prince):
 
 \begin{align*}
-h_{new} = 0.9 h_{old} \left[\frac{\delta h_{old}}{||\mathrm{E}||}\right]^{\frac{1}{p}}
+h_{new} = 0.9 h_{old} \left[\frac{\delta }{||\mathrm{E}||}\right]^{\frac{1}{p+1}}
 \end{align*}
 
 \item <2-> Step size correction (Me):
 
 \begin{align*}
-h_{new} &= \min_j \left(0.9 h_{old} \left[\frac{\delta_j\sqrt{h_{old}}}{\mathrm{E}_{j}}\right]^{\frac{1}{p}}\right), \quad \mathrm{E}_j>\delta_j : \mathrm{reject}\\
-\delta_j &=\delta_{abs}+|\mathbf{X}_j(t_{i})|\delta_{rel}.
+h_{new} &= \min_j \left(0.9 h_{old} \left[\frac{\delta_j}{\mathrm{E}_{j}}\right]^{\frac{1}{p}}\right), \quad \mathrm{E}_j>\delta_j : \mathrm{reject}\\
+\delta_j &=\min(\delta_{abs},|\mathbf{X}_j(t_{i})|\delta_{rel})\sqrt{\frac{h_{old}}{T}}.
 \end{align*}
 
-\item <3-> Worst case correction. Relative and absolute error.
-
-\item<4-> ``Fail safe" $\sqrt{h_{old}}$.
+\item <3-> Relative and absolute error at end. ``Fail safe" $\sqrt{\ldots}$.
 
 {\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
 \end{itemize}
@@ -855,7 +854,7 @@ h_{new} &= \min_j \left(0.9 h_{old} \left[\frac{\delta_j\sqrt{h_{old}}}{\mathrm{
 \only<1>{%
 \noindent\includegraphics[width=0.8\linewidth]{dipole2.pdf}
 
-My version relative and absolute error $10^{-7}$. 49 steps (or 62).
+My version relative and absolute error $10^{-6}$. 94 steps (+ 14 rejected).
 }%
 \only<2>{%
 \noindent\includegraphics[width=0.8\linewidth]{dipole3.pdf}
@@ -874,35 +873,66 @@ Odeint library relative and absolute error $10^{-7}$. 92 steps.
 \frametitle{Another curious result}
 \begin{centering}
 \only<1>{%
+\noindent\includegraphics[width=0.8\linewidth]{dipole4.pdf}
 
-At most 62 points from $t=\SI{0}{\micro\second}$ to $t=\SI{600}{\micro\second}$, adaptive.
+$T = \SI{0.2}{\milli\second}$
 }
 \only<2>{%
-\noindent\includegraphics[width=\linewidth]{dipole_h.pdf}
+\noindent\includegraphics[width=0.8\linewidth]{dipole5.pdf}
 
-Magnetic ``mirror" or ``bottle"
+$T = \SI{0.3}{\milli\second}$
+
+}%
+\only<3>{%
+\noindent\includegraphics[width=0.8\linewidth]{dipole6.pdf}
+
+$T = \SI{0.6}{\milli\second}$
+
+Magnetic ``mirror" or ``bottle".
+}%
+\only<4>{%
+\noindent\includegraphics[width=\linewidth]{Fields_in_magnetic_bottles.jpg}
+
+{\color{gray} Wikipedia user WikiHelper2134 , Public Domain.}
+}%
+\only<5>{%
+\noindent\includegraphics[width=\linewidth]{magnetic_bottles.jpg}
+
+{\color{gray} Tandem Mirror Experiment, The Lawrence Livermore National Laboratory, 1978.}
+
 }%
 \end{centering}
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Extra examples-``if time permits" }
-\begin{itemize}
-\item<1-> The cyclotron
-
-\item<2-> Toroidal fields
-\end{itemize}
-\end{frame}
 
 \begin{frame}
 \frametitle{Extra examples-``if time permits" }
 \begin{itemize}
 \item<1-> The cyclotron
-
+\begin{itemize}
+\item<1-> When the Dormand Prince method fails
+\end{itemize}
 \item<2-> Toroidal fields
+\begin{itemize}
+\item<2-> Another non-analytic setup.
+\end{itemize}
+
 \end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{Conclusion }
+\begin{itemize}
+\item<1-> Simulating particles in electric and magnetic fields.
+\item<2-> Numerically solving ordinary differential equations
+\item<2-> Reasonable agreement with known results.
+\item<2-> Can easily be generalized to other systems.
+\item<3-> Limitation, simulations are not experiments.
+\end{itemize}
+\end{frame}
+
+
 
 \begin{frame}
 \frametitle{Example, cyclotron}
@@ -933,59 +963,17 @@ Magnetic ``mirror" or ``bottle"
 
 
 \begin{frame}
-\frametitle{Example, cyclotron}
+\frametitle{Can it be simulated}
 \begin{columns}
 \begin{column}{0.5\linewidth}
 \begin{itemize}
-\item<1-> Electric field accelerates, magnetic contains.
+\item<1-> With fixed step size, looks bad 4999 points
 
-\item<2-> Single gab, oscillating field.
+\item<2- > My adabtive method, error: $10^{-6}$
 
-\item<3-> Uses Cyclotron frequency
+\item<3-> Odeint library
 
-\item<4-> Analytical final speed, in principle path.
-
-\begin{equation*}
-\frac{R|q|B}{m} = v_\perp
-\end{equation*}
-
-\end{itemize}
-\end{column}
-\begin{column}{0.5\linewidth}
-\includegraphics[width=\linewidth]{ Cyclotron_patent.png}
-{\color{gray} Ernest O. Lawrence, 1934, U.S. Patent 1,948,384; image in Public Domain.}
-\end{column}
-\end{columns}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\frametitle{Naive setup}
-\begin{lstlisting}
-size_t steps = integrate(
-//Default to adaptive- Dopri5, this is fine
-    ODE      , //Lorentz-force
-    Data0    , //{pos0,v0}
-    0.0      , //t0=0
-    T        , //Here 500 micro second
-    timestep , //Here 0.1 (intentionally too large)
-    save_step);//User defined save data function
-\end{lstlisting}
-\end{frame}
-
-\subsection{When adaptive step-size fails}
-\begin{frame}
-\frametitle{Does it help/work}
-\begin{columns}
-\begin{column}{0.5\linewidth}
-\begin{itemize}
-\item<1-> With fixed step size (Same method, accept all) 4999 points
-
-\item<2-> Trust default setup:
-
-\item<2-> Epic fail Why?
-
-\item<2-> Discontinuous ODE is bad!
+\item<4-> Non-continuous ODE are bad.
 
 \end{itemize}
 \end{column}
@@ -993,61 +981,20 @@ size_t steps = integrate(
 \only<1>{%
 \includegraphics[width=\linewidth]{ cyclotron_noadapt_xy-view.pdf}%
 
-4999 points!}%
-\only<2->{%
+4999 points.}%
+\only<2>{%
+\includegraphics[width=\linewidth]{ cyclotron_overadapt_xy-view.pdf}%
+
+500000 points.
+}%
+\only<3->{%
 \includegraphics[width=\linewidth]{ cyclotron_badadapt_xy-view.pdf}%
 
-2070 points}%
-
+2070 points.}%
 
 \end{column}
 \end{columns}
-
 \end{frame}
-
-
-\begin{frame}
-\begin{center}
-\only<1>{%
-\includegraphics[width=0.7\linewidth]{ cyclotron_badadapt_xy-view.pdf}%
-
-Default choice,  2070 points.
-}%
-\only<2->{%
-\includegraphics[width=0.7\linewidth]{ cyclotron_badadapt_xy1-view.pdf}%
-
-Default choice,  2070 points.
-}%
-\only<3->{%
-\includegraphics[width=0.7\linewidth]{ cyclotron_badadapt_xy2-view.pdf}%
-
-\lstinline{make_controlled( 1E-7 , 1E-7 , runge_kutta_dopri5< state_type >() )},  3714 points.
-}%
-\only<4->{%
-\includegraphics[width=0.7\linewidth]{ cyclotron_badadapt_xy3-view.pdf}%
-
-\lstinline{make_controlled( 1E-7 , 1E-7 , runge_kutta_dopri5< state_type >() )},  3714 points.
-}%
-\only<5->{%
-\includegraphics[width=0.7\linewidth]{ cyclotron_badadapt_xy4-view.pdf}%
-
-\lstinline{make_controlled( 1E-12 , 1E-12 , runge_kutta_dopri5< state_type >() )},  23850 points.
-}%
-\end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{Analytic agreement}
-...
-\end{frame}
-
-
-\section{Conclusion and question}
-
-\begin{frame}
-\frametitle{Questions}
-\end{frame}
-
 
 %Electric and magnetic fields
 %The Lorentz force

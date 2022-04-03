@@ -20,7 +20,9 @@ field B solenoid1 0 0 0 0 0 1 0.6062352745211712 3.0
 
 field E cyclotron_gab 3.0 0.2 9.648534061671654e-02 0.6018558420197118 0.0
 
-save_dt 0.05
+save_dt 0.1
+
+engine RK45
 
 #set these if we want to print the electric and magnetic field for later display, format: field_res min max steps, prints a binary file with the electric and magnetic field from [min,min,min] to [max,max,max] with steps step in each direction
 #printfield B

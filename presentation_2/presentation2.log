@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/Arch Linux) (preloaded format=xelatex 2021.10.11)  31 MAR 2022 19:17
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/Arch Linux) (preloaded format=xelatex 2021.10.11)  2 APR 2022 23:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -876,32 +876,32 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ) (./presentation2.aux)
 \openout1 = `presentation2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-16.
+17.
 
 (/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -937,7 +937,7 @@ LaTeX Font Info:    ... okay on input line 116.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 116.
+Package hyperref Info: Link coloring OFF on input line 117.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -949,56 +949,56 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count357
 )
-LaTeX Info: Redefining \ref on input line 116.
-LaTeX Info: Redefining \pageref on input line 116.
-LaTeX Info: Redefining \nameref on input line 116.
+LaTeX Info: Redefining \ref on input line 117.
+LaTeX Info: Redefining \pageref on input line 117.
+LaTeX Info: Redefining \nameref on input line 117.
 
 (./presentation2.out) (./presentation2.out)
 \@outlinefile=\write5
 \openout5 = `presentation2.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 116.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 116.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 117.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 116.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 116.
+(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmss/b/n on input line 116.
+(Font)                  OT1/cmr/bx/n --> TU/lmss/b/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmss/b/n on input line 116.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 116.
+(Font)                  OT1/cmr/bx/n --> TU/lmss/b/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 116.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/m/n on input line 116.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 116.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/m/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmss/m/it on input line 116.
+(Font)                  OT1/cmr/m/it --> TU/lmss/m/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmss/m/it on input line 116.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 116.
+(Font)                  OT1/cmr/bx/it --> TU/lmss/m/it on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 116.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 116.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 116.
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 116.
+(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> TU/lmr/b/n on input line 116.
+(Font)                  OT1/cmss/b/n --> TU/lmr/b/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 116.
+(Font)                  TU/lmss/b/n --> TU/lmss/b/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 116.
+(Font)                  TU/lmss/m/n --> TU/lmss/b/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 116.
+(Font)                  TU/lmss/m/it --> TU/lmss/b/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 116.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/b/n on input line 117.
 
 (/usr/share/texmf-dist/tex/latex/translator/translator-basic-dictionary-English
 .dict
@@ -1029,23 +1029,23 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 \c@lstlisting=\count358
 
 (./presentation2.nav)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 116
+LaTeX Font Info:    Trying to load font information for U+msa on input line 117
 .
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 116
+LaTeX Font Info:    Trying to load font information for U+msb on input line 117
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 116.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 117.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 116.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 117.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 116.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 117.
  [1
 
 ] (./presentation2.toc)
@@ -1053,11 +1053,11 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 150.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 151.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 150.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 151.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 150.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 151.
  [3
 
 ] [4
@@ -1083,7 +1083,7 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 ] [14
 
 ]
-Overfull \hbox (5.0503pt too wide) detected at line 223
+Overfull \hbox (5.0503pt too wide) detected at line 224
 [][][] \OT1/cmss/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^A [][] / \OT1/cmss/m/n/10
 .95 ([] \OMS/cmsy/m/n/10.95 ^^B []\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A
  [] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 :
@@ -1092,11 +1092,11 @@ Overfull \hbox (5.0503pt too wide) detected at line 223
 File: dw0.png Graphic file (type bmp)
 <dw0.png>
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 223.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 224.
 [15
 
 ]
-Overfull \hbox (5.0503pt too wide) detected at line 223
+Overfull \hbox (5.0503pt too wide) detected at line 224
 [][][] \OT1/cmss/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^A [][] / \OT1/cmss/m/n/10
 .95 ([] \OMS/cmsy/m/n/10.95 ^^B []\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A
  [] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 :
@@ -1107,7 +1107,7 @@ File: dw0.png Graphic file (type bmp)
 [16
 
 ]
-Overfull \hbox (5.0503pt too wide) detected at line 223
+Overfull \hbox (5.0503pt too wide) detected at line 224
 [][][] \OT1/cmss/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^A [][] / \OT1/cmss/m/n/10
 .95 ([] \OMS/cmsy/m/n/10.95 ^^B []\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A
  [] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 :
@@ -1118,7 +1118,7 @@ File: cyc0.png Graphic file (type bmp)
 [17
 
 ]
-Overfull \hbox (5.0503pt too wide) detected at line 223
+Overfull \hbox (5.0503pt too wide) detected at line 224
 [][][] \OT1/cmss/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^A [][] / \OT1/cmss/m/n/10
 .95 ([] \OMS/cmsy/m/n/10.95 ^^B []\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A
  [] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 :
@@ -1129,7 +1129,7 @@ File: cyc0.png Graphic file (type bmp)
 [18
 
 ]
-Overfull \hbox (5.0503pt too wide) detected at line 223
+Overfull \hbox (5.0503pt too wide) detected at line 224
 [][][] \OT1/cmss/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^A [][] / \OT1/cmss/m/n/10
 .95 ([] \OMS/cmsy/m/n/10.95 ^^B []\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A
  [] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 :
@@ -1160,7 +1160,7 @@ File: AN_solenoid_yz_view.pdf Graphic file (type pdf)
 File: AN_solenoid_tz.pdf Graphic file (type pdf)
 <use AN_solenoid_tz.pdf>
 
-Overfull \vbox (4.46329pt too high) detected at line 240
+Overfull \vbox (4.46329pt too high) detected at line 241
  []
 
 [23
@@ -1192,11 +1192,11 @@ File: Cyclotron_patent.png Graphic file (type bmp)
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 294.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 295.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <8> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 294.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 295.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <6> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 294.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 295.
  [29
 
 ] [30
@@ -1209,7 +1209,7 @@ LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <6> not available
  (./presentation2.vrb) [32
 
 ]
-Overfull \hbox (9.64369pt too wide) detected at line 363
+Overfull \hbox (9.64369pt too wide) detected at line 364
 []\OT1/cmss/m/n/10.95 ([][]) = []([][]) + [][][]([]()\OML/cmm/m/it/10.95 ; [][]
 \OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
@@ -1219,7 +1219,7 @@ File: euler_demo0.pdf Graphic file (type pdf)
 [33
 
 ]
-Overfull \hbox (9.64369pt too wide) detected at line 363
+Overfull \hbox (9.64369pt too wide) detected at line 364
 []\OT1/cmss/m/n/10.95 ([][]) = []([][]) + [][][]([]()\OML/cmm/m/it/10.95 ; [][]
 \OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
@@ -1229,7 +1229,7 @@ File: euler_demo0.pdf Graphic file (type pdf)
 [34
 
 ]
-Overfull \hbox (9.64369pt too wide) detected at line 363
+Overfull \hbox (9.64369pt too wide) detected at line 364
 []\OT1/cmss/m/n/10.95 ([][]) = []([][]) + [][][]([]()\OML/cmm/m/it/10.95 ; [][]
 \OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
@@ -1239,7 +1239,7 @@ File: euler_demo0.pdf Graphic file (type pdf)
 [35
 
 ]
-Overfull \hbox (9.64369pt too wide) detected at line 363
+Overfull \hbox (9.64369pt too wide) detected at line 364
 []\OT1/cmss/m/n/10.95 ([][]) = []([][]) + [][][]([]()\OML/cmm/m/it/10.95 ; [][]
 \OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
@@ -1249,7 +1249,7 @@ File: euler_demo1.pdf Graphic file (type pdf)
 [36
 
 ]
-Overfull \hbox (16.12064pt too wide) detected at line 363
+Overfull \hbox (16.12064pt too wide) detected at line 364
 []\OT1/cmss/m/n/10.95 ([][]) = []([][]) + [][][]([]([][])\OML/cmm/m/it/10.95 ; 
 [][]\OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
@@ -1257,13 +1257,13 @@ Overfull \hbox (16.12064pt too wide) detected at line 363
 File: euler_demo1.pdf Graphic file (type pdf)
 <use euler_demo1.pdf>
 
-Overfull \vbox (5.8999pt too high) detected at line 363
+Overfull \vbox (5.8999pt too high) detected at line 364
  []
 
 [37
 
 ]
-Overfull \hbox (26.97984pt too wide) detected at line 363
+Overfull \hbox (26.97984pt too wide) detected at line 364
 []\OT1/cmss/m/n/10.95 ([][]) = []([][]) + [][][]([]([][])\OML/cmm/m/it/10.95 ; 
 [][]\OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
@@ -1271,13 +1271,13 @@ Overfull \hbox (26.97984pt too wide) detected at line 363
 File: euler_demo1.pdf Graphic file (type pdf)
 <use euler_demo1.pdf>
 
-Overfull \vbox (5.8999pt too high) detected at line 363
+Overfull \vbox (5.8999pt too high) detected at line 364
  []
 
 [38
 
 ]
-Overfull \hbox (16.12064pt too wide) detected at line 363
+Overfull \hbox (16.12064pt too wide) detected at line 364
 []\OT1/cmss/m/n/10.95 ([][]) = []([][]) + [][][]([]([][])\OML/cmm/m/it/10.95 ; 
 [][]\OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
@@ -1285,7 +1285,7 @@ Overfull \hbox (16.12064pt too wide) detected at line 363
 File: euler_demo2.pdf Graphic file (type pdf)
 <use euler_demo2.pdf>
 
-Overfull \vbox (5.8999pt too high) detected at line 363
+Overfull \vbox (5.8999pt too high) detected at line 364
  []
 
 [39
@@ -1299,35 +1299,35 @@ Overfull \vbox (5.8999pt too high) detected at line 363
 ] [43
 
 ]
-Overfull \hbox (10.5486pt too wide) detected at line 411
+Overfull \hbox (10.5486pt too wide) detected at line 412
 []
  []
 
 [44
 
 ]
-Overfull \hbox (10.5486pt too wide) detected at line 411
+Overfull \hbox (10.5486pt too wide) detected at line 412
 []
  []
 
 [45
 
 ]
-Overfull \hbox (10.5486pt too wide) detected at line 411
+Overfull \hbox (10.5486pt too wide) detected at line 412
 []
  []
 
 [46
 
 ]
-Overfull \hbox (10.5486pt too wide) detected at line 411
+Overfull \hbox (10.5486pt too wide) detected at line 412
 []
  []
 
 [47
 
 ]
-Overfull \hbox (10.5486pt too wide) detected at line 411
+Overfull \hbox (10.5486pt too wide) detected at line 412
 []
  []
 
@@ -1340,28 +1340,28 @@ Overfull \hbox (10.5486pt too wide) detected at line 411
 ] [51
 
 ]
-Overfull \hbox (65.73567pt too wide) detected at line 470
+Overfull \hbox (65.73567pt too wide) detected at line 471
 []
  []
 
 File: Runge-Kutta_slopes.pdf Graphic file (type pdf)
 <use Runge-Kutta_slopes.pdf>
 
-Overfull \hbox (8.83017pt too wide) detected at line 470
+Overfull \hbox (8.83017pt too wide) detected at line 471
 [][][] $[]$[][][][][][][][] $[]$[][][][][][] 
  []
 
 [52
 
 ]
-Overfull \hbox (65.73567pt too wide) detected at line 470
+Overfull \hbox (65.73567pt too wide) detected at line 471
 []
  []
 
 File: Runge-Kutta_slopes.pdf Graphic file (type pdf)
 <use Runge-Kutta_slopes.pdf>
 
-Overfull \hbox (8.83017pt too wide) detected at line 470
+Overfull \hbox (8.83017pt too wide) detected at line 471
 [][][] $[]$[][][][][][][][] $[]$[][][][][][] 
  []
 
@@ -1404,11 +1404,11 @@ Overfull \hbox (8.83017pt too wide) detected at line 470
 File: Solenoid_compare001_3D.pdf Graphic file (type pdf)
 <use Solenoid_compare001_3D.pdf>
 
-Overfull \vbox (0.80312pt too high) detected at line 621
+Overfull \vbox (0.80312pt too high) detected at line 622
  []
 
 
-Overfull \vbox (2.9274pt too high) detected at line 621
+Overfull \vbox (2.9274pt too high) detected at line 622
  []
 
 [64
@@ -1417,11 +1417,11 @@ Overfull \vbox (2.9274pt too high) detected at line 621
 File: Solenoid_compare01_3D.pdf Graphic file (type pdf)
 <use Solenoid_compare01_3D.pdf>
 
-Overfull \vbox (0.80312pt too high) detected at line 638
+Overfull \vbox (0.80312pt too high) detected at line 639
  []
 
 
-Overfull \vbox (2.9274pt too high) detected at line 638
+Overfull \vbox (2.9274pt too high) detected at line 639
  []
 
 [65
@@ -1430,11 +1430,11 @@ Overfull \vbox (2.9274pt too high) detected at line 638
 File: Solenoid_compare1_3D.pdf Graphic file (type pdf)
 <use Solenoid_compare1_3D.pdf>
 
-Overfull \vbox (0.80312pt too high) detected at line 655
+Overfull \vbox (0.80312pt too high) detected at line 656
  []
 
 
-Overfull \vbox (2.9274pt too high) detected at line 655
+Overfull \vbox (2.9274pt too high) detected at line 656
  []
 
 [66
@@ -1443,7 +1443,7 @@ Overfull \vbox (2.9274pt too high) detected at line 655
 File: solenoid_euler_yz_view.pdf Graphic file (type pdf)
 <use solenoid_euler_yz_view.pdf>
 
-Overfull \vbox (10.30595pt too high) detected at line 662
+Overfull \vbox (10.30595pt too high) detected at line 663
  []
 
 [67
@@ -1452,7 +1452,7 @@ Overfull \vbox (10.30595pt too high) detected at line 662
 File: solenoid_RK_yz_view.pdf Graphic file (type pdf)
 <use solenoid_RK_yz_view.pdf>
 
-Overfull \vbox (10.30595pt too high) detected at line 662
+Overfull \vbox (10.30595pt too high) detected at line 663
  []
 
 [68
@@ -1481,11 +1481,11 @@ File: solenoid_RK4_Vt.pdf Graphic file (type pdf)
 File: solenoid_Rh.pdf Graphic file (type pdf)
 <use solenoid_Rh.pdf>
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <14.4> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 680.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 681.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 680.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 681.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <7> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 680.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 681.
  [73
 
 ] [74
@@ -1496,7 +1496,7 @@ LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <7> not available
 File: Structure_of_the_magnetosphere_Nasa.pdf Graphic file (type pdf)
 <use Structure_of_the_magnetosphere_Nasa.pdf>
 
-Overfull \vbox (17.78415pt too high) detected at line 723
+Overfull \vbox (17.78415pt too high) detected at line 724
  []
 
 [76
@@ -1541,7 +1541,7 @@ File: dipole1.pdf Graphic file (type pdf)
 ] [88
 
 ]
-Overfull \hbox (23.15236pt too wide) in paragraph at lines 824--824
+Overfull \hbox (23.15236pt too wide) in paragraph at lines 825--825
 [][]  
  []
 
@@ -1553,58 +1553,64 @@ Overfull \hbox (23.15236pt too wide) in paragraph at lines 824--824
 
 ] [92
 
-] [93
-
 ]
 File: dipole2.pdf Graphic file (type pdf)
 <use dipole2.pdf>
- [94
+ [93
 
 ]
 File: dipole3.pdf Graphic file (type pdf)
 <use dipole3.pdf>
- [95
+ [94
 
 ]
 File: dipole_R.pdf Graphic file (type pdf)
 <use dipole_R.pdf>
+ [95
+
+]
+File: dipole_h.pdf Graphic file (type pdf)
+<use dipole_h.pdf>
  [96
 
 ]
-File: dipole_h.pdf Graphic file (type pdf)
-<use dipole_h.pdf>
+File: dipole4.pdf Graphic file (type pdf)
+<use dipole4.pdf>
  [97
 
-] [98
+]
+File: dipole5.pdf Graphic file (type pdf)
+<use dipole5.pdf>
+ [98
 
 ]
-File: dipole_h.pdf Graphic file (type pdf)
-<use dipole_h.pdf>
+File: dipole6.pdf Graphic file (type pdf)
+<use dipole6.pdf>
  [99
 
-] [100
+]
+File: Fields_in_magnetic_bottles.jpg Graphic file (type bmp)
+<Fields_in_magnetic_bottles.jpg>
+ [100
 
-] [101
+]
+File: magnetic_bottles.jpg Graphic file (type bmp)
+<magnetic_bottles.jpg>
+
+Overfull \vbox (21.36423pt too high) detected at line 905
+ []
+
+[101
 
 ] [102
 
-]
-[103
+] [103
 
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [104
+] [104
 
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [105
+] [105
 
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [106
+] [106
 
 ]
 File: Cyclotron_patent.png Graphic file (type bmp)
@@ -1627,78 +1633,25 @@ File: Cyclotron_patent.png Graphic file (type bmp)
  [110
 
 ]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
+File: cyclotron_noadapt_xy-view.pdf Graphic file (type pdf)
+<use cyclotron_noadapt_xy-view.pdf>
  [111
 
 ]
-\openout4 = `presentation2.vrb'.
-
- (./presentation2.vrb)
-[112
+File: cyclotron_overadapt_xy-view.pdf Graphic file (type pdf)
+<use cyclotron_overadapt_xy-view.pdf>
+ [112
 
 ]
-File: cyclotron_noadapt_xy-view.pdf Graphic file (type pdf)
-<use cyclotron_noadapt_xy-view.pdf>
- [113
+File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy-view.pdf>
+
+[113
 
 ]
 File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
 <use cyclotron_badadapt_xy-view.pdf>
  [114
-
-]
-File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy-view.pdf>
- [115
-
-]
-File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy1-view.pdf>
- [116
-
-]
-File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy1-view.pdf>
-File: cyclotron_badadapt_xy2-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy2-view.pdf>
-
-Overfull \vbox (258.46996pt too high) detected at line 1037
- []
-
-[117
-
-]
-File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy1-view.pdf>
-File: cyclotron_badadapt_xy2-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy2-view.pdf>
-File: cyclotron_badadapt_xy3-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy3-view.pdf>
-
-Overfull \vbox (526.05612pt too high) detected at line 1037
- []
-
-[118
-
-]
-File: cyclotron_badadapt_xy1-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy1-view.pdf>
-File: cyclotron_badadapt_xy2-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy2-view.pdf>
-File: cyclotron_badadapt_xy3-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy3-view.pdf>
-File: cyclotron_badadapt_xy4-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy4-view.pdf>
-
-Overfull \vbox (793.64229pt too high) detected at line 1037
- []
-
-[119
-
-] [120
-
-] [121
 
 ]
 \tf@nav=\write6
@@ -1712,15 +1665,15 @@ Overfull \vbox (793.64229pt too high) detected at line 1037
 
  (./presentation2.aux)
 Package rerunfilecheck Info: File `presentation2.out' has not changed.
-(rerunfilecheck)             Checksum: 44D60985F30EA1D269565C087A1432CE;2017.
+(rerunfilecheck)             Checksum: 1DF29753049F2E6A0D7D58E0ADEAE8CF;1639.
  ) 
 Here is how much of TeX's memory you used:
- 24522 strings out of 476919
- 471322 string characters out of 5827673
+ 24517 strings out of 476919
+ 471158 string characters out of 5827673
  1103258 words of memory out of 5000000
- 43939 multiletter control sequences out of 15000+600000
- 412865 words of font info for 96 fonts, out of 8000000 for 9000
+ 43930 multiletter control sequences out of 15000+600000
+ 412881 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,19n,132p,426b,1384s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presentation2.pdf (121 pages).
+Output written on presentation2.pdf (114 pages).

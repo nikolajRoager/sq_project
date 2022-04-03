@@ -85,37 +85,22 @@
 \headcommand {\beamer@framepages {87}{88}}
 \headcommand {\slideentry {5}{0}{5}{89/89}{}{0}}
 \headcommand {\beamer@framepages {89}{89}}
-\headcommand {\slideentry {5}{0}{6}{90/93}{}{0}}
-\headcommand {\beamer@framepages {90}{93}}
-\headcommand {\slideentry {5}{0}{7}{94/97}{}{0}}
-\headcommand {\beamer@framepages {94}{97}}
-\headcommand {\slideentry {5}{0}{8}{98/99}{}{0}}
-\headcommand {\beamer@framepages {98}{99}}
-\headcommand {\slideentry {5}{0}{9}{100/101}{}{0}}
-\headcommand {\beamer@framepages {100}{101}}
-\headcommand {\slideentry {5}{0}{10}{102/103}{}{0}}
+\headcommand {\slideentry {5}{0}{6}{90/92}{}{0}}
+\headcommand {\beamer@framepages {90}{92}}
+\headcommand {\slideentry {5}{0}{7}{93/96}{}{0}}
+\headcommand {\beamer@framepages {93}{96}}
+\headcommand {\slideentry {5}{0}{8}{97/101}{}{0}}
+\headcommand {\beamer@framepages {97}{101}}
+\headcommand {\slideentry {5}{0}{9}{102/103}{}{0}}
 \headcommand {\beamer@framepages {102}{103}}
-\headcommand {\slideentry {5}{0}{11}{104/107}{}{0}}
-\headcommand {\beamer@framepages {104}{107}}
-\headcommand {\slideentry {5}{0}{12}{108/111}{}{0}}
-\headcommand {\beamer@framepages {108}{111}}
-\headcommand {\slideentry {5}{0}{13}{112/112}{}{0}}
-\headcommand {\beamer@framepages {112}{112}}
-\headcommand {\beamer@subsectionpages {74}{112}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{113}{When adaptive step-size fails}}
-\headcommand {\slideentry {5}{1}{1}{113/114}{When adaptive step-size fails}{0}}
-\headcommand {\beamer@framepages {113}{114}}
-\headcommand {\slideentry {5}{1}{2}{115/119}{When adaptive step-size fails}{0}}
-\headcommand {\beamer@framepages {115}{119}}
-\headcommand {\slideentry {5}{1}{3}{120/120}{When adaptive step-size fails}{0}}
-\headcommand {\beamer@framepages {120}{120}}
-\headcommand {\beamer@sectionpages {74}{120}}
-\headcommand {\beamer@subsectionpages {113}{120}}
-\headcommand {\sectionentry {6}{Conclusion and question}{121}{Conclusion and question}{0}}
-\headcommand {\slideentry {6}{0}{1}{121/121}{}{0}}
-\headcommand {\beamer@framepages {121}{121}}
-\headcommand {\beamer@partpages {1}{121}}
-\headcommand {\beamer@subsectionpages {121}{121}}
-\headcommand {\beamer@sectionpages {121}{121}}
-\headcommand {\beamer@documentpages {121}}
-\headcommand {\gdef \inserttotalframenumber {45}}
+\headcommand {\slideentry {5}{0}{10}{104/106}{}{0}}
+\headcommand {\beamer@framepages {104}{106}}
+\headcommand {\slideentry {5}{0}{11}{107/110}{}{0}}
+\headcommand {\beamer@framepages {107}{110}}
+\headcommand {\slideentry {5}{0}{12}{111/114}{}{0}}
+\headcommand {\beamer@framepages {111}{114}}
+\headcommand {\beamer@partpages {1}{114}}
+\headcommand {\beamer@subsectionpages {74}{114}}
+\headcommand {\beamer@sectionpages {74}{114}}
+\headcommand {\beamer@documentpages {114}}
+\headcommand {\gdef \inserttotalframenumber {40}}

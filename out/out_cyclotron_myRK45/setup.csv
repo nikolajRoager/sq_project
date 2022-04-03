@@ -1,0 +1,10 @@
+display_E_field , False
+display_B_field , False
+field_min , -5
+field_max , 5
+field_steps , 15
+T, 500
+dt, 0.1
+particles , 1
+name , particle 0
+timesteps , 2876

@@ -367,7 +367,7 @@ void particle::calculate_3rdparty_RK4(const composite_field& Fields, double T, d
 
 void particle::calculate_RKDP45(const composite_field& Fields, double T, double dt)
 {
-    double h_max = print_interval;
+    double h_max = 0;//print_interval; Turns out this creates more problems down the line
     state_type Data0 = {pos0.x,pos0.y,pos0.z,v0.x,v0.y,v0.z};
 
     //p_print=0;
@@ -429,8 +429,8 @@ void particle::calculate_RKDP45(const composite_field& Fields, double T, double 
     double t=0,h=dt;
 
     //Relative and absolute error on all the data
-    double relErr=10e-7;
-    double absErr=10e-7;
+    double relErr=1e-6;
+    double absErr=1e-6;
 
 
     state_type Data = Data0;
@@ -507,7 +507,7 @@ void particle::calculate_RKDP45(const composite_field& Fields, double T, double 
             bool first_run = true;
             for (uint i = 0; i<Data.size() ; ++i)
             {
-                double delta = sqrt(h)*(relErr*abs(Data[i])+absErr);
+                double delta = sqrt(h/T)*max(relErr*abs(Data[i]),absErr);
                 if (Error[i]>delta)
                 {
                     reject = true;
@@ -627,7 +627,7 @@ void particle::calculate(const composite_field& Fields, double T, double dt)
     //All these things live in the namespace boost::numeric::odeint
     size_t steps = integrate_adaptive(
         //runge_kutta_dopri5< state_type >(),
-        make_controlled( 1e-7 , 1e-7 , runge_kutta_dopri5< state_type >() ) ,//Create stepper
+        make_controlled( 1e-6 , 1e-6 , runge_kutta_dopri5< state_type >() ) ,//Create stepper
         ODE,   //Lorentz-force
         Data0 ,//{pos0,v0}
         0.0 ,  //t0=0

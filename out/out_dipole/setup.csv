@@ -7,8 +7,8 @@ T, 100
 dt, 0.1
 particles , 3
 name , proton 
-timesteps , 93
+timesteps , 58
 name , proton 
-timesteps , 70
+timesteps , 40
 name , proton 
-timesteps , 8
+timesteps , 17
