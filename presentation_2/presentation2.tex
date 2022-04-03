@@ -99,8 +99,7 @@
 
 
 %Information to be included in the title page:
-\title{How numerical simulations work: Simulating particles in electric and magnetic fields
-}
+\title{How numerical simulations work: Simulating particles in electric and magnetic fields}
 \author{Nikolaj Roager Christensen}
 \institute{Student Colloquium in Physics and Astronomy, Aarhus University}
 \date{March 2021}
@@ -120,53 +119,29 @@ TITLEIMAGE
 
 
 
-\section{Introduction [3 MIN]}
+\section{Introduction [5 MIN]}
 
 \begin{frame}
-\frametitle{MAINTITLE}
+\frametitle{How numerical simulations work: Simulating particles in electric and magnetic fields}
 \tableofcontents
 \end{frame}
 
 
 \begin{frame}
 \frametitle{Introduction, what and why}
-\begin{columns}
-\begin{column}{0.5\linewidth}
 \begin{itemize}
-\item<1->
-\begin{itemize}
-\item<3->
-\end{itemize}
-\end{itemize}
-\end{column}
-\begin{column}{0.5\linewidth}
-
-%\only<2>
-%{%
-%\includegraphics[width=0.8\linewidth]{Structure_of_the_magnetosphere_Nasa.pdf}%
-%{\color{gray} Illustration originally from Nasa. Published on wikipedia, in Public Domain (Cropped to fit page) }
-%}%
-\end{column}
-\end{columns}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{How: Numeric-ODE solvers}
-\begin{itemize}
-\item<1-> When analytical solutions are not practical.
-\item<2-> Testing experimental setups.
-%\item<4-> Here, the \lstinline{odeint} library in C++.
-%\begin{itemize}
-%\item<4-> Runge Kutta Algorithm
-%\item<4-> Identical to \lstinline{odeint}/\lstinline{ode45} in scipy or matlab.
-%\end{itemize}
-\item<5-> Simulations are not experiments!
+\item<1-> Numerical simulations are important.
+\item<2-> Testing setups, non-analytical systems.
+\item<3-> Demonstration, charged particles in electric and magnetic fields.
+\item<3-> Analytically known and not.
+\item<4-> Simulations are not experiments.
 \end{itemize}
 \end{frame}
 
 
-\section{Theory and physical background [10 MIN]}
+
+
+\section{Theory and physical background [5 MIN]}
 
 \begin{frame}
 \frametitle{Theory: Classical non-relativistic particles}
@@ -184,7 +159,6 @@ TITLEIMAGE
 \end{itemize}
 \end{frame}
 
-\subsection{Solved systems}
 
 \begin{frame}
 \frametitle{Known results, cyclotron motion $\vec{B}$ fields}
@@ -230,47 +204,22 @@ R = \frac{v_\perp m}{|q|B} \quad \omega_c =\frac{|q|B}{m}.
 \only<3>{\includegraphics[width=0.66\linewidth]{AN_solenoid_xz_view.pdf}\includegraphics[width=0.33\linewidth]{AN_solenoid_yz_view.pdf}}%
 \only<4>{\includegraphics[width=\linewidth]{AN_solenoid_tz.pdf}}%
 \only<5>{\includegraphics[width=\linewidth]{AN_solenoid_speed.pdf}}%
+\only<6>{\includegraphics[width=\linewidth]{dipole7.pdf}}%
 
 \only<1>{%
 {\color{gray} Solenoid with $N=1000$ turns per $m$, $I=\SI{5}{\ampere}$, $r=\SI{1}{\meter}$, $|\vec{B}|\approx\SI{6}{\milli\tesla}$. Proton with $E_{kin}=\SI{1}{\mega\electronvolt\per\square\lightspeed}$ ($|v|\approx \SI{3.195E5}{\meter\per\second}$)}}
-\only<2->{%
+\only<2-5>{%
 \begin{equation*}
 R \approx \SI{0.5}{\meter}\sin(\theta) \quad T=\frac{2\pi}{\omega_c} \approx \SI{10}{\micro\second}
 \end{equation*}
 }
 \end{frame}
 
-\begin{frame}
-\frametitle{Cyclotron accelerator}
-\begin{columns}
-\begin{column}{0.5\linewidth}
-\begin{itemize}
-\item<1-> Electric forces do work.
-
-\item<2-> Practical example, the Cyclotron.
-
-\item<3-> Single gab, oscillating field.
-
-\item<4-> Final speed:
-
-\begin{equation*}
-\frac{R|q|B}{m} = v_\perp
-\end{equation*}
-
-\end{itemize}
-\end{column}
-\begin{column}{0.5\linewidth}
-\includegraphics[width=\linewidth]{ Cyclotron_patent.png}
-{\color{gray} Ernest O. Lawrence, 1934, U.S. Patent 1,948,384; image in Public Domain.}
-\end{column}
-\end{columns}
-\end{frame}
-
-\section{Eulers Method and the 4th order Runge-Kutta Method [10 MIN]}
+\section{Euler's Method and the 4th order Runge-Kutta Method [15 MIN]}
 %What are they, what are not they
 
 \begin{frame}
-\frametitle{Ordinary differential equation*s.}
+\frametitle{Ordinary differential equation's.}
 \begin{itemize}
 \item<1-> {\color{gray} Sources: Zeigler et al. Theory of Modeling and Simulation (Third edition) chapter 3}
 
@@ -339,12 +288,13 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 
 \item<3-> How would you find $\mathbf{X}(t_{i+1})$:
 
-\item<5-> \only<5,7>{(Explicit) Forward}\only<6>{(Implicit) Backward} Euler's Method:
+\item<4-> \only<4,6>{(Explicit) Forward}\only<5>{(Implicit) Backward} Euler's Method:
 
 \begin{equation*}
-\mathbf{X}(t_{i+1}) = \mathbf{X}(t_{i})+h f_{ode}(\mathbf{X}(\only<5,7>{t_i}\only<6>{t_{i+1}}),t_i).
+\mathbf{X}(t_{i+1}) = \mathbf{X}(t_{i})+h f_{ode}(\mathbf{X}(\only<4,6>{t_i}\only<5>{t_{i+1}}),t_i).
 \end{equation*}
 
+\item<6-> Chain together multiple steps from $t_0$\ldots with step size $h$.
 
 \item<1-> {\color{gray} Bernard P. Zeigler et al. Theory of Modeling and Simulation (Third edition), chapter 3}
 \end{itemize}
@@ -356,7 +306,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \only<4-6>{%
 \includegraphics[width=\linewidth]{euler_demo1.pdf}%
 }%
-\only<7>{%
+\only<6>{%
 \includegraphics[width=\linewidth]{euler_demo2.pdf}%
 }%
 \end{column}
@@ -375,9 +325,9 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \mathbf{X}(t_{i+1}) = \mathbf{X}(t_{i})+h f_{ode}(\mathbf{X}(t_i),t_i)+h^2\ldots +\ldots.
 \end{equation*}
 
-\item<3-> ``Local truncation error"  $~h^2=h^{p+1}$.
+\item<3-> ``Local truncation error"  $~h^2$.
 
-\item<3-> Global error $~h=h^p$.
+\item<3-> Global error $~h^1$.
 
 \item<4-> Convergence, but not uniform.
 \end{itemize}
@@ -390,7 +340,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \item<1-> In general.
 
 \begin{equation*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) = \int_{t_i}^{t_{i+1}} f_{ode}(\mathbf{X}(t_i),t_i) dt \only<2-> = h f_{ode}(\mathbf{X}(\tau),\tau)
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) = \int_{t_i}^{t_{i+1}} f_{ode}(\mathbf{X}(t_i),t_i) dt \only<2->{ = h f_{ode}(\mathbf{X}(\tau),\tau)}.
 \end{equation*}
 
 \item <2-> \textit{Mean Value theorem for integrals} $t_i\leq \tau\leq t_{i+1}$.
@@ -400,7 +350,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \item<4-> More generally, (\textit{Explicit} and \textit{single step}), Runge-Kutta family:
 
 \begin{align*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \int_{t_i}^{t'} f_{ode}(\mathbf{X}(t_i),t_i) dt + \ldots \int_{t^{(m)}}^{t_{i+1}} f_{ode}(\mathbf{X}(t_i),t_i) dt \only<5->{\\ &= h \sum_{j=1}^{m} c_j f_{ode}(\mathbf{X}(\tau_j),\tau_j)}
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \int_{t_i}^{t'} f_{ode}(\mathbf{X}(t_i),t_i) dt + \ldots \int_{t^{(m)}}^{t_{i+1}} f_{ode}(\mathbf{X}(t_i),t_i) dt \only<5->{\\ &=  \sum_{j=1}^{m} h_j f_{ode}(\mathbf{X}(\tau_j),\tau_j)}
 \end{align*}
 
 \item<5-> Use $f_{ode}(\mathbf{X}(t_i),t_i)$ to approximate $\mathbf{X}(\tau_1)$ etc.
@@ -422,11 +372,11 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) =  h \sum_{j=1}^{m} b_j \mathbf{K}_j
 \end{equation*}
 
-\item<1-> With: $\mathbf{K}_1 =  f_{ode}(\mathbf{X}(t_i),t_i)$, $\mathbf{K}_2 =  f_{ode}(\mathbf{X}(t_i)+ha_{21}\mathbf{K}_{1},t_i+c_2h)$ etc.
+\item<2-> Want exact to $p$'th order. Can be found with Taylor expansion of $\mathbf{X}(t_{i})$.
 
-\item<2-> Want exact to $p$'th order. Can be found with taylor expansion of $\mathbf{X}(t_{i})$.
+\item<3-> Local/global error  $~h^{p+1}$, Global error $~h^p$.
 
-\item<3-> 2nd order (Heun's method):
+\item<4-> 2nd order (Heun's method):
 
 \begin{align*}
 \mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \frac{h}{2}(\mathbf{k}_1+\mathbf{k}_2)\\
@@ -439,7 +389,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \end{frame}
 
 
-\subsection{4th order Runge Kutta}
+\subsection{Higher order Runge-Kutta methods}
 
 
 \begin{frame}
@@ -458,7 +408,6 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \mathbf{k}_4 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_3,t_i+h)\\
 \end{align*}
 
-\item<2-> Almost default in \lstinline{scipy.integrate.solve_ivp} and matlab \lstinline{ode45}.
 
 \end{itemize}
 \end{column}
@@ -511,9 +460,8 @@ for (size_t i = 1; i < time_res; ++i)
     double t=i*dt;
     ODE(Data,dDatadt,t);
     //Euler time evolution
-    //Data +=timestep*dDatadt; 1 variable
-    for (uint i = 0; i<Data.size(); ++i)
-        Data[i]+=timestep*dDatadt[i];
+    Data+=timestep*dDatadt;
+
     save_step( Data , i*timestep );
 };
 \end{lstlisting}
@@ -533,29 +481,30 @@ size_t time_res = T/timestep;
 for (size_t i = 1; i < time_res; ++i)
 {
     double t=i*timestep;
+
     //substep 1
     ODE(Data,K1,t);
-    for (uint i = 0; i<Data.size(); ++i)
-        temp[i]=Data[i]+timestep*K1[i]/2;
+
     //substep 2
-    ODE(Data,K2,t+timestep/2);
-    for (uint i = 0; i<Data.size(); ++i)
-        temp[i]=Data[i]+timestep*K2[i]/2;
+    temp=Data+timestep*K1/2;
+    ODE(temp,K2,t+timestep/2);
 \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
 \frametitle{RK4 Implementations (2/2)}
 \begin{lstlisting}
+
     //substep 3
-    ODE(Data,K3,t+timestep/2);
-    for (uint i = 0; i<Data.size(); ++i)
-        temp[i]=Data[i]+timestep*K3[i];
+    temp=Data+timestep*K2/2;
+    ODE(temp,K3,t+timestep/2);
+
     //substep 4
+    temp=Data+timestep*K3;
     ODE(temp,K4,t+timestep);
+
     //Read data
-    for (uint i = 0; i<Data.size(); ++i)
-        Data[i]+=timestep*(K1[i]+2.0*K2[i]+2.0*K3[i]+K4[i])/6.0;
+    Data+=timestep*(K1+2.0*K2+2.0*K3+K4)/6.0;
     save_step( Data , i*timestep );
 }
 \end{lstlisting}
@@ -582,9 +531,7 @@ size_t steps = integrate_const(
 \end{lstlisting}
 \end{frame}
 
-
-
-\section{Testing the methods [5 MIN]}
+\subsection{Demonstration, particles in a solenoid}
 
 \begin{frame}
 \frametitle{Does it work}
@@ -598,7 +545,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \item<2-> Compare Analytic, Euler, Runge-Kutta 4.
 
-\item<3-> Consider $\theta=\ang{60}$, $h=\SI{0.01}{\micro\second}$, $h=\SI{0.1}{\micro\second}$ and  $h=\SI{0.1}{\micro\second}$.
+\item<3-> Consider $\theta=\ang{60}$ at different $h$.
 
 \item<4-> Check error on $|\vec{v}|$, $R=\sqrt{y^2+z^2}$ and $x(t)$.
 \end{itemize}
@@ -680,11 +627,13 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \only<1>{\includegraphics[width=\linewidth]{solenoid_Rh.pdf}}%
 \end{frame}
 
-\section{Introducing Adaptive step size [5 MIN]}
+\section{Introducing Adaptive step size [10 MIN]}
 
+\subsection{Demonstration: magnetic dipole}
 
 \begin{frame}
 \frametitle{Adaptive step size, why}
+
 
 
 
@@ -724,15 +673,12 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \end{frame}
 
 
-
 \begin{frame}
 \frametitle{Example, magnetic dipole}
 
 \begin{columns}
 \begin{column}{0.5\linewidth}
 \begin{itemize}
-
-\item <1- > Not good approximation of the Earth magnetic field.
 
 \item <1-> True dipole:
 
@@ -765,12 +711,15 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \end{columns}
 \end{frame}
 
+
+\subsection{Dormand Prince 5 (4) method}
+
 \begin{frame}
 \frametitle{Runge-Kutta Adaptive step size, how}
 \begin{itemize}
 \item <1-> Reduce $h$ until the ``error" is small enough
 
-\item <2-> Use 2 different irder methods, $\mathbf{x}^{(p)}(t_{i+1})$, $\mathbf{x}^{(p)}(t_{i+1})$.
+\item <2-> Use 2 different order methods, $\mathbf{x}^{(p+1)}(t_{i+1})$, $\mathbf{x}^{(p)}(t_{i+1})$.
 
 \item <3-> Approximate ``Error" as  $\mathbf{E} = |\mathbf{x}^{(p+1)}(t_{i+1})-\mathbf{x}^{(p)}(t_{i+1})|$.
 
@@ -797,7 +746,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \end{align*}
 
 \begin{align*}
-\mathbf{k}_i &= f_{ode}(\mathbf{X}(t_i)+h \sum_j^{i-1} a_{ki} \mathbf{k}_i+ha_{32},t_i+c_3 h).
+\mathbf{k}_i &= f_{ode}(\mathbf{X}(t_i)+h \sum_j^{i-1} a_{ki} \mathbf{k}_i,t_i+c_3 h).
 \end{align*}
 
 \item <2-> 7 $\mathbf{k}_i$'s (actually 6).
@@ -913,13 +862,16 @@ Magnetic ``mirror" or ``bottle".
 \begin{itemize}
 \item<1-> When the Dormand Prince method fails
 \end{itemize}
-\item<2-> Toroidal fields
+\item<2-> Toroidal fields [TBD]
 \begin{itemize}
 \item<2-> Another non-analytic setup.
 \end{itemize}
-
 \end{itemize}
 \end{frame}
+
+
+\section{Conclusion [2 MIN]}
+
 
 \begin{frame}
 \frametitle{Conclusion }
@@ -933,6 +885,8 @@ Magnetic ``mirror" or ``bottle".
 \end{frame}
 
 
+\subsection{Extra, the cyclotron}
+\subsection{Extra, toroidal fields}
 
 \begin{frame}
 \frametitle{Example, cyclotron}
@@ -963,17 +917,17 @@ Magnetic ``mirror" or ``bottle".
 
 
 \begin{frame}
-\frametitle{Can it be simulated}
+\frametitle{can it be simulated}
 \begin{columns}
 \begin{column}{0.5\linewidth}
 \begin{itemize}
-\item<1-> With fixed step size, looks bad 4999 points
+\item<1-> with fixed step size, looks bad 4999 points
 
-\item<2- > My adabtive method, error: $10^{-6}$
+\item<2- > my adabtive method, error: $10^{-6}$
 
-\item<3-> Odeint library
+\item<3-> odeint library
 
-\item<4-> Non-continuous ODE are bad.
+\item<4-> non-continuous ode are bad.
 
 \end{itemize}
 \end{column}
@@ -996,9 +950,11 @@ Magnetic ``mirror" or ``bottle".
 \end{columns}
 \end{frame}
 
-%Electric and magnetic fields
-%The Lorentz force
-%Newtons 2nd law, ordinary differential equation
-%Alternative, electric and magnetic potentials
+
+
+
+\begin{frame}
+\frametitle{TBD}
+\end{frame}
 
 \end{document}
