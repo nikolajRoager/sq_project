@@ -99,7 +99,7 @@
 
 
 %Information to be included in the title page:
-\title{How numerical simulations work: Simulating particles in electric and magnetic fields}
+\title{}
 \author{Nikolaj Roager Christensen}
 \institute{Student Colloquium in Physics and Astronomy, Aarhus University}
 \date{March 2021}
@@ -198,21 +198,30 @@ R = \frac{v_\perp m}{|q|B} \quad \omega_c =\frac{|q|B}{m}.
 \end{frame}
 
 \begin{frame}
-\frametitle{Analytical solution: Protons in a Solenoid}
+\frametitle{What we expect to see}
 \only<1>{\includegraphics[width=0.8\linewidth]{AN_helix0.pdf}}%
 \only<2>{\includegraphics[width=0.8\linewidth]{AN_helix1.pdf}}%
 \only<3>{\includegraphics[width=0.66\linewidth]{AN_solenoid_xz_view.pdf}\includegraphics[width=0.33\linewidth]{AN_solenoid_yz_view.pdf}}%
-\only<4>{\includegraphics[width=\linewidth]{AN_solenoid_tz.pdf}}%
-\only<5>{\includegraphics[width=\linewidth]{AN_solenoid_speed.pdf}}%
-\only<6>{\includegraphics[width=\linewidth]{dipole7.pdf}}%
+\only<4>{\includegraphics[width=\linewidth]{dipole7.pdf}}%
+\only<5>{TBD, image from torus simulation}%
 
 \only<1>{%
+``Cyclotron motion"
+
 {\color{gray} Solenoid with $N=1000$ turns per $m$, $I=\SI{5}{\ampere}$, $r=\SI{1}{\meter}$, $|\vec{B}|\approx\SI{6}{\milli\tesla}$. Proton with $E_{kin}=\SI{1}{\mega\electronvolt\per\square\lightspeed}$ ($|v|\approx \SI{3.195E5}{\meter\per\second}$)}}
-\only<2-5>{%
+
+\only<2-3>{%
+``Cyclotron motion"
+
 \begin{equation*}
 R \approx \SI{0.5}{\meter}\sin(\theta) \quad T=\frac{2\pi}{\omega_c} \approx \SI{10}{\micro\second}
 \end{equation*}
 }
+
+\only<4-5>{%
+Particles ``follow" magnetic fields.
+}
+
 \end{frame}
 
 \section{Euler's Method and the 4th order Runge-Kutta Method [15 MIN]}
@@ -229,7 +238,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta) \quad T=\frac{2\pi}{\omega_c} \approx \SI
 \dot{\mathbf{X}} = f_{ode}(\mathbf{X}(t),t).
 \end{equation*}
 
-\item<2-> We have a:
+\item<2-> We have:
 
 \begin{align*}
 \ddot{\vec{r}} &= \frac{q}{m} ( \dot{\vec{r}}\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t)).
@@ -243,11 +252,6 @@ R \approx \SI{0.5}{\meter}\sin(\theta) \quad T=\frac{2\pi}{\omega_c} \approx \SI
 \end{itemize}
 \end{frame}
 
-\newif\ifadditional
-%\additionalfalse
-\additionaltrue
-
-\ifadditional
 \begin{frame}[fragile]
 \frametitle{The ODE to solve}
 %\only<1>{%
@@ -268,7 +272,6 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 };
 \end{lstlisting}
 \end{frame}
-\fi
 
 
 \subsection{Euler's Method}
@@ -276,36 +279,31 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \begin{frame}
 \begin{columns}
 \begin{column}{0.5\linewidth}
-\frametitle{The Forward Euler's Method}
+\frametitle{Solving differential equations}
 \begin{itemize}
-\item<1-> Let $h=t_{i+1}-t_i>0$ be constant.
 
-\item<2-> $h$, $\mathbf{X}(t)$, $t_i$ and $f_{ode}$ are known.
+\item<1-> We know only $\mathbf{X}(t_0)$ and $t_0$ and $f_{ode}$.
 
-\begin{equation*}
-\dot{\mathbf{X}} = f_{ode}(\mathbf{X}(t),t).
-\end{equation*}
+\item<2-> Can we find $\mathbf{X}(t_0+h)$ for $h>0$?.
 
-\item<3-> How would you find $\mathbf{X}(t_{i+1})$:
-
-\item<4-> \only<4,6>{(Explicit) Forward}\only<5>{(Implicit) Backward} Euler's Method:
+\item<3-> (Explicit Forward) Euler's Method:
 
 \begin{equation*}
-\mathbf{X}(t_{i+1}) = \mathbf{X}(t_{i})+h f_{ode}(\mathbf{X}(\only<4,6>{t_i}\only<5>{t_{i+1}}),t_i).
+\mathbf{X}(t_0+h) = \mathbf{X}(t_0)+h f_{ode}(\mathbf{X}(t_0),t_0).
 \end{equation*}
 
+\item<3-> Multiple steps $t_0,t_1=t_0+h,\ldots t_i,\ldots$.
+
+\item<4-> Can this be justified?
 
 \item<1-> {\color{gray} Bernard P. Zeigler et al. Theory of Modeling and Simulation (Third edition), chapter 3}
 \end{itemize}
 \end{column}
 \begin{column}{0.5\linewidth}
-\only<1-3>{%
-\includegraphics[width=\linewidth]{euler_demo0.pdf}%
-}%
-\only<4-6>{%
+\only<1-2>{%
 \includegraphics[width=\linewidth]{euler_demo1.pdf}%
 }%
-\only<6>{%
+\only<3->{%
 \includegraphics[width=\linewidth]{euler_demo2.pdf}%
 }%
 \end{column}
@@ -321,38 +319,38 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \item<2-> First 2 terms in Taylor series {{\color{gray} Zeigler et al.}}:
 
 \begin{equation*}
-\mathbf{X}(t_{i+1}) = \mathbf{X}(t_{i})+h f_{ode}(\mathbf{X}(t_i),t_i)+h^2\ldots +\ldots.
+\only<1>{\mathbf{X}(t_{0}+h) = \mathbf{X}(t_{0})+h \dot{\mathbf{X}}(t_0)+h^2\ldots +\ldots.}
+\only<2>{\mathbf{X}(t_{0}+h) = \mathbf{X}(t_{0})+h f_{ode}(\mathbf{X}(t_0),t_0)+h^2\ldots +\ldots.}
+\only<3>{\mathbf{X}(t_{i}+h) = \mathbf{X}(t_{i})+h f_{ode}(\mathbf{X}(t_i),t_i)+h^2\ldots +\ldots.}
 \end{equation*}
 
-\item<3-> ``Local truncation error"  $~h^2$.
+\item<3-> Local error  $~h^2$. Global error: $~h^1$.
 
-\item<3-> Global error $~h^1$.
-
-\item<4-> Convergence, but not uniform.
+\item<4-> Argument suggests we need $\dot{f}_{ode},\ddot{f}_{ode},\ldots$
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Why does this work? The Runge Kutta family}
+\frametitle{The Runge Kutta steppers}
 \begin{itemize}
 
-\item<1-> In general.
+\item<1-> In general:
 
 \begin{equation*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) = \int_{t_i}^{t_{i+1}} f_{ode}(\mathbf{X}(t_i),t_i) dt \only<2->{ = h f_{ode}(\mathbf{X}(\tau),\tau)}.
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) \only<1-3>{=\int_{t_i}^{t_{i+1}}} \only<1>{\dot{\mathbf{X}}(t_i) dt}\only<2-3>{f_{ode}(\mathbf{X}(t_i),t_i) dt }\only<3->{ = h f_{ode}(\mathbf{X}(\tau),\tau)}.
 \end{equation*}
 
 \item <2-> \textit{Mean Value theorem for integrals} $t_i\leq \tau\leq t_{i+1}$.
 
-\item<3-> Guess $\tau=t_i$.
+\item<4-> Guess $\tau=t_i$. Good guess, if $\dot{f}_{ode}\approx 0$.
 
-\item<4-> More generally, (\textit{Explicit} and \textit{single step}), Runge-Kutta family:
+\item<5-> More generally, (\textit{Explicit} and \textit{single step}), Runge-Kutta family:
 
 \begin{align*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \int_{t_i}^{t'} f_{ode}(\mathbf{X}(t_i),t_i) dt + \ldots \int_{t^{(m)}}^{t_{i+1}} f_{ode}(\mathbf{X}(t_i),t_i) dt \only<5->{\\ &=  \sum_{j=1}^{m} h_j f_{ode}(\mathbf{X}(\tau_j),\tau_j)}
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \int_{t_i}^{t'} f_{ode}(\mathbf{X}(t_i),t_i) dt + \ldots \int_{t^{(m)}}^{t_{i+1}} f_{ode}(\mathbf{X}(t_i),t_i) dt \only<6->{,\\ &=  \sum_{j=1}^{m} h_j f_{ode}(\mathbf{X}(\tau_j),\tau_j)}.
 \end{align*}
 
-\item<5-> Use $f_{ode}(\mathbf{X}(t_i),t_i)$ to approximate $\mathbf{X}(\tau_1)$ etc.
+\item<6-> Use $f_{ode}(\mathbf{X}(t_i),t_i)$ to approximate $\mathbf{X}(\tau_1)$.
 
 
 \item<1-> {\color{gray} L. Zheng, X. Zhang, Modeling and Analysis of Modern Fluid Problems, 2017, chapter 8}:
@@ -362,26 +360,28 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 
 
 \begin{frame}
-\frametitle{Explicit Runge Kutta methods}
+\frametitle{Runge Kutta methods}
 \begin{itemize}
 
-\item<1-> We want:
+\item<1-> More commonly written:
 
 \begin{equation*}
 \mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) =  h \sum_{j=1}^{m} b_j \mathbf{K}_j
 \end{equation*}
 
-\item<2-> Want exact to $p$'th order. Can be found with Taylor expansion of $\mathbf{X}(t_{i})$.
-
-\item<3-> Local/global error  $~h^{p+1}$, Global error $~h^p$.
-
-\item<4-> 2nd order (Heun's method):
+\item<2-> Estimate $\mathf{K}_j$:
 
 \begin{align*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \frac{h}{2}(\mathbf{k}_1+\mathbf{k}_2)\\
-\mathbf{k}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
-\mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_1,t_i+h)
+\mathbf{K}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
+\mathbf{K}_2 &= f_{ode}(\mathbf{X}(t_i)+ha_{21} \mathbf{K}_1,t_i+c_2 h)\\
+\mathbf{K}_3 &= f_{ode}(\mathbf{X}(t_i)+ha_{31} \mathbf{K}_1+ha_{32} \mathbf{K}_2,t_i+c_3 h)\\
+&\vdots
 \end{align*}
+
+\item<3-> Want exact to $p$'th order.
+
+\item<4-> Local/global error  $~h^{p+1}$, Global error $~h^p$.
+
 
 \item<1-> {{\color{gray} Martha L. Abell, James P. Braselton, Differential Equations with Mathematica (Fourth Edition), 2016}}:
 \end{itemize}
@@ -392,12 +392,21 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 
 
 \begin{frame}
-\frametitle{The 4th order Runge Kutta method}
+\frametitle{Higher order methods}
 \begin{columns}
 \begin{column}{0.5\linewidth}
 \begin{itemize}
 
-\item<1-> RK4, often simply called the Runge Kutta method:
+\item<1-> 2nd order (Heun's method):
+
+\begin{align*}
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \frac{h}{2}(\mathbf{k}_1+\mathbf{k}_2)\\
+\mathbf{k}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
+\mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_1,t_i+h)
+\end{align*}
+
+
+\item<1-> 4th order, often simply called the Runge Kutta method:
 
 \begin{align*}
 \mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \frac{h}{6}(\mathbf{k}_1+2\mathbf{k}_2+2\mathbf{k}_3+\mathbf{k}_4 )\\
@@ -424,14 +433,6 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 
 \item<1-> General explicit, single step, fixed size, Runge Kutta method
 
-\begin{align*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j \mathbf{K}_j\\
-\mathbf{k}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
-\mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+ha_{21} \mathbf{k}_1,t_i+c_2 h)\\
-\mathbf{k}_3 &= f_{ode}(\mathbf{X}(t_i)+ha_{31} \mathbf{k}_1+ha_{32} \mathbf{k}_2,t_i+c_3 h)
-&\vdots
-\end{align*}
-
 \item<2-> Expressed in Butcher tableu:
 
 \begin{tabular}{l | @{\quad} c @{\quad} c @{\quad} c}
@@ -442,8 +443,6 @@ $c_n$ & $a_{n1}$ &  $a_{n2}$ & $\hdots$\\
 \midrule
 & $b_1$ & $b_2$ & $\hdots$
 \end{tabular}
-
-
 \end{itemize}
 \end{frame}
 
