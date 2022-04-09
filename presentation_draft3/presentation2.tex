@@ -99,7 +99,8 @@
 
 
 %Information to be included in the title page:
-\title{}
+\title{Numerical integration of ordinary differential equations: motion of charged particles in electromagnetic fields
+}
 \author{Nikolaj Roager Christensen}
 \institute{Student Colloquium in Physics and Astronomy, Aarhus University}
 \date{March 2021}
@@ -110,19 +111,16 @@
 
 \titlegraphic
 {
-TITLEIMAGE
-%\includegraphics[width=0.5\textwidth]{torus4_3D.pdf}
+\includegraphics[width=0.5\textwidth]{dipole6.pdf}
 }
 \begin{document}
 
 \frame{\titlepage}
 
-
-
-\section{Introduction [5 MIN]}
+\section{Introduction}
 
 \begin{frame}
-\frametitle{How numerical simulations work: Simulating particles in electric and magnetic fields}
+\frametitle{Numerical integration of ordinary differential equations: motion of charged particles in electromagnetic fields}
 \tableofcontents
 \end{frame}
 
@@ -134,14 +132,12 @@ TITLEIMAGE
 \item<2-> Testing setups, non-analytical systems.
 \item<3-> Demonstration, charged particles in electric and magnetic fields.
 \item<3-> Analytically known and not.
-\item<4-> Simulations are not experiments.
+\item<4-> Simulations are not experiments!
 \end{itemize}
 \end{frame}
 
 
-
-
-\section{Theory and physical background [5 MIN]}
+\section{Theory and physical background}
 
 \begin{frame}
 \frametitle{Theory: Classical non-relativistic particles}
@@ -202,8 +198,10 @@ R = \frac{v_\perp m}{|q|B} \quad \omega_c =\frac{|q|B}{m}.
 \only<1>{\includegraphics[width=0.8\linewidth]{AN_helix0.pdf}}%
 \only<2>{\includegraphics[width=0.8\linewidth]{AN_helix1.pdf}}%
 \only<3>{\includegraphics[width=0.66\linewidth]{AN_solenoid_xz_view.pdf}\includegraphics[width=0.33\linewidth]{AN_solenoid_yz_view.pdf}}%
-\only<4>{\includegraphics[width=\linewidth]{dipole7.pdf}}%
-\only<5>{TBD, image from torus simulation}%
+\only<4>{\includegraphics[width=\linewidth]{dipole7.pdf}
+
+(Actually from my simulation)}%
+\only<5>{NOTE TBD, image from torus simulation}%
 
 \only<1>{%
 ``Cyclotron motion"
@@ -224,7 +222,7 @@ Particles ``follow" magnetic fields.
 
 \end{frame}
 
-\section{Euler's Method and the 4th order Runge-Kutta Method [15 MIN]}
+\section{Euler's Method and the 4th order Runge-Kutta Method}
 %What are they, what are not they
 
 \begin{frame}
@@ -321,7 +319,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \begin{equation*}
 \only<1>{\mathbf{X}(t_{0}+h) = \mathbf{X}(t_{0})+h \dot{\mathbf{X}}(t_0)+h^2\ldots +\ldots.}
 \only<2>{\mathbf{X}(t_{0}+h) = \mathbf{X}(t_{0})+h f_{ode}(\mathbf{X}(t_0),t_0)+h^2\ldots +\ldots.}
-\only<3>{\mathbf{X}(t_{i}+h) = \mathbf{X}(t_{i})+h f_{ode}(\mathbf{X}(t_i),t_i)+h^2\ldots +\ldots.}
+\only<3->{\mathbf{X}(t_{i}+h) = \mathbf{X}(t_{i})+h f_{ode}(\mathbf{X}(t_i),t_i)+h^2\ldots +\ldots.}
 \end{equation*}
 
 \item<3-> Local error  $~h^2$. Global error: $~h^1$.
@@ -369,7 +367,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) =  h \sum_{j=1}^{m} b_j \mathbf{K}_j
 \end{equation*}
 
-\item<2-> Estimate $\mathf{K}_j$:
+\item<2-> Estimate $\mathbf{K}_j$:
 
 \begin{align*}
 \mathbf{K}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
@@ -378,9 +376,9 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 &\vdots
 \end{align*}
 
-\item<3-> Want exact to $p$'th order.
+\item<3-> Want exact for $p$'th order polynomial.
 
-\item<4-> Local/global error  $~h^{p+1}$, Global error $~h^p$.
+\item<4-> Taylor series analogy: error  $~h^p$.
 
 
 \item<1-> {{\color{gray} Martha L. Abell, James P. Braselton, Differential Equations with Mathematica (Fourth Edition), 2016}}:
@@ -393,8 +391,6 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 
 \begin{frame}
 \frametitle{Higher order methods}
-\begin{columns}
-\begin{column}{0.5\linewidth}
 \begin{itemize}
 
 \item<1-> 2nd order (Heun's method):
@@ -405,7 +401,14 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_1,t_i+h)
 \end{align*}
 
+\end{itemize}
+\end{frame}
 
+\begin{frame}
+\frametitle{Higher order methods}
+\begin{columns}
+\begin{column}{0.5\linewidth}
+\begin{itemize}
 \item<1-> 4th order, often simply called the Runge Kutta method:
 
 \begin{align*}
@@ -413,9 +416,8 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \mathbf{k}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
 \mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+\frac{h}{2}\mathbf{k}_1,t_i+\frac{h}{2})\\
 \mathbf{k}_3 &= f_{ode}(\mathbf{X}(t_i)+\frac{h}{2}\mathbf{k}_2,t_i+\frac{h}{2})\\
-\mathbf{k}_4 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_3,t_i+h)\\
+\mathbf{k}_4 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_3,t_i+h)
 \end{align*}
-
 
 \end{itemize}
 \end{column}
@@ -625,15 +627,12 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \only<1>{\includegraphics[width=\linewidth]{solenoid_Rh.pdf}}%
 \end{frame}
 
-\section{Introducing Adaptive step size [10 MIN]}
+\section{Introducing Adaptive step size}
 
 \subsection{Demonstration: magnetic dipole}
 
 \begin{frame}
 \frametitle{Adaptive step size, why}
-
-
-
 
 \begin{columns}
 \begin{column}{0.5\linewidth}
@@ -642,7 +641,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \item <2-> Hard to pick, and may change:
 
-\item <3-> Inhomogeneous fields (here Earth magnetic field)
+\item <3-> Inhomogeneous fields (here, a true dipole)
 
 \item <4-> time dependent fields (here the cyclotron, bad example)
 
@@ -654,13 +653,12 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 
 \only<3>{%
-\includegraphics[width=0.8\linewidth]{Structure_of_the_magnetosphere_Nasa.pdf}%
+\includegraphics[width=\linewidth]{dipole.pdf}
 
-{\color{gray} Illustration originally from Nasa. Published on wikipedia, in Public Domain (Cropped to fit page) }
 }%
 
 
-\only<4>{%
+\only<5>{%
 \includegraphics[width=\linewidth]{ Cyclotron_patent.png}
 
 {\color{gray} Ernest O. Lawrence, 1934, U.S. Patent 1,948,384; image in Public Domain.}
@@ -697,7 +695,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 
 \only<1>{\includegraphics[width=\linewidth]{dipole.pdf}}%
-\only<2->{\includegraphics[width=\linewidth]{dipole1.pdf}
+\only<2->{\includegraphics[width=\linewidth]{dipole6.pdf}
 
 {\color{gray}  Arbitrarily set $\frac{\mu_0}{4\pi}|\vec{m}|= \SI{0.155}{\tesla\per\cubic\meter}$ .
 
@@ -723,7 +721,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \item <4-> Adjust step size to keep the error(s) small (Implementations differ!).
 
-{\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
+{\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and AppliMathematics}
 \begin{equation}
 \end{equation}
 
@@ -747,7 +745,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \mathbf{k}_i &= f_{ode}(\mathbf{X}(t_i)+h \sum_j^{i-1} a_{ki} \mathbf{k}_i,t_i+c_3 h).
 \end{align*}
 
-\item <2-> 7 $\mathbf{k}_i$'s (actually 6).
+\item <2-> 7 $\mathbf{k}_i$'s (actually 6 by clever re-usage).
 
 {\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
 \end{itemize}
@@ -788,7 +786,7 @@ h_{new} &= \min_j \left(0.9 h_{old} \left[\frac{\delta_j}{\mathrm{E}_{j}}\right]
 \delta_j &=\min(\delta_{abs},|\mathbf{X}_j(t_{i})|\delta_{rel})\sqrt{\frac{h_{old}}{T}}.
 \end{align*}
 
-\item <3-> Relative and absolute error at end. ``Fail safe" $\sqrt{\ldots}$.
+\item <3-> Scale by step size $\frac{h_{old}}{T}$, ``Fail safe" $\sqrt{\ldots}$.
 
 {\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
 \end{itemize}
@@ -811,7 +809,18 @@ Odeint library relative and absolute error $10^{-7}$. 92 steps.
 \only<3>{%
 \noindent\includegraphics[width=\linewidth]{dipole_R.pdf}}%
 \only<4>{%
-\noindent\includegraphics[width=\linewidth]{dipole_h.pdf}}%
+\noindent\includegraphics[width=\linewidth]{dipole_h.pdf}
+
+My version, adaptive step size.
+}%
+
+\only<5>{%
+\noindent\includegraphics[width=\linewidth]{dipole_h_lib.pdf}
+
+Odeint Library, adaptive step size.
+}%
+
+
 \end{centering}
 \end{frame}
 
@@ -853,22 +862,8 @@ Magnetic ``mirror" or ``bottle".
 
 
 
-\begin{frame}
-\frametitle{Extra examples-``if time permits" }
-\begin{itemize}
-\item<1-> The cyclotron
-\begin{itemize}
-\item<1-> When the Dormand Prince method fails
-\end{itemize}
-\item<2-> Toroidal fields [TBD]
-\begin{itemize}
-\item<2-> Another non-analytic setup.
-\end{itemize}
-\end{itemize}
-\end{frame}
 
-
-\section{Conclusion [2 MIN]}
+\section{Conclusion}
 
 
 \begin{frame}
@@ -882,77 +877,19 @@ Magnetic ``mirror" or ``bottle".
 \end{itemize}
 \end{frame}
 
-
-\subsection{Extra, the cyclotron}
-\subsection{Extra, toroidal fields}
-
 \begin{frame}
-\frametitle{Example, cyclotron}
-\begin{columns}
-\begin{column}{0.5\linewidth}
+\frametitle{Extra examples-``if time permits" }
 \begin{itemize}
-\item<1-> Electric field accelerates, magnetic contains.
-
-\item<2-> Single gab, oscillating field.
-
-\item<3-> Uses classical Cyclotron frequency
-
-\item<4-> Analytical final speed, in principle path.
-
-\begin{equation*}
-\frac{R|q|B}{m} = v_\perp
-\end{equation*}
-
-\end{itemize}
-\end{column}
-\begin{column}{0.5\linewidth}
-\includegraphics[width=\linewidth]{ Cyclotron_patent.png}
-{\color{gray} Ernest O. Lawrence, 1934, U.S. Patent 1,948,384; image in Public Domain.}
-\end{column}
-\end{columns}
-\end{frame}
-
-
-
-\begin{frame}
-\frametitle{can it be simulated}
-\begin{columns}
-\begin{column}{0.5\linewidth}
+\item<1-> [NOTE] Good figures still need to be made
+\item<1-> The cyclotron
 \begin{itemize}
-\item<1-> with fixed step size, looks bad 4999 points
-
-\item<2- > my adabtive method, error: $10^{-6}$
-
-\item<3-> odeint library
-
-\item<4-> non-continuous ode are bad.
-
+\item<1-> When the Dormand Prince method fails
 \end{itemize}
-\end{column}
-\begin{column}{0.5\linewidth}
-\only<1>{%
-\includegraphics[width=\linewidth]{ cyclotron_noadapt_xy-view.pdf}%
-
-4999 points.}%
-\only<2>{%
-\includegraphics[width=\linewidth]{ cyclotron_overadapt_xy-view.pdf}%
-
-500000 points.
-}%
-\only<3->{%
-\includegraphics[width=\linewidth]{ cyclotron_badadapt_xy-view.pdf}%
-
-2070 points.}%
-
-\end{column}
-\end{columns}
-\end{frame}
-
-
-
-
-\begin{frame}
-\frametitle{TBD}
+\item<2-> Toroidal fields
+\begin{itemize}
+\item<2-> Another non-analytic setup.
+\end{itemize}
+\end{itemize}
 \end{frame}
 
 \end{document}

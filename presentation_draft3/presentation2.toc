@@ -1,12 +1,10 @@
-\beamer@sectionintoc {1}{Introduction [5 MIN]}{2}{0}{1}
-\beamer@sectionintoc {2}{Theory and physical background [5 MIN]}{7}{0}{2}
-\beamer@sectionintoc {3}{Euler's Method and the 4th order Runge-Kutta Method [15 MIN]}{22}{0}{3}
-\beamer@subsectionintoc {3}{1}{Euler's Method}{26}{0}{3}
-\beamer@subsectionintoc {3}{2}{Higher order Runge-Kutta methods}{45}{0}{3}
-\beamer@subsectionintoc {3}{3}{Demonstration, particles in a solenoid}{52}{0}{3}
-\beamer@sectionintoc {4}{Introducing Adaptive step size [10 MIN]}{66}{0}{4}
-\beamer@subsectionintoc {4}{1}{Demonstration: magnetic dipole}{66}{0}{4}
-\beamer@subsectionintoc {4}{2}{Dormand Prince 5 (4) method}{75}{0}{4}
-\beamer@sectionintoc {5}{Conclusion [2 MIN]}{96}{0}{5}
-\beamer@subsectionintoc {5}{1}{Extra, the cyclotron}{99}{0}{5}
-\beamer@subsectionintoc {5}{2}{Extra, toroidal fields}{99}{0}{5}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Theory and physical background}{7}{0}{2}
+\beamer@sectionintoc {3}{Euler's Method and the 4th order Runge-Kutta Method}{21}{0}{3}
+\beamer@subsectionintoc {3}{1}{Euler's Method}{25}{0}{3}
+\beamer@subsectionintoc {3}{2}{Higher order Runge-Kutta methods}{43}{0}{3}
+\beamer@subsectionintoc {3}{3}{Demonstration, particles in a solenoid}{51}{0}{3}
+\beamer@sectionintoc {4}{Introducing Adaptive step size}{65}{0}{4}
+\beamer@subsectionintoc {4}{1}{Demonstration: magnetic dipole}{65}{0}{4}
+\beamer@subsectionintoc {4}{2}{Dormand Prince 5 (4) method}{74}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{94}{0}{5}

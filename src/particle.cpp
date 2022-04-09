@@ -627,7 +627,7 @@ void particle::calculate(const composite_field& Fields, double T, double dt)
     //All these things live in the namespace boost::numeric::odeint
     size_t steps = integrate_adaptive(
         //runge_kutta_dopri5< state_type >(),
-        make_controlled( 1e-6 , 1e-6 , runge_kutta_dopri5< state_type >() ) ,//Create stepper
+        make_controlled( 1e-7 , 1e-7 , runge_kutta_dopri5< state_type >() ) ,//Create stepper
         ODE,   //Lorentz-force
         Data0 ,//{pos0,v0}
         0.0 ,  //t0=0

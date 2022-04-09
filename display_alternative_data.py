@@ -20,7 +20,7 @@ timesteps = [];
 max_time = 0;
 dt = 0;
 names=[]
-particle_colors = ['-r','-g','-b','-k']#The default color map includes colors which are hard to read or tell apart
+particle_colors = ['-r','-g','-k']#The default color map includes colors which are hard to read or tell apart
 # open the CSV data setup file for setting up the
 with open(data_folder+'/setup.csv', mode ='r') as setup:
     # reading the CSV file
@@ -87,11 +87,11 @@ plt.streamplot(X,Y,Bx,By, density=1.4, linewidth=None, color='#A23BEC')
 for i in range(0,particle_number):
     particle_data = np.fromfile(data_folder+"/particles"+str(i)+".bin",  dtype=np.float64).reshape(timesteps[i],3);
     if (len(names)>0 and False):
-        ax.plot(particle_data[:,0], particle_data[:,2],particle_colors[i], label=r'$'+(names[i])+'$')
-        ax.plot(particle_data[-1,0], particle_data[-1,2],particle_colors[i]+'x', label=r'$'+(names[i])+'$')
+        ax.plot(particle_data[:,0], particle_data[:,2],particle_colors[i], label=r'$'+(names[i])+'$',lw=2)
+        ax.plot(particle_data[-1,0], particle_data[-1,2],particle_colors[i]+'x', label=r'$'+(names[i])+'$',lw=2)
     else:
-        ax.plot(particle_data[:,0], particle_data[:,2],particle_colors[i])
-        ax.plot(particle_data[-1,0], particle_data[-1,2],particle_colors[i]+'x')
+        ax.plot(particle_data[:,0], particle_data[:,2],particle_colors[i],lw=2)
+        ax.plot(particle_data[-1,0], particle_data[-1,2],particle_colors[i]+'x',lw=2)
 
 
 

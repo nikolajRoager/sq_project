@@ -5,6 +5,10 @@ field_max , 10
 field_steps , 11
 T, 100
 dt, 0.1
-particles , 1
+particles , 3
 name , proton 
-timesteps , 1601
+timesteps , 93
+name , proton 
+timesteps , 70
+name , proton 
+timesteps , 8
