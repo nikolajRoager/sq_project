@@ -95,12 +95,17 @@ for i in range(0,particle_number):
 
 
 
+#hide x-axis
+ax.get_xaxis().set_visible(False)
+
+#hide y-axis
+ax.get_yaxis().set_visible(False)
 
 
 
 if (plot_min!=plot_max and plot_lim):#If a set range was given, use it
     ax.set_xlim([plot_min, plot_max])
     ax.set_ylim([plot_min, plot_max ])
-plt.legend();
+#plt.legend();
 plt.show()
 

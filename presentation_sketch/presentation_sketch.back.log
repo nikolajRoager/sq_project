@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2022.4.16)  17 APR 2022 22:07
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2022.4.16)  17 APR 2022 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**presentation_sketch.tex
-(./presentation_sketch.tex
+**presentation_sketch.back.tex
+(./presentation_sketch.back.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
@@ -804,8 +804,8 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 115.
 
-(./presentation_sketch.aux)
-\openout1 = `presentation_sketch.aux'.
+No file presentation_sketch.back.aux.
+\openout1 = `presentation_sketch.back.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
 LaTeX Font Info:    ... okay on input line 115.
@@ -818,7 +818,6 @@ LaTeX Font Info:    ... okay on input line 115.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
 15.
-
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -883,10 +882,12 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 115.
 LaTeX Info: Redefining \pageref on input line 115.
 LaTeX Info: Redefining \nameref on input line 115.
-
-(./presentation_sketch.out) (./presentation_sketch.out)
 \@outlinefile=\write5
-\openout5 = `presentation_sketch.out'.
+\openout5 = `presentation_sketch.back.out'.
+
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 115.
@@ -963,481 +964,24 @@ nslations-basic-dictionary')
 Package translations Info: loading dictionary `translations-basic-dictionary' f
 or `english'. on input line 115.
 \c@lstlisting=\count357
- (./presentation_sketch.nav)
-File: torus4_3D.pdf Graphic file (type pdf)
-<use torus4_3D.pdf>
 
-Overfull \vbox (1.22108pt too high) detected at line 117
- []
+No file presentation_sketch.back.nav.
 
-[1
+LaTeX Warning: File `Cyclotron_patent.png' not found on input line 117.
 
-]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 135
-.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 135
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 135.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 135.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 135.
-
-(./presentation_sketch.toc) [2
-
-] (./presentation_sketch.toc) [3
-
-]
-(./presentation_sketch.toc) [4
-
-]
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 178.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 178.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 178.
- [5
-
-]
-File: Structure_of_the_magnetosphere_Nasa.pdf Graphic file (type pdf)
-<use Structure_of_the_magnetosphere_Nasa.pdf>
-
-Overfull \hbox (18.0756pt too wide) in paragraph at lines 178--178
-[][][]\TU/lmss/m/n/10.95 Illustration 
- []
-
-
-Overfull \vbox (17.78415pt too high) detected at line 178
- []
-
-[6
-
-]
-File: Princeton_Large_Torus_1975.jpg Graphic file (type bmp)
-<Princeton_Large_Torus_1975.jpg>
- [7
-
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [8
-
-]
-File: Aurora_australis_ISS.jpg Graphic file (type bmp)
-<Aurora_australis_ISS.jpg>
- [9
-
-] [10
-
-] [11
-
-] [12
-
-] [13
-
-] [14
-
-] (./presentation_sketch.toc) [15
-
-]
-[16
-
-] [17
-
-] [18
-
-] [19
-
-] [20
-
-] [21
-
-]
-\openout4 = `presentation_sketch.vrb'.
-
- (./presentation_sketch.vrb) [22
-
-]
-Overfull \hbox (5.0503pt too wide) detected at line 309
-[][][] \OT1/cmss/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^A [][] / \OT1/cmss/m/n/10
-.95 ([] \OMS/cmsy/m/n/10.95 ^^B []\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A
- [] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 :
- []
-
-File: dw0.png Graphic file (type bmp)
-<dw0.png>
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 309.
-[23
-
-]
-Overfull \hbox (5.0503pt too wide) detected at line 309
-[][][] \OT1/cmss/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^A [][] / \OT1/cmss/m/n/10
-.95 ([] \OMS/cmsy/m/n/10.95 ^^B []\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A
- [] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 :
- []
-
-File: dw0.png Graphic file (type bmp)
-<dw0.png>
-[24
-
-]
-Overfull \hbox (5.0503pt too wide) detected at line 309
-[][][] \OT1/cmss/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^A [][] / \OT1/cmss/m/n/10
-.95 ([] \OMS/cmsy/m/n/10.95 ^^B []\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A
- [] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 :
- []
-
-File: cyc0.png Graphic file (type bmp)
-<cyc0.png>
-[25
-
-]
-Overfull \hbox (5.0503pt too wide) detected at line 309
-[][][] \OT1/cmss/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^A [][] / \OT1/cmss/m/n/10
-.95 ([] \OMS/cmsy/m/n/10.95 ^^B []\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A
- [] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 :
- []
-
-File: cyc0.png Graphic file (type bmp)
-<cyc0.png>
-[26
-
-]
-Overfull \hbox (5.0503pt too wide) detected at line 309
-[][][] \OT1/cmss/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ^^A [][] / \OT1/cmss/m/n/10
-.95 ([] \OMS/cmsy/m/n/10.95 ^^B []\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A
- [] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 :
- []
-
-File: cyc0.png Graphic file (type bmp)
-<cyc0.png>
-[27
-
-]
-File: helix.pdf Graphic file (type pdf)
-<use helix.pdf>
- [28
-
-]
-File: helix1.pdf Graphic file (type pdf)
-<use helix1.pdf>
- [29
-
-]
-File: solenoid_3D0.pdf Graphic file (type pdf)
-<use solenoid_3D0.pdf>
- [30
-
-]
-File: solenoid_3D1.pdf Graphic file (type pdf)
-<use solenoid_3D1.pdf>
- [31
-
-]
-File: solenoid_xz_view1.pdf Graphic file (type pdf)
-<use solenoid_xz_view1.pdf>
-File: solenoid_yz_view1.pdf Graphic file (type pdf)
-<use solenoid_yz_view1.pdf>
-
-Overfull \vbox (12.12256pt too high) detected at line 346
- []
-
-[32
-
-]
-File: solenoid_xz_view2.pdf Graphic file (type pdf)
-<use solenoid_xz_view2.pdf>
-File: solenoid_yz_view2.pdf Graphic file (type pdf)
-<use solenoid_yz_view2.pdf>
- [33
-
-]
-File: solenoid_xz_view3.pdf Graphic file (type pdf)
-<use solenoid_xz_view3.pdf>
-File: solenoid_yz_view3.pdf Graphic file (type pdf)
-<use solenoid_yz_view3.pdf>
- [34
-
-]
-File: solenoid_xz_view4.pdf Graphic file (type pdf)
-<use solenoid_xz_view4.pdf>
-File: solenoid_yz_view4.pdf Graphic file (type pdf)
-<use solenoid_yz_view4.pdf>
- [35
-
-]
-File: solenoid_xz_view5.pdf Graphic file (type pdf)
-<use solenoid_xz_view5.pdf>
- [36
-
-]
-File: solenoid_tz.pdf Graphic file (type pdf)
-<use solenoid_tz.pdf>
- [37
-
-]
-File: solenoid_speed1.pdf Graphic file (type pdf)
-<use solenoid_speed1.pdf>
- [38
-
-]
-File: solenoid_speed2.pdf Graphic file (type pdf)
-<use solenoid_speed2.pdf>
- [39
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 355.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 355.
-
-(./presentation_sketch.toc) [40
-
-]
-Overfull \hbox (21.93384pt too wide) detected at line 389
-[]\OT1/cmss/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; []; ^^^\OT1/cmss/m/n/10.95 ) = [
-]\OML/cmm/m/it/10.95 ^^^^^V[][] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 ^^^
-[]\OT1/cmss/m/n/10.95 ([])[]\OML/cmm/m/it/10.95 :
- []
-
-File: solenoid_3D0.pdf Graphic file (type pdf)
-<use solenoid_3D0.pdf>
-[41
-
-]
-Overfull \hbox (21.93384pt too wide) detected at line 389
-[]\OT1/cmss/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; []; ^^^\OT1/cmss/m/n/10.95 ) = [
-]\OML/cmm/m/it/10.95 ^^^^^V[][] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 ^^^
-[]\OT1/cmss/m/n/10.95 ([])[]\OML/cmm/m/it/10.95 :
- []
-
-File: solenoid_3D0.pdf Graphic file (type pdf)
-<use solenoid_3D0.pdf>
-[42
-
-]
-Overfull \hbox (21.93384pt too wide) detected at line 389
-[]\OT1/cmss/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; []; ^^^\OT1/cmss/m/n/10.95 ) = [
-]\OML/cmm/m/it/10.95 ^^^^^V[][] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 ^^^
-[]\OT1/cmss/m/n/10.95 ([])[]\OML/cmm/m/it/10.95 :
- []
-
-File: solenoid_3D0.pdf Graphic file (type pdf)
-<use solenoid_3D0.pdf>
-[43
-
-]
-Overfull \hbox (21.93384pt too wide) detected at line 389
-[]\OT1/cmss/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; []; ^^^\OT1/cmss/m/n/10.95 ) = [
-]\OML/cmm/m/it/10.95 ^^^^^V[][] \OT1/cmss/m/n/10.95 = []\OML/cmm/m/it/10.95 ^^^
-[]\OT1/cmss/m/n/10.95 ([])[]\OML/cmm/m/it/10.95 :
- []
-
-File: torus0_3D.pdf Graphic file (type pdf)
-<use torus0_3D.pdf>
-[44
-
-]
-File: torus_xyview0.pdf Graphic file (type pdf)
-<use torus_xyview0.pdf>
- [45
-
-]
-File: torus_xyview1.pdf Graphic file (type pdf)
-<use torus_xyview1.pdf>
- [46
-
-]
-File: torus1_3D.pdf Graphic file (type pdf)
-<use torus1_3D.pdf>
- [47
-
-]
-File: torus2_3D.pdf Graphic file (type pdf)
-<use torus2_3D.pdf>
- [48
-
-]
-File: torus3_3D.pdf Graphic file (type pdf)
-<use torus3_3D.pdf>
- [49
-
-]
-File: torus4_3D.pdf Graphic file (type pdf)
-<use torus4_3D.pdf>
- [50
-
-]
-File: iter.jpg Graphic file (type bmp)
-<iter.jpg>
- [51
-
-]
-File: torus3_3D.pdf Graphic file (type pdf)
-<use torus3_3D.pdf>
- [52
-
-]
-File: torus3_3D.pdf Graphic file (type pdf)
-<use torus3_3D.pdf>
- [53
-
-]
-File: torus4_3D.pdf Graphic file (type pdf)
-<use torus4_3D.pdf>
- [54
-
-]
-File: torus5_3D.pdf Graphic file (type pdf)
-<use torus5_3D.pdf>
- [55
-
-]
-File: tokamak_stamp.jpg Graphic file (type bmp)
-<tokamak_stamp.jpg>
- [56
-
-]
-File: tokamak_stamp.jpg Graphic file (type bmp)
-<tokamak_stamp.jpg>
- [57
-
-]
-File: tokamak_stamp.jpg Graphic file (type bmp)
-<tokamak_stamp.jpg>
- [58
-
-]
-File: Structure_of_the_magnetosphere_Nasa.pdf Graphic file (type pdf)
-<use Structure_of_the_magnetosphere_Nasa.pdf>
-
-[59
-
-]
-File: Structure_of_the_magnetosphere_Nasa.pdf Graphic file (type pdf)
-<use Structure_of_the_magnetosphere_Nasa.pdf>
- [60
-
-]
-File: Tsyganenko1.png Graphic file (type bmp)
-<Tsyganenko1.png>
- [61
-
-]
-File: dipole0.pdf Graphic file (type pdf)
-<use dipole0.pdf>
- [62
-
-]
-File: dipole1.pdf Graphic file (type pdf)
-<use dipole1.pdf>
- [63
-
-]
-File: dipole2.pdf Graphic file (type pdf)
-<use dipole2.pdf>
- [64
-
-]
-File: dipole3.pdf Graphic file (type pdf)
-<use dipole3.pdf>
- [65
-
-] (./presentation_sketch.toc) [66
-
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [67
-
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
-
-[68
-
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [69
-
-]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [70
-
-]
-File: Lawrence_27_inch_cyclotron_dees_1935.jpg Graphic file (type bmp)
-<Lawrence_27_inch_cyclotron_dees_1935.jpg>
- [71
-
-]
-File: cyclotron0_xy-view.pdf Graphic file (type pdf)
-<use cyclotron0_xy-view.pdf>
- [72
-
-]
-File: cyclotron0_xy-view.pdf Graphic file (type pdf)
-<use cyclotron0_xy-view.pdf>
- [73
-
-]
-File: cyclotron1_xy-view.pdf Graphic file (type pdf)
-<use cyclotron1_xy-view.pdf>
- [74
-
-]
-File: cyclotron_speed1.pdf Graphic file (type pdf)
-<use cyclotron_speed1.pdf>
- [75
-
-] [76
-
-] [77
-
-] [78
-
-] [79
-
-] [80
-
-] [81
-
-]
-\tf@nav=\write6
-\openout6 = `presentation_sketch.nav'.
-
-\tf@toc=\write7
-\openout7 = `presentation_sketch.toc'.
-
-\tf@snm=\write8
-\openout8 = `presentation_sketch.snm'.
-
-
-(./presentation_sketch.aux)
-Package rerunfilecheck Info: File `presentation_sketch.out' has not changed.
-(rerunfilecheck)             Checksum: 5921A6D0A4D592BF31769FE8C0C53C97;1127.
- ) 
+! Unable to load picture or PDF file 'Cyclotron_patent.png'.
+<to be read again> 
+                   }
+l.117 \frame{\titlepage}
+                        
+? x
+ 
 Here is how much of TeX's memory you used:
- 26775 strings out of 476190
- 555529 string characters out of 5812094
- 1077973 words of memory out of 5000000
- 46946 multiletter control sequences out of 15000+600000
- 478582 words of font info for 83 fonts, out of 8000000 for 9000
+ 25946 strings out of 476190
+ 538805 string characters out of 5812094
+ 945983 words of memory out of 5000000
+ 46205 multiletter control sequences out of 15000+600000
+ 469667 words of font info for 35 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 128i,15n,122p,408b,1276s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on presentation_sketch.pdf (81 pages).
+ 128i,4n,122p,413b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.

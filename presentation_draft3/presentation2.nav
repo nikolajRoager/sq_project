@@ -63,42 +63,44 @@
 \headcommand {\beamer@framepages {58}{59}}
 \headcommand {\slideentry {3}{3}{6}{60/61}{Demonstration, particles in a solenoid}{0}}
 \headcommand {\beamer@framepages {60}{61}}
-\headcommand {\slideentry {3}{3}{7}{62/63}{Demonstration, particles in a solenoid}{0}}
-\headcommand {\beamer@framepages {62}{63}}
-\headcommand {\slideentry {3}{3}{8}{64/64}{Demonstration, particles in a solenoid}{0}}
-\headcommand {\beamer@framepages {64}{64}}
-\headcommand {\beamer@sectionpages {21}{64}}
-\headcommand {\beamer@subsectionpages {51}{64}}
-\headcommand {\sectionentry {4}{Introducing Adaptive step size}{65}{Introducing Adaptive step size}{0}}
-\headcommand {\beamer@subsectionpages {65}{64}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{65}{Demonstration: magnetic dipole}}
-\headcommand {\slideentry {4}{1}{1}{65/69}{Demonstration: magnetic dipole}{0}}
-\headcommand {\beamer@framepages {65}{69}}
-\headcommand {\slideentry {4}{1}{2}{70/73}{Demonstration: magnetic dipole}{0}}
-\headcommand {\beamer@framepages {70}{73}}
-\headcommand {\beamer@subsectionpages {65}{73}}
-\headcommand {\beamer@subsectionentry {0}{4}{2}{74}{Dormand Prince 5 (4) method}}
-\headcommand {\slideentry {4}{2}{1}{74/77}{Dormand Prince 5 (4) method}{0}}
-\headcommand {\beamer@framepages {74}{77}}
-\headcommand {\slideentry {4}{2}{2}{78/79}{Dormand Prince 5 (4) method}{0}}
-\headcommand {\beamer@framepages {78}{79}}
-\headcommand {\slideentry {4}{2}{3}{80/80}{Dormand Prince 5 (4) method}{0}}
-\headcommand {\beamer@framepages {80}{80}}
-\headcommand {\slideentry {4}{2}{4}{81/83}{Dormand Prince 5 (4) method}{0}}
-\headcommand {\beamer@framepages {81}{83}}
-\headcommand {\slideentry {4}{2}{5}{84/88}{Dormand Prince 5 (4) method}{0}}
-\headcommand {\beamer@framepages {84}{88}}
-\headcommand {\slideentry {4}{2}{6}{89/93}{Dormand Prince 5 (4) method}{0}}
-\headcommand {\beamer@framepages {89}{93}}
-\headcommand {\beamer@sectionpages {65}{93}}
-\headcommand {\beamer@subsectionpages {74}{93}}
-\headcommand {\sectionentry {5}{Conclusion}{94}{Conclusion}{0}}
-\headcommand {\slideentry {5}{0}{1}{94/96}{}{0}}
-\headcommand {\beamer@framepages {94}{96}}
-\headcommand {\slideentry {5}{0}{2}{97/98}{}{0}}
-\headcommand {\beamer@framepages {97}{98}}
-\headcommand {\beamer@partpages {1}{98}}
-\headcommand {\beamer@subsectionpages {94}{98}}
-\headcommand {\beamer@sectionpages {94}{98}}
-\headcommand {\beamer@documentpages {98}}
+\headcommand {\slideentry {3}{3}{7}{62/62}{Demonstration, particles in a solenoid}{0}}
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\beamer@sectionpages {21}{62}}
+\headcommand {\beamer@subsectionpages {51}{62}}
+\headcommand {\sectionentry {4}{Introducing Adaptive step size}{63}{Introducing Adaptive step size}{0}}
+\headcommand {\beamer@subsectionpages {63}{62}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{63}{Demonstration: magnetic dipole}}
+\headcommand {\slideentry {4}{1}{1}{63/67}{Demonstration: magnetic dipole}{0}}
+\headcommand {\beamer@framepages {63}{67}}
+\headcommand {\slideentry {4}{1}{2}{68/71}{Demonstration: magnetic dipole}{0}}
+\headcommand {\beamer@framepages {68}{71}}
+\headcommand {\beamer@subsectionpages {63}{71}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{72}{Dormand Prince 5 (4) method}}
+\headcommand {\slideentry {4}{2}{1}{72/75}{Dormand Prince 5 (4) method}{0}}
+\headcommand {\beamer@framepages {72}{75}}
+\headcommand {\slideentry {4}{2}{2}{76/77}{Dormand Prince 5 (4) method}{0}}
+\headcommand {\beamer@framepages {76}{77}}
+\headcommand {\slideentry {4}{2}{3}{78/78}{Dormand Prince 5 (4) method}{0}}
+\headcommand {\beamer@framepages {78}{78}}
+\headcommand {\slideentry {4}{2}{4}{79/81}{Dormand Prince 5 (4) method}{0}}
+\headcommand {\beamer@framepages {79}{81}}
+\headcommand {\slideentry {4}{2}{5}{82/85}{Dormand Prince 5 (4) method}{0}}
+\headcommand {\beamer@framepages {82}{85}}
+\headcommand {\slideentry {4}{2}{6}{86/90}{Dormand Prince 5 (4) method}{0}}
+\headcommand {\beamer@framepages {86}{90}}
+\headcommand {\beamer@sectionpages {63}{90}}
+\headcommand {\beamer@subsectionpages {72}{90}}
+\headcommand {\sectionentry {5}{Conclusion}{91}{Conclusion}{0}}
+\headcommand {\slideentry {5}{0}{1}{91/93}{}{0}}
+\headcommand {\beamer@framepages {91}{93}}
+\headcommand {\beamer@subsectionpages {91}{93}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{94}{Extra, the cyclotron}}
+\headcommand {\slideentry {5}{1}{1}{94/97}{Extra, the cyclotron}{0}}
+\headcommand {\beamer@framepages {94}{97}}
+\headcommand {\slideentry {5}{1}{2}{98/101}{Extra, the cyclotron}{0}}
+\headcommand {\beamer@framepages {98}{101}}
+\headcommand {\beamer@partpages {1}{101}}
+\headcommand {\beamer@subsectionpages {94}{101}}
+\headcommand {\beamer@sectionpages {91}{101}}
+\headcommand {\beamer@documentpages {101}}
 \headcommand {\gdef \inserttotalframenumber {37}}
