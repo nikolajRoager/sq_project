@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Theory and physical background 10 min}{7}{0}{2}
+\beamer@sectionintoc {3}{Euler's Method and the 4th order Runge-Kutta Method 15 min}{20}{0}{3}
+\beamer@subsectionintoc {3}{1}{Euler's Method}{24}{0}{3}
+\beamer@subsectionintoc {3}{2}{Higher order Runge-Kutta methods}{42}{0}{3}
+\beamer@subsectionintoc {3}{3}{Demonstration, particles in a solenoid}{50}{0}{3}
+\beamer@sectionintoc {4}{Embedded algorithms, and adaptive step size 15 min}{62}{0}{4}
+\beamer@subsectionintoc {4}{1}{Dormand Prince 5 (4) method}{71}{0}{4}
+\beamer@subsectionintoc {4}{2}{Demonstration: magnetic dipole}{81}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{90}{0}{5}
+\beamer@subsectionintoc {5}{1}{If time permits, the cyclotron}{93}{0}{5}

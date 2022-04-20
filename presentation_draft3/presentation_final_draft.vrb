@@ -1,0 +1,17 @@
+\frametitle{``Correct" way}
+\begin{lstlisting}
+#include <boost/array.hpp>
+#include <boost/numeric/odeint.hpp>
+using namespace boost::numeric::odeint;
+typedef boost::array< double, 6 > state_type;
+...
+size_t steps = integrate_const(
+    runge_kutta4< state_type >(),
+    ODE,   //Lorentz-force
+    Data0 ,//{pos0,v0}
+    0.0 ,  //t0=0
+    T ,    //max time
+    timestep ,//length of each step
+    save_step //User defined save data function
+);
+\end{lstlisting}

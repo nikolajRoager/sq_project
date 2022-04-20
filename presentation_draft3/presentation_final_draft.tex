@@ -97,17 +97,21 @@
 \newcommand{\ol}[1]{\ensuremath{\overline{#1} } }
 \newcommand{\F}[1]{\ensuremath{\mathbb{F}_{#1} } }
 
+\newif\ifdraft
+
+\drafttrue
+%\draftfalse
 
 %Information to be included in the title page:
-\title{Numerical integration of ordinary differential equations: motion of charged particles in electromagnetic fields
-}
+\title{How physics simulations work: simulating particles in electric and magnetic fields}
+%Numerical integration of ordinary differential equations: motion of charged particles in electromagnetic fields}
 \author{Nikolaj Roager Christensen}
 \institute{Student Colloquium in Physics and Astronomy, Aarhus University}
 \date{March 2021}
 
 %\AtBeginSection[]
 %{
-%}
+%ect
 
 %\titlegraphic
 %{
@@ -122,7 +126,6 @@
 }
 \frame{\titlepage}
 }
-
 
 
 \section{Introduction}
@@ -144,22 +147,29 @@
 \end{itemize}
 \end{frame}
 
-
-\section{Theory and physical background}
+\ifdraft
+    \section{Theory and physical background 10 min}
+\else
+    \section{Theory and physical background}
+\fi
 
 \begin{frame}
 \frametitle{Theory: Classical non-relativistic particles}
 \begin{itemize}
 \item<1-> Some repetition from Electrodynamics
-\item<2-> The Lorentz force (SI units):
+\item<2-> The Lorentz force+N2:
 
-\begin{equation*}
-\vec{F} = q ( \vec{v}\times \vec{B}+\vec{E}).
-\end{equation*}
+\begin{align*}
+\vec{F} &= q ( \vec{v}\times \vec{B}+\vec{E}).\\
+m \ddot{\vec{r}}(t) &= q ( \dot{\vec{r}}(t)\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t)).
+\end{align*}
 
 \item<3-> Only 1 particle! so pre-programmed depending on the setup.
 
-\item<4-> Could use potentials $\phi(\vec{r},t)$ $\vec{A}(\vec{r},t)$ and Hamiltonian.
+\item<4-> Could use potentials $\phi(\vec{r},t)$ $\vec{A}(\vec{r},t)$ and Hamiltonian, or Lagrangian.
+
+\item<4-> Other systems would have other differential equations.
+
 \end{itemize}
 \end{frame}
 
@@ -222,14 +232,13 @@ R = \frac{v_\perp m}{|q|B} \quad \omega_c =\frac{|q|B}{m}.
 R \approx \SI{0.5}{\meter}\sin(\theta) \quad T=\frac{2\pi}{\omega_c} \approx \SI{10}{\micro\second}
 \end{equation*}
 }
-
-\only<4-5>{%
-Particles ``follow" magnetic fields.
-}
-
 \end{frame}
 
-\section{Euler's Method and the 4th order Runge-Kutta Method}
+\ifdraft
+    \section{Euler's Method and the 4th order Runge-Kutta Method 15 min}
+\else
+    \section{Euler's Method and the 4th order Runge-Kutta Method}
+\fi
 %What are they, what are not they
 
 \begin{frame}
@@ -237,22 +246,23 @@ Particles ``follow" magnetic fields.
 \begin{itemize}
 \item<1-> {\color{gray} Sources: Zeigler et al. Theory of Modeling and Simulation (Third edition) chapter 3}
 
-\item<1-> Algorithms exists for ODEs:
+\item<1-> We have:
+
+\begin{align*}
+\ddot{\vec{r}}(t) &= \frac{q}{m} ( \dot{\vec{r}}(t)\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t)).
+\end{align*}
+
+\item<2-> Algorithms exists for ODEs:
 
 \begin{equation*}
 \dot{\mathbf{X}} = f_{ode}(\mathbf{X}(t),t).
 \end{equation*}
 
-\item<2-> We have:
-
-\begin{align*}
-\ddot{\vec{r}} &= \frac{q}{m} ( \dot{\vec{r}}\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t)).
-\end{align*}
 
 \item<3-> Here:
 
 \begin{align*}
-\mathbf{X} = \mvec{\vec{r}}{\dot{\vec{r}}} \quad f_{ode}(\vec{r},t) = \mvec{\dot{\vec{r}}}{\frac{q}{m} ( \dot{\vec{r}}\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t))}.
+\mathbf{X} = \mvec{\vec{r}}{\dot{\vec{r}}} \quad f_{ode}(\mathbf{X},t) = \mvec{\dot{\vec{r}}}{\frac{q}{m} ( \dot{\vec{r}}\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t))}.
 \end{align*}
 \end{itemize}
 \end{frame}
@@ -628,9 +638,13 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \only<1>{\includegraphics[width=\linewidth]{solenoid_Rh.pdf}}%
 \end{frame}
 
-\section{Introducing Adaptive step size}
 
-\subsection{Demonstration: magnetic dipole}
+\ifdraft
+    \section{Embedded algorithms, and adaptive step size 15 min}
+\else
+    \section{Embedded algorithms, and adaptive step size}
+\fi
+
 
 \begin{frame}
 \frametitle{Adaptive step size, why}
@@ -793,6 +807,7 @@ h_{new} &= \min_j \left(0.9 h_{old} \left[\frac{\delta_j}{\mathrm{E}_{j}}\right]
 \end{itemize}
 \end{frame}
 
+\subsection{Demonstration: magnetic dipole}
 
 \begin{frame}
 \frametitle{Does it work?}
@@ -870,7 +885,7 @@ Magnetic ``mirror" or ``bottle".
 \end{itemize}
 \end{frame}
 
-\subsection{Extra, the cyclotron}
+\subsection{If time permits, the cyclotron}
 
 \begin{frame}
 \frametitle{Example, cyclotron}
@@ -935,5 +950,7 @@ Magnetic ``mirror" or ``bottle".
 \end{frame}
 
 
+\subsection{If time permits, Cycloid motion.}
+\subsection{If time permits, Toroidal coils.}
 
 \end{document}
