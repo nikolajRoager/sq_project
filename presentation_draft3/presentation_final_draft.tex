@@ -274,20 +274,43 @@ R \approx \SI{0.5}{\meter}\sin(\theta) \quad T=\frac{2\pi}{\omega_c} \approx \SI
 auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
     //Extract position and velocity from data
     vec pos = vec(Data[0],Data[1],Data[2]);
-    vec velocity = vec(Data[3],Data[4],Data[5]);
-
+    vec V = vec(Data[3],Data[4],Data[5]);
     //Lorentz+Newtons 2nd law
     vec F = Charge*(Fields.get_Efield(pos,t)+
-        cross(velocity,Fields.get_Bfield(pos,t)));
+        cross(V,Fields.get_Bfield(pos,t)));
     vec dVdt = F*Inv_mass;
-
     //Save derivative of data
-    dDatadt[0]=velocity.x;
-    ...
-};
+    dDatadt[0]=V.x;dDatadt[1]=V.y;dDatadt[2]=V.z;
+    dDatadt[3]=dVdt.x;dDatadt[4]=dVdt.y;dDatadt[5]=dVdt.z;
+    }
 \end{lstlisting}
 \end{frame}
 
+\begin{frame}
+\frametitle{Ordinary differential equation's.}
+\begin{itemize}
+\item<1-> {\color{gray} Sources: Zeigler et al. Theory of Modeling and Simulation (Third edition) chapter 3}
+
+\item<1-> We have:
+
+\begin{align*}
+\ddot{\vec{r}}(t) &= \frac{q}{m} ( \dot{\vec{r}}(t)\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t)).
+\end{align*}
+
+\item<1-> Algorithms exists for ODEs:
+
+\begin{equation*}
+\dot{\mathbf{X}} = f_{ode}(\mathbf{X}(t),t).
+\end{equation*}
+
+
+\item<1-> Here:
+
+\begin{align*}
+\mathbf{X} = \mvec{\vec{r}}{\dot{\vec{r}}} \quad f_{ode}(\mathbf{X},t) = \mvec{\dot{\vec{r}}}{\frac{q}{m} ( \dot{\vec{r}}\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t))}.
+\end{align*}
+\end{itemize}
+\end{frame}
 
 \subsection{Euler's Method}
 
@@ -885,7 +908,7 @@ Magnetic ``mirror" or ``bottle".
 \end{itemize}
 \end{frame}
 
-\subsection{If time permits, the cyclotron}
+%\subsection{If time permits, the cyclotron}
 
 \begin{frame}
 \frametitle{Example, cyclotron}
@@ -950,7 +973,7 @@ Magnetic ``mirror" or ``bottle".
 \end{frame}
 
 
-\subsection{If time permits, Cycloid motion.}
-\subsection{If time permits, Toroidal coils.}
+%\subsection{If time permits, Cycloid motion.}
+%\subsection{If time permits, Toroidal coils.}
 
 \end{document}

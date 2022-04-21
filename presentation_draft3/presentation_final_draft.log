@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/Arch Linux) (preloaded format=xelatex 2021.10.11)  19 APR 2022 19:56
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/Arch Linux) (preloaded format=xelatex 2021.10.11)  21 APR 2022 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1176,8 +1176,10 @@ LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <6> not available
 
  (./presentation_final_draft.vrb) [23
 
+] [24
+
 ]
-Overfull \hbox (28.33527pt too wide) detected at line 326
+Overfull \hbox (28.33527pt too wide) detected at line 349
 []\OT1/cmss/m/n/10.95 ([][] + []) = []([][]) + [][][]([]([][])\OML/cmm/m/it/10.
 95 ; [][]\OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
@@ -1185,41 +1187,27 @@ Overfull \hbox (28.33527pt too wide) detected at line 326
 File: euler_demo1.pdf Graphic file (type pdf)
 <use euler_demo1.pdf>
 
-Overfull \vbox (5.3999pt too high) detected at line 326
- []
-
-[24
-
-]
-Overfull \hbox (28.33527pt too wide) detected at line 326
-[]\OT1/cmss/m/n/10.95 ([][] + []) = []([][]) + [][][]([]([][])\OML/cmm/m/it/10.
-95 ; [][]\OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
- []
-
-File: euler_demo1.pdf Graphic file (type pdf)
-<use euler_demo1.pdf>
-
-Overfull \vbox (5.3999pt too high) detected at line 326
+Overfull \vbox (5.3999pt too high) detected at line 349
  []
 
 [25
 
 ]
-Overfull \hbox (28.33527pt too wide) detected at line 326
+Overfull \hbox (28.33527pt too wide) detected at line 349
 []\OT1/cmss/m/n/10.95 ([][] + []) = []([][]) + [][][]([]([][])\OML/cmm/m/it/10.
 95 ; [][]\OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
 
-File: euler_demo2.pdf Graphic file (type pdf)
-<use euler_demo2.pdf>
+File: euler_demo1.pdf Graphic file (type pdf)
+<use euler_demo1.pdf>
 
-Overfull \vbox (5.3999pt too high) detected at line 326
+Overfull \vbox (5.3999pt too high) detected at line 349
  []
 
 [26
 
 ]
-Overfull \hbox (28.33527pt too wide) detected at line 326
+Overfull \hbox (28.33527pt too wide) detected at line 349
 []\OT1/cmss/m/n/10.95 ([][] + []) = []([][]) + [][][]([]([][])\OML/cmm/m/it/10.
 95 ; [][]\OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
@@ -1227,12 +1215,24 @@ Overfull \hbox (28.33527pt too wide) detected at line 326
 File: euler_demo2.pdf Graphic file (type pdf)
 <use euler_demo2.pdf>
 
-Overfull \vbox (5.3999pt too high) detected at line 326
+Overfull \vbox (5.3999pt too high) detected at line 349
  []
 
 [27
 
-] [28
+]
+Overfull \hbox (28.33527pt too wide) detected at line 349
+[]\OT1/cmss/m/n/10.95 ([][] + []) = []([][]) + [][][]([]([][])\OML/cmm/m/it/10.
+95 ; [][]\OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
+ []
+
+File: euler_demo2.pdf Graphic file (type pdf)
+<use euler_demo2.pdf>
+
+Overfull \vbox (5.3999pt too high) detected at line 349
+ []
+
+[28
 
 ] [29
 
@@ -1240,49 +1240,49 @@ Overfull \vbox (5.3999pt too high) detected at line 326
 
 ] [31
 
-]
-Overfull \hbox (13.59027pt too wide) detected at line 374
-[]
- []
-
-[32
+] [32
 
 ]
-Overfull \hbox (13.59027pt too wide) detected at line 374
+Overfull \hbox (13.59027pt too wide) detected at line 397
 []
  []
 
 [33
 
 ]
-Overfull \hbox (13.59027pt too wide) detected at line 374
+Overfull \hbox (13.59027pt too wide) detected at line 397
 []
  []
 
 [34
 
 ]
-Overfull \hbox (13.59027pt too wide) detected at line 374
+Overfull \hbox (13.59027pt too wide) detected at line 397
 []
  []
 
 [35
 
 ]
-Overfull \hbox (13.59027pt too wide) detected at line 374
+Overfull \hbox (13.59027pt too wide) detected at line 397
 []
  []
 
 [36
 
 ]
-Overfull \hbox (13.59027pt too wide) detected at line 374
+Overfull \hbox (13.59027pt too wide) detected at line 397
 []
  []
 
 [37
 
-] [38
+]
+Overfull \hbox (13.59027pt too wide) detected at line 397
+[]
+ []
+
+[38
 
 ] [39
 
@@ -1292,47 +1292,47 @@ Overfull \hbox (13.59027pt too wide) detected at line 374
 
 ] [42
 
+] [43
+
 ]
-Overfull \hbox (65.73567pt too wide) detected at line 447
+Overfull \hbox (65.73567pt too wide) detected at line 470
 []
  []
 
 File: Runge-Kutta_slopes.pdf Graphic file (type pdf)
 <use Runge-Kutta_slopes.pdf>
 
-Overfull \hbox (8.83017pt too wide) detected at line 447
+Overfull \hbox (8.83017pt too wide) detected at line 470
 [][][] $[]$[][][][][][][][] $[]$[][][][][][] 
  []
 
-[43
-
-] [44
+[44
 
 ] [45
 
-]
-\openout4 = `presentation_final_draft.vrb'.
-
- (./presentation_final_draft.vrb) [46
+] [46
 
 ]
 \openout4 = `presentation_final_draft.vrb'.
 
-
-(./presentation_final_draft.vrb) [47
-
-]
-\openout4 = `presentation_final_draft.vrb'.
-
- (./presentation_final_draft.vrb) [48
+ (./presentation_final_draft.vrb) [47
 
 ]
 \openout4 = `presentation_final_draft.vrb'.
 
 
-(./presentation_final_draft.vrb) [49
+(./presentation_final_draft.vrb) [48
 
-] [50
+]
+\openout4 = `presentation_final_draft.vrb'.
+
+ (./presentation_final_draft.vrb) [49
+
+]
+\openout4 = `presentation_final_draft.vrb'.
+
+
+(./presentation_final_draft.vrb) [50
 
 ] [51
 
@@ -1340,101 +1340,98 @@ Overfull \hbox (8.83017pt too wide) detected at line 447
 
 ] [53
 
+] [54
+
 ]
 File: Solenoid_compare001_3D.pdf Graphic file (type pdf)
 <use Solenoid_compare001_3D.pdf>
 
-Overfull \vbox (0.80312pt too high) detected at line 586
+Overfull \vbox (0.80312pt too high) detected at line 609
  []
 
 
-Overfull \vbox (2.9274pt too high) detected at line 586
- []
-
-[54
-
-]
-File: Solenoid_compare01_3D.pdf Graphic file (type pdf)
-<use Solenoid_compare01_3D.pdf>
-
-Overfull \vbox (0.80312pt too high) detected at line 603
- []
-
-
-Overfull \vbox (2.9274pt too high) detected at line 603
+Overfull \vbox (2.9274pt too high) detected at line 609
  []
 
 [55
 
 ]
-File: Solenoid_compare1_3D.pdf Graphic file (type pdf)
-<use Solenoid_compare1_3D.pdf>
+File: Solenoid_compare01_3D.pdf Graphic file (type pdf)
+<use Solenoid_compare01_3D.pdf>
 
-Overfull \vbox (0.80312pt too high) detected at line 620
+Overfull \vbox (0.80312pt too high) detected at line 626
  []
 
 
-Overfull \vbox (2.9274pt too high) detected at line 620
+Overfull \vbox (2.9274pt too high) detected at line 626
  []
 
 [56
 
 ]
-File: solenoid_euler_yz_view.pdf Graphic file (type pdf)
-<use solenoid_euler_yz_view.pdf>
+File: Solenoid_compare1_3D.pdf Graphic file (type pdf)
+<use Solenoid_compare1_3D.pdf>
 
-Overfull \vbox (10.30595pt too high) detected at line 627
+Overfull \vbox (0.80312pt too high) detected at line 643
+ []
+
+
+Overfull \vbox (2.9274pt too high) detected at line 643
  []
 
 [57
 
 ]
-File: solenoid_RK_yz_view.pdf Graphic file (type pdf)
-<use solenoid_RK_yz_view.pdf>
+File: solenoid_euler_yz_view.pdf Graphic file (type pdf)
+<use solenoid_euler_yz_view.pdf>
 
-Overfull \vbox (10.30595pt too high) detected at line 627
+Overfull \vbox (10.30595pt too high) detected at line 650
  []
 
 [58
 
 ]
+File: solenoid_RK_yz_view.pdf Graphic file (type pdf)
+<use solenoid_RK_yz_view.pdf>
+
+Overfull \vbox (10.30595pt too high) detected at line 650
+ []
+
+[59
+
+]
 File: solenoid_euler_Rt.pdf Graphic file (type pdf)
 <use solenoid_euler_Rt.pdf>
- [59
+ [60
 
 ]
 File: solenoid_RK4_Rt.pdf Graphic file (type pdf)
 <use solenoid_RK4_Rt.pdf>
- [60
+ [61
 
 ]
 File: solenoid_Rh.pdf Graphic file (type pdf)
 <use solenoid_Rh.pdf>
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <14.4> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 639.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 662.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 639.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 662.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <7> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 639.
- [61
-
-] [62
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 662.
+ [62
 
 ] [63
+
+] [64
 
 ]
 File: dipole.pdf Graphic file (type pdf)
 <use dipole.pdf>
- [64
+ [65
 
 ]
 File: Cyclotron_patent.png Graphic file (type bmp)
 <Cyclotron_patent.png>
- [65
-
-]
-File: dipole.pdf Graphic file (type pdf)
-<use dipole.pdf>
  [66
 
 ]
@@ -1443,8 +1440,8 @@ File: dipole.pdf Graphic file (type pdf)
  [67
 
 ]
-File: dipole6.pdf Graphic file (type pdf)
-<use dipole6.pdf>
+File: dipole.pdf Graphic file (type pdf)
+<use dipole.pdf>
  [68
 
 ]
@@ -1457,88 +1454,88 @@ File: dipole6.pdf Graphic file (type pdf)
 <use dipole6.pdf>
  [70
 
-] [71
+]
+File: dipole6.pdf Graphic file (type pdf)
+<use dipole6.pdf>
+ [71
 
 ] [72
 
-]
-[73
+] [73
 
-] [74
+]
+[74
 
 ] [75
 
 ] [76
 
+] [77
+
 ]
-Overfull \hbox (23.15236pt too wide) in paragraph at lines 785--785
+Overfull \hbox (23.15236pt too wide) in paragraph at lines 808--808
 [][]  
  []
 
-[77
-
-] [78
+[78
 
 ] [79
 
 ] [80
 
+] [81
+
 ]
 File: dipole2.pdf Graphic file (type pdf)
 <use dipole2.pdf>
- [81
+ [82
 
 ]
 File: dipole3.pdf Graphic file (type pdf)
 <use dipole3.pdf>
- [82
+ [83
 
 ]
 File: dipole_R.pdf Graphic file (type pdf)
 <use dipole_R.pdf>
- [83
+ [84
 
 ]
 File: dipole_h.pdf Graphic file (type pdf)
 <use dipole_h.pdf>
- [84
+ [85
 
 ]
 File: dipole4.pdf Graphic file (type pdf)
 <use dipole4.pdf>
- [85
+ [86
 
 ]
 File: dipole5.pdf Graphic file (type pdf)
 <use dipole5.pdf>
- [86
+ [87
 
 ]
 File: dipole6.pdf Graphic file (type pdf)
 <use dipole6.pdf>
- [87
+ [88
 
 ]
 File: Fields_in_magnetic_bottles.jpg Graphic file (type bmp)
 <Fields_in_magnetic_bottles.jpg>
- [88
+ [89
 
 ]
 File: magnetic_bottles.jpg Graphic file (type bmp)
 <magnetic_bottles.jpg>
- [89
-
-] [90
+ [90
 
 ] [91
 
-]
-[92
+] [92
 
 ]
-File: Cyclotron_patent.png Graphic file (type bmp)
-<Cyclotron_patent.png>
- [93
+[93
 
 ]
 File: Cyclotron_patent.png Graphic file (type bmp)
@@ -1556,24 +1553,29 @@ File: Cyclotron_patent.png Graphic file (type bmp)
  [96
 
 ]
+File: Cyclotron_patent.png Graphic file (type bmp)
+<Cyclotron_patent.png>
+ [97
+
+]
 File: cyclotron_noadapt_xy-view.pdf Graphic file (type pdf)
 <use cyclotron_noadapt_xy-view.pdf>
- [97
+ [98
 
 ]
 File: cyclotron_overadapt_xy-view.pdf Graphic file (type pdf)
 <use cyclotron_overadapt_xy-view.pdf>
- [98
-
-]
-File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
-<use cyclotron_badadapt_xy-view.pdf>
  [99
 
 ]
 File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
 <use cyclotron_badadapt_xy-view.pdf>
  [100
+
+]
+File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
+<use cyclotron_badadapt_xy-view.pdf>
+ [101
 
 ]
 \tf@nav=\write6
@@ -1588,15 +1590,15 @@ File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
  (./presentation_final_draft.aux)
 Package rerunfilecheck Info: File `presentation_final_draft.out' has not change
 d.
-(rerunfilecheck)             Checksum: 97ED5E7FECA2DD8EA7DEC627D718A210;2378.
+(rerunfilecheck)             Checksum: 8AB7E46EA56961A67C364A6D568A2F8D;2157.
  ) 
 Here is how much of TeX's memory you used:
- 24450 strings out of 476919
- 469632 string characters out of 5827673
- 1080280 words of memory out of 5000000
- 43871 multiletter control sequences out of 15000+600000
+ 24453 strings out of 476919
+ 469630 string characters out of 5827673
+ 1104280 words of memory out of 5000000
+ 43874 multiletter control sequences out of 15000+600000
  412865 words of font info for 96 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  131i,19n,132p,437b,1211s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on presentation_final_draft.pdf (100 pages).
+Output written on presentation_final_draft.pdf (101 pages).
