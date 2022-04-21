@@ -1,17 +1,16 @@
-\frametitle{``Correct" way}
+\frametitle{RK4 Implementations (2/2)}
 \begin{lstlisting}
-#include <boost/array.hpp>
-#include <boost/numeric/odeint.hpp>
-using namespace boost::numeric::odeint;
-typedef boost::array< double, 6 > state_type;
-...
-size_t steps = integrate_const(
-    runge_kutta4< state_type >(),
-    ODE,   //Lorentz-force
-    Data0 ,//{pos0,v0}
-    0.0 ,  //t0=0
-    T ,    //max time
-    timestep ,//length of each step
-    save_step //User defined save data function
-);
+
+    //substep 3
+    temp=Data+timestep*K2/2;
+    ODE(temp,K3,t+timestep/2);
+
+    //substep 4
+    temp=Data+timestep*K3;
+    ODE(temp,K4,t+timestep);
+
+    //Read data
+    Data+=timestep*(K1+2.0*K2+2.0*K3+K4)/6.0;
+    save_step( Data , i*timestep );}
+}
 \end{lstlisting}

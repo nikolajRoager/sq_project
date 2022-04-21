@@ -324,7 +324,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 
 \item<2-> Can we find $\mathbf{X}(t_0+h)$ for $h>0$?.
 
-\item<3-> (Explicit Forward) Euler's Method:
+\item<3-> Euler's Method:
 
 \begin{equation*}
 \mathbf{X}(t_0+h) = \mathbf{X}(t_0)+h f_{ode}(\mathbf{X}(t_0),t_0).
@@ -362,9 +362,13 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \only<3->{\mathbf{X}(t_{i}+h) = \mathbf{X}(t_{i})+h f_{ode}(\mathbf{X}(t_i),t_i)+h^2\ldots +\ldots.}
 \end{equation*}
 
-\item<3-> Local error  $~h^2$. Global error: $~h^1$.
+\item<4-> Local error  $~h^2$.
 
-\item<4-> Argument suggests we need $\dot{f}_{ode},\ddot{f}_{ode},\ldots$
+\item<5-> Global error: $~h^1$: All points converges to true path.
+
+\item<6-> We want ``better" (larger $h$  (fewer steps, fewer calls), same error).
+
+\item<7-> Argument suggests we need $\dot{f}_{ode},\ddot{f}_{ode},\ldots$, we don't!
 \end{itemize}
 \end{frame}
 
@@ -378,17 +382,17 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) \only<1-3>{=\int_{t_i}^{t_{i+1}}} \only<1>{\dot{\mathbf{X}}(t_i) dt}\only<2-3>{f_{ode}(\mathbf{X}(t_i),t_i) dt }\only<3->{ = h f_{ode}(\mathbf{X}(\tau),\tau)}.
 \end{equation*}
 
-\item <2-> \textit{Mean Value theorem for integrals} $t_i\leq \tau\leq t_{i+1}$.
+\item <3-> \textit{Mean Value theorem for integrals} $t_i\leq \tau\leq t_{i+1}$.
 
-\item<4-> Guess $\tau=t_i$. Good guess, if $\dot{f}_{ode}\approx 0$.
+\item<4-> Only possible guess: $\tau=t_i$. Good guess, if $\dot{f}_{ode}\approx 0$.
 
 \item<5-> More generally, (\textit{Explicit} and \textit{single step}), Runge-Kutta family:
 
 \begin{align*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \int_{t_i}^{t'} f_{ode}(\mathbf{X}(t_i),t_i) dt + \ldots \int_{t^{(m)}}^{t_{i+1}} f_{ode}(\mathbf{X}(t_i),t_i) dt \only<6->{,\\ &=  \sum_{j=1}^{m} h_j f_{ode}(\mathbf{X}(\tau_j),\tau_j)}.
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \int_{t_i}^{t'} f_{ode}(\mathbf{X}(t),t) dt + \ldots \int_{t^{(m)}}^{t_{i+1}} f_{ode}(\mathbf{X}(t),t) dt \only<6->{,\\ &=  \sum_{j=1}^{m} h_j f_{ode}(\mathbf{X}(\tau_j),\tau_j)}.
 \end{align*}
 
-\item<6-> Use $f_{ode}(\mathbf{X}(t_i),t_i)$ to approximate $\mathbf{X}(\tau_1)$.
+\item<6-> Use $f_{ode}(\mathbf{X}(t_i),t_i)$ to approximate $\mathbf{X}(\tau_1)$ to approximate $\mathbf{X}(\tau_2)$ etc.
 
 
 \item<1-> {\color{gray} L. Zheng, X. Zhang, Modeling and Analysis of Modern Fluid Problems, 2017, chapter 8}:
@@ -418,8 +422,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 
 \item<3-> Want exact for $p$'th order polynomial.
 
-\item<4-> Taylor series analogy: error  $~h^p$.
-
+\item<4-> Taylor series analogy: Local error  $~h^p$, global $~h^{p-1}$.
 
 \item<1-> {{\color{gray} Martha L. Abell, James P. Braselton, Differential Equations with Mathematica (Fourth Edition), 2016}}:
 \end{itemize}
@@ -438,7 +441,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \begin{align*}
 \mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \frac{h}{2}(\mathbf{k}_1+\mathbf{k}_2)\\
 \mathbf{k}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
-\mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_1,t_i+h)
+\mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_1,t_i+h).
 \end{align*}
 
 \end{itemize}
@@ -456,7 +459,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \mathbf{k}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
 \mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+\frac{h}{2}\mathbf{k}_1,t_i+\frac{h}{2})\\
 \mathbf{k}_3 &= f_{ode}(\mathbf{X}(t_i)+\frac{h}{2}\mathbf{k}_2,t_i+\frac{h}{2})\\
-\mathbf{k}_4 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_3,t_i+h)
+\mathbf{k}_4 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_3,t_i+h).
 \end{align*}
 
 \end{itemize}
@@ -468,26 +471,6 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \end{column}
 \end{columns}
 \end{frame}
-
-\begin{frame}
-\frametitle{The General explicit Runge Kutta method}
-\begin{itemize}
-
-\item<1-> General explicit, single step, fixed size, Runge Kutta method
-
-\item<2-> Expressed in Butcher tableu:
-
-\begin{tabular}{l | @{\quad} c @{\quad} c @{\quad} c}
-$c_1=0$ \\
-$c_2$ & $a_{21}$\\
-$c_3$ & $a_{31}$ &  $a_{32}$\\
-$c_n$ & $a_{n1}$ &  $a_{n2}$ & $\hdots$\\
-\midrule
-& $b_1$ & $b_2$ & $\hdots$
-\end{tabular}
-\end{itemize}
-\end{frame}
-
 
 \begin{frame}[fragile]
 \frametitle{Euler Implementations}
@@ -506,10 +489,6 @@ for (size_t i = 1; i < time_res; ++i)
 };
 \end{lstlisting}
 \end{frame}
-
-
-
-
 
 \begin{frame}[fragile]
 \frametitle{RK4 Implementations (1/2)}
@@ -545,31 +524,31 @@ for (size_t i = 1; i < time_res; ++i)
 
     //Read data
     Data+=timestep*(K1+2.0*K2+2.0*K3+K4)/6.0;
-    save_step( Data , i*timestep );
+    save_step( Data , i*timestep );}
 }
 \end{lstlisting}
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{``Correct" way}
-\begin{lstlisting}
-#include <boost/array.hpp>
-#include <boost/numeric/odeint.hpp>
-using namespace boost::numeric::odeint;
-typedef boost::array< double, 6 > state_type;
-...
-size_t steps = integrate_const(
-    runge_kutta4< state_type >(),
-    ODE,   //Lorentz-force
-    Data0 ,//{pos0,v0}
-    0.0 ,  //t0=0
-    T ,    //max time
-    timestep ,//length of each step
-    save_step //User defined save data function
-);
-\end{lstlisting}
-\end{frame}
+%\begin{frame}[fragile]
+%\frametitle{``Correct" way}
+%\begin{lstlisting}
+%#include <boost/array.hpp>
+%#include <boost/numeric/odeint.hpp>
+%using namespace boost::numeric::odeint;
+%typedef boost::array< double, 6 > state_type;
+%...
+%size_t steps = integrate_const(
+%    runge_kutta4< state_type >(),
+%    ODE,   //Lorentz-force
+%    Data0 ,//{pos0,v0}
+%    0.0 ,  //t0=0
+%    T ,    //max time
+%    timestep ,//length of each step
+%    save_step //User defined save data function
+%);
+%\end{lstlisting}
+%\end{frame}
 
 \subsection{Demonstration, particles in a solenoid}
 
@@ -580,14 +559,14 @@ size_t steps = integrate_const(
 \item<1-> Test, same proton in a solenoid use $\theta=\ang{60}$ reference, had:
 
 \begin{equation*}
-R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\pi}{\omega_c} \approx \SI{10}{\micro\second}
+R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\pi}{\omega_c} \approx \SI{10}{\micro\second}.
 \end{equation*}
 
 \item<2-> Compare Analytic, Euler, Runge-Kutta 4.
 
 \item<3-> Consider $\theta=\ang{60}$ at different $h$.
 
-\item<4-> Check error on $|\vec{v}|$, $R=\sqrt{y^2+z^2}$ and $x(t)$.
+\item<4-> Check error on $|\vec{v}|$, $R=\sqrt{y^2+z^2}$.
 \end{itemize}
 \end{frame}
 
@@ -670,12 +649,12 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 
 \begin{frame}
-\frametitle{Adaptive step size, why}
+\frametitle{What is not to like?}
 
 \begin{columns}
 \begin{column}{0.5\linewidth}
 \begin{itemize}
-\item <1-> $h$ must be small ``enough"
+\item <1-> $h$ must be small ``enough".
 
 \item <2-> Hard to pick, and may change:
 
@@ -683,7 +662,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \item <4-> Time dependent fields (here the cyclotron, bad example)
 
-\item <5-> Let the computer pick $h$.
+\item <5-> Let the computer pick $h$ for error.
 
 \end{itemize}
 \end{column}

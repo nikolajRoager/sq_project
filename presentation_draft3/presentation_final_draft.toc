@@ -2,7 +2,7 @@
 \beamer@sectionintoc {2}{Theory and physical background 10 min}{7}{0}{2}
 \beamer@sectionintoc {3}{Euler's Method and the 4th order Runge-Kutta Method 15 min}{20}{0}{3}
 \beamer@subsectionintoc {3}{1}{Euler's Method}{25}{0}{3}
-\beamer@subsectionintoc {3}{2}{Higher order Runge-Kutta methods}{43}{0}{3}
+\beamer@subsectionintoc {3}{2}{Higher order Runge-Kutta methods}{46}{0}{3}
 \beamer@subsectionintoc {3}{3}{Demonstration, particles in a solenoid}{51}{0}{3}
 \beamer@sectionintoc {4}{Embedded algorithms, and adaptive step size 15 min}{63}{0}{4}
 \beamer@subsectionintoc {4}{1}{Dormand Prince 5 (4) method}{72}{0}{4}
