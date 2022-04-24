@@ -281,8 +281,8 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
     vec dVdt = F*Inv_mass;
     //Save derivative of data
     dDatadt[0]=V.x;dDatadt[1]=V.y;dDatadt[2]=V.z;
-    dDatadt[3]=dVdt.x;dDatadt[4]=dVdt.y;dDatadt[5]=dVdt.z;
-    }
+    dDatadt[3]=dVdt.x;Datadt[4]=dVdt.y;dDatadt[5]=dVdt.z;
+    };
 \end{lstlisting}
 \end{frame}
 
@@ -379,7 +379,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \item<1-> In general:
 
 \begin{equation*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) \only<1-3>{=\int_{t_i}^{t_{i+1}}} \only<1>{\dot{\mathbf{X}}(t_i) dt}\only<2-3>{f_{ode}(\mathbf{X}(t_i),t_i) dt }\only<3->{ = h f_{ode}(\mathbf{X}(\tau),\tau)}.
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) \only<1-3>{=\int_{t_i}^{t_{i+1}}} \only<1>{\dot{\mathbf{X}}(t) dt}\only<2-3>{f_{ode}(\mathbf{X}(t),t) dt }\only<3->{ = h f_{ode}(\mathbf{X}(\tau),\tau)}.
 \end{equation*}
 
 \item <3-> \textit{Mean Value theorem for integrals} $t_i\leq \tau\leq t_{i+1}$.
@@ -392,7 +392,7 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 \mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \int_{t_i}^{t'} f_{ode}(\mathbf{X}(t),t) dt + \ldots \int_{t^{(m)}}^{t_{i+1}} f_{ode}(\mathbf{X}(t),t) dt \only<6->{,\\ &=  \sum_{j=1}^{m} h_j f_{ode}(\mathbf{X}(\tau_j),\tau_j)}.
 \end{align*}
 
-\item<6-> Use $f_{ode}(\mathbf{X}(t_i),t_i)$ to approximate $\mathbf{X}(\tau_1)$ to approximate $\mathbf{X}(\tau_2)$ etc.
+\item<6-> Guess $\tau_1 = t_i$ use $f_{ode}(\mathbf{X}(t_i),t_i)$ to approximate $\mathbf{X}(\tau_2)$ to approximate $\mathbf{X}(\tau_3)$ etc.
 
 
 \item<1-> {\color{gray} L. Zheng, X. Zhang, Modeling and Analysis of Modern Fluid Problems, 2017, chapter 8}:
@@ -422,12 +422,30 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 
 \item<3-> Want exact for $p$'th order polynomial.
 
-\item<4-> Taylor series analogy: Local error  $~h^p$, global $~h^{p-1}$.
+\item<4-> Taylor series analogy: Local error  $~h^{p+1}$, global $~h^{p}$.
 
 \item<1-> {{\color{gray} Martha L. Abell, James P. Braselton, Differential Equations with Mathematica (Fourth Edition), 2016}}:
 \end{itemize}
 \end{frame}
 
+
+\begin{frame}
+\frametitle{The General explicit Runge Kutta method}
+\begin{itemize}
+
+
+\item<1-> Expressed in Butcher tableu:
+
+\begin{tabular}{l | @{\quad} c @{\quad} c @{\quad} c}
+$c_1=0$ \\
+$c_2$ & $a_{21}$\\
+$c_3$ & $a_{31}$ &  $a_{32}$\\
+$c_n$ & $a_{n1}$ &  $a_{n2}$ & $\hdots$\\
+\midrule
+& $b_1$ & $b_2$ & $\hdots$
+\end{tabular}
+\end{itemize}
+\end{frame}
 
 \subsection{Higher order Runge-Kutta methods}
 
@@ -654,9 +672,9 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \begin{columns}
 \begin{column}{0.5\linewidth}
 \begin{itemize}
-\item <1-> $h$ must be small ``enough".
+\item <2-> Usually don't know error.
 
-\item <2-> Hard to pick, and may change:
+\item <2-> Hard to pick $h$ , and may change:
 
 \item <3-> Inhomogeneous fields (here, a true dipole)
 
@@ -703,7 +721,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \item <3-> strong field, large change, short steps.
 
-\item <4-> No analytical solution (afaik.)
+\item <4-> No analytical solution.
 
 
 \end{itemize}
@@ -728,15 +746,16 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \subsection{Dormand Prince 5 (4) method}
 
 \begin{frame}
-\frametitle{Runge-Kutta Adaptive step size, how}
+\frametitle{Embedded Runge-Kutta algorithms}
 \begin{itemize}
-\item <1-> Reduce $h$ until the ``error" is small enough
+\item <1-> Need estimate for error.
 
-\item <2-> Use 2 different order methods, $\mathbf{x}^{(p+1)}(t_{i+1})$, $\mathbf{x}^{(p)}(t_{i+1})$.
+\item <2-> Runge-Kutta step $\mathbf{X}^{(p)}(t_{i+1})$ will converge to $\mathbf{X}(t_{i+1})$.
+\item <3-> Use 2 different order methods, $\mathbf{X}^{(p-1)}(t_{i+1})$, $\mathbf{X}^{(p)}(t_{i+1})$.
 
-\item <3-> Approximate ``Error" as  $\mathbf{E} = |\mathbf{x}^{(p+1)}(t_{i+1})-\mathbf{x}^{(p)}(t_{i+1})|$.
+\item <4-> Approximate ``Error" as  $\mathbf{E}_j = |\mathbf{X}^{(p-1)}_j(t_{i+1})-\mathbf{X}^{(p)}_j(t_{i+1})|$.
 
-\item <4-> Adjust step size to keep the error(s) small (Implementations differ!).
+\item <5-> Adjust step size to keep the error(s) small (Implementations differ!).
 
 {\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and AppliMathematics}
 \begin{equation}
