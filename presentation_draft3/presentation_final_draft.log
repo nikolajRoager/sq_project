@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/Arch Linux) (preloaded format=xelatex 2021.10.11)  25 APR 2022 23:19
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/Arch Linux) (preloaded format=xelatex 2021.10.11)  26 APR 2022 09:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1575,12 +1575,12 @@ File: cyclotron_badadapt_xy-view.pdf Graphic file (type pdf)
 (./presentation_final_draft.aux)
 Package rerunfilecheck Info: File `presentation_final_draft.out' has not change
 d.
-(rerunfilecheck)             Checksum: 5564903B016DEEE988BEAE486BF721A6;2157.
+(rerunfilecheck)             Checksum: 3BE7F5879FF9BB18E2520E8D8DC6DD09;2034.
  ) 
 Here is how much of TeX's memory you used:
  24435 strings out of 476919
  469374 string characters out of 5827673
- 1104280 words of memory out of 5000000
+ 1105280 words of memory out of 5000000
  43858 multiletter control sequences out of 15000+600000
  412865 words of font info for 96 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
