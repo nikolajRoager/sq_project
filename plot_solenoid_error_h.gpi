@@ -2,12 +2,11 @@ set terminal pdf
 set size ratio 0.5
 set output 'solenoid_Rh.pdf'
 set ylabel 'R error $/R$'
-set xlabel '$h/\mu s$'
+set xlabel '$\Delta t/T_c$'
 set logscale y
 set logscale x
 set key out
 set  title 'relative global R error '
 plot \
-'out/out_RK4_lib_timesteps/Final.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title 'RK4-boost',\
-'out/out_RK4_timesteps/Final.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title 'RK4-mine',\
-'out/out_euler_timesteps/Final.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title 'Euler'
+'out/out_RK4_timesteps_1/Final.tsv' index 0 using ($1/10.439684835648404):abs(1- 0.4597589020078102/sqrt($4*$4+$3*$3)) with lines  title 'RK4-mine',\
+'out/out_euler_timesteps/Final.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title 'Euler'

@@ -107,7 +107,7 @@
 %Numerical integration of ordinary differential equations: motion of charged particles in electromagnetic fields}
 \author{Nikolaj Roager Christensen}
 \institute{Student Colloquium in Physics and Astronomy, Aarhus University}
-\date{March 2021}
+\date{May 2022 CE}
 
 %\AtBeginSection[]
 %{
@@ -122,7 +122,8 @@
 {
 \setbeamertemplate{background}
 {
-    \includegraphics[height=\paperheight]{dipole_preface.png}
+    \centering
+    \includegraphics[width=\paperwidth]{dipole_preface.png}
 }
 \frame{\titlepage}
 }
@@ -131,19 +132,20 @@
 \section{Introduction}
 
 \begin{frame}
-\frametitle{How physics simulations work: simulating particles in electric and magnetic fields}
+\frametitle{How physics simulations work: simulating particles in electric and magnetic fields.}
 \tableofcontents
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Introduction, what and why}
+\frametitle{Motivation and introductions.}
 \begin{itemize}
 \item<1-> Numerical simulations are important.
 \item<2-> Testing setups, non-analytical systems.
-\item<3-> Demonstration, charged particles in electric and magnetic fields.
-\item<3-> Analytically known and not.
-\item<4-> Simulations are not experiments!
+\item<3-> Engineering: testing integrity of buildings/machines.
+\item<4-> Entertainment: Video-games and CGI effects in movies.
+\item<5-> Demonstration, charged particles in electric and magnetic fields.
+\item<6-> Simulations are not experiments!
 \end{itemize}
 \end{frame}
 
@@ -154,19 +156,17 @@
 \fi
 
 \begin{frame}
-\frametitle{Theory: Classical non-relativistic particles}
+\frametitle{Theory: Classical non-relativistic particles.}
 \begin{itemize}
-\item<1-> Some repetition from Electrodynamics
+\item<1-> Some repetition from Electrodynamics.
 \item<2-> The Lorentz force+N2:
 
 \begin{align*}
 \vec{F} &= q ( \vec{v}\times \vec{B}+\vec{E}).\\
-m \ddot{\vec{r}}(t) &= q ( \dot{\vec{r}}(t)\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t)).
+\ddot{\vec{r}}(t) &= \frac{q}{m} ( \dot{\vec{r}}(t)\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t)).
 \end{align*}
 
-\item<3-> Only 1 particle! so pre-programmed depending on the setup.
-
-\item<4-> Could use potentials $\phi(\vec{r},t)$ $\vec{A}(\vec{r},t)$ and Hamiltonian, or Lagrangian.
+\item<3-> Could use potentials $\phi(\vec{r},t)$ $\vec{A}(\vec{r},t)$ and Hamiltonian, or Lagrangian.
 
 \item<4-> Other systems would have other differential equations.
 
@@ -175,7 +175,7 @@ m \ddot{\vec{r}}(t) &= q ( \dot{\vec{r}}(t)\times \vec{B}(\vec{r},t)+\vec{E}(\ve
 
 
 \begin{frame}
-\frametitle{Known results, cyclotron motion $\vec{B}$ fields}
+\frametitle{Known results, cyclotron motion $\vec{B}$ fields.}
 \begin{columns}
 \begin{column}{0.5\linewidth}
 \begin{itemize}
@@ -190,7 +190,7 @@ dW_{\vec{B}}= \vec{F}_B \cdot d\vec{r}\propto (\vec{v}\times \vec{B})\cdot \vec{
 \begin{equation*}
 |\vec{F}_B| = |q ( \vec{v}\times \vec{B})| =|q v_{\perp} B|.
 \end{equation*}
-\item<4-> Same as Centripetal force: Cyclotron motion
+\item<4-> Same as Centripetal force: Cyclotron motion.
 
 \item<5-> Cyclotron radius and frequency:
 
@@ -212,7 +212,7 @@ R = \frac{v_\perp m}{|q|B} \quad \omega_c =\frac{|q|B}{m}.
 \end{frame}
 
 \begin{frame}
-\frametitle{What we expect to see}
+\frametitle{What we expect to see.}
 \only<1>{\includegraphics[width=0.8\linewidth]{AN_helix0.pdf}}%
 \only<2>{\includegraphics[width=0.8\linewidth]{AN_helix1.pdf}}%
 \only<3>{\includegraphics[width=0.66\linewidth]{AN_solenoid_xz_view.pdf}\includegraphics[width=0.33\linewidth]{AN_solenoid_yz_view.pdf}}%
@@ -223,13 +223,13 @@ R = \frac{v_\perp m}{|q|B} \quad \omega_c =\frac{|q|B}{m}.
 \only<1>{%
 ``Cyclotron motion"
 
-{\color{gray} Solenoid with $N=1000$ turns per $m$, $I=\SI{5}{\ampere}$, $r=\SI{1}{\meter}$, $|\vec{B}|\approx\SI{6}{\milli\tesla}$. Proton with $E_{kin}=\SI{1}{\mega\electronvolt\per\square\lightspeed}$ ($|v|\approx \SI{3.195E5}{\meter\per\second}$)}}
+{\color{gray} Solenoid with $N=1000$ turns per $m$, $I=\SI{5}{\ampere}$, $r=\SI{1}{\meter}$, $|\vec{B}|\approx\SI{6}{\milli\tesla}$. Proton with $|v|\approx \SI{3.195E5}{\meter\per\second}$}}
 
 \only<2-3>{%
 ``Cyclotron motion"
 
 \begin{equation*}
-R \approx \SI{0.5}{\meter}\sin(\theta) \quad T=\frac{2\pi}{\omega_c} \approx \SI{10}{\micro\second}
+R \approx \SI{0.5}{\meter}\sin(\theta) \quad T_c=\frac{2\pi}{\omega_c} \approx \SI{10}{\micro\second}
 \end{equation*}
 }
 \end{frame}
@@ -244,7 +244,7 @@ R \approx \SI{0.5}{\meter}\sin(\theta) \quad T=\frac{2\pi}{\omega_c} \approx \SI
 \begin{frame}
 \frametitle{Ordinary differential equation's.}
 \begin{itemize}
-\item<1-> {\color{gray} Sources: Zeigler et al. Theory of Modeling and Simulation (Third edition) chapter 3}
+\item<1-> {\color{gray} Sources: Zeigler et al. Theory of Modeling and Simulation (Third edition) chapter 3}.
 
 \item<1-> We have:
 
@@ -255,144 +255,103 @@ R \approx \SI{0.5}{\meter}\sin(\theta) \quad T=\frac{2\pi}{\omega_c} \approx \SI
 \item<2-> Algorithms exists for ODEs:
 
 \begin{equation*}
-\dot{\mathbf{X}} = f_{ode}(\mathbf{X}(t),t).
+\dot{\mathbf{X}} = \mathbf{f}_{ode}(\mathbf{X}(t),t).
 \end{equation*}
 
 
 \item<3-> Here:
 
 \begin{align*}
-\mathbf{X} = \mvec{\vec{r}}{\dot{\vec{r}}} \quad f_{ode}(\mathbf{X},t) = \mvec{\dot{\vec{r}}}{\frac{q}{m} ( \dot{\vec{r}}\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t))}.
+\mathbf{X} = \mvec{\vec{r}}{\dot{\vec{r}}} \quad \mathbf{f}_{ode}(\mathbf{X},t) = \mvec{\dot{\vec{r}}}{\frac{q}{m} ( \dot{\vec{r}}\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t))}.
 \end{align*}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{The ODE to solve}
+%\begin{frame}[fragile]
+%\frametitle{The ODE to solve}
 %\only<1>{%
-\begin{lstlisting}
-auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
-    //Extract position and velocity from data
-    vec pos = vec(Data[0],Data[1],Data[2]);
-    vec V = vec(Data[3],Data[4],Data[5]);
-    //Lorentz+Newtons 2nd law
-    vec F = Charge*(Fields.get_Efield(pos,t)+
-        cross(V,Fields.get_Bfield(pos,t)));
-    vec dVdt = F*Inv_mass;
-    //Save derivative of data
-    dDatadt[0]=V.x;dDatadt[1]=V.y;dDatadt[2]=V.z;
-    dDatadt[3]=dVdt.x;Datadt[4]=dVdt.y;dDatadt[5]=dVdt.z;
-    };
-\end{lstlisting}
-\end{frame}
+%\begin{lstlisting}
+%auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
+%    //Extract position and velocity from data
+%    vec pos = vec(Data[0],Data[1],Data[2]);
+%    vec V = vec(Data[3],Data[4],Data[5]);
+%    //Lorentz+Newtons 2nd law
+%    vec F = Charge*(Fields.get_Efield(pos,t)+
+%        cross(V,Fields.get_Bfield(pos,t)));
+%    vec dVdt = F*Inv_mass;
+%    //Save derivative of data
+%    dDatadt[0]=V.x;dDatadt[1]=V.y;dDatadt[2]=V.z;
+%    dDatadt[3]=dVdt.x;Datadt[4]=dVdt.y;dDatadt[5]=dVdt.z;
+%    };
+%\end{lstlisting}
+%\end{frame}
 
-\begin{frame}
-\frametitle{Ordinary differential equation's.}
-\begin{itemize}
-\item<1-> {\color{gray} Sources: Zeigler et al. Theory of Modeling and Simulation (Third edition) chapter 3}
-
-\item<1-> We have:
-
-\begin{align*}
-\ddot{\vec{r}}(t) &= \frac{q}{m} ( \dot{\vec{r}}(t)\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t)).
-\end{align*}
-
-\item<1-> Algorithms exists for ODEs:
-
-\begin{equation*}
-\dot{\mathbf{X}} = f_{ode}(\mathbf{X}(t),t).
-\end{equation*}
-
-
-\item<1-> Here:
-
-\begin{align*}
-\mathbf{X} = \mvec{\vec{r}}{\dot{\vec{r}}} \quad f_{ode}(\mathbf{X},t) = \mvec{\dot{\vec{r}}}{\frac{q}{m} ( \dot{\vec{r}}\times \vec{B}(\vec{r},t)+\vec{E}(\vec{r},t))}.
-\end{align*}
-\end{itemize}
-\end{frame}
 
 \subsection{Euler's Method}
 
 \begin{frame}
-\begin{columns}
-\begin{column}{0.5\linewidth}
-\frametitle{Solving differential equations}
+\frametitle{Solving differential equations.}
 \begin{itemize}
 
-\item<1-> We know only $\mathbf{X}(t_0)$ and $t_0$ and $f_{ode}$.
+\item<1-> We know only $\mathbf{X}(t_i)$ and $t_i= t_0+i \Delta t$ and $\mathbf{f}_{ode}$.
 
-\item<2-> Can we find $\mathbf{X}(t_0+h)$ for $h>0$?.
+\item<2-> Can we find $\mathbf{X}(t_i+\Delta t)$ for $\Delta t>0$?
 
 \item<3-> Euler's Method:
 
 \begin{equation*}
-\mathbf{X}(t_0+h) = \mathbf{X}(t_0)+h f_{ode}(\mathbf{X}(t_0),t_0).
+\mathbf{X}(t_i+\Delta t) = \mathbf{X}(t_i)+\Delta t \mathbf{f}_{ode}(\mathbf{X}(t_i),t_i).
 \end{equation*}
 
-\item<3-> Multiple steps $t_0,t_1=t_0+h,\ldots t_i,\ldots$.
+\item<3-> Multiple steps $t_0,t_1=t_0+\Delta t,\ldots t_i,\ldots$.
 
 \item<4-> Can this be justified?
 
-\item<1-> {\color{gray} Bernard P. Zeigler et al. Theory of Modeling and Simulation (Third edition), chapter 3}
+\item<1-> {\color{gray} Bernard P. Zeigler et al. Theory of Modeling and Simulation (Third edition), chapter 3.}
 \end{itemize}
-\end{column}
-\begin{column}{0.5\linewidth}
-\only<1-2>{%
-\includegraphics[width=\linewidth]{euler_demo1.pdf}%
-}%
-\only<3->{%
-\includegraphics[width=\linewidth]{euler_demo2.pdf}%
-}%
-\end{column}
-\end{columns}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Why does this work? What is the error}
+\frametitle{Why does this work? What is the error.}
 \begin{itemize}
 \item<1-> Multiple justifications for why.
 
 \item<2-> First 2 terms in Taylor series {{\color{gray} Zeigler et al.}}:
 
 \begin{equation*}
-\only<1>{\mathbf{X}(t_{0}+h) = \mathbf{X}(t_{0})+h \dot{\mathbf{X}}(t_0)+h^2\ldots +\ldots.}
-\only<2>{\mathbf{X}(t_{0}+h) = \mathbf{X}(t_{0})+h f_{ode}(\mathbf{X}(t_0),t_0)+h^2\ldots +\ldots.}
-\only<3->{\mathbf{X}(t_{i}+h) = \mathbf{X}(t_{i})+h f_{ode}(\mathbf{X}(t_i),t_i)+h^2\ldots +\ldots.}
+\only<1>{\mathbf{X}(t_{i}+\Delta t) = \mathbf{X}(t_{i})+\Delta t \dot{\mathbf{X}}(t_i)+\Delta t^2\ldots +\ldots}
+\only<2->{\mathbf{X}(t_{i}+\Delta t) = \mathbf{X}(t_{i})+\Delta t \mathbf{f}_{ode}(\mathbf{X}(t_i),t_i)+\Delta t^2\ldots +\ldots}
 \end{equation*}
 
-\item<4-> Local error  $~h^2$.
+\item<3-> Local error  $O((\Delta t)^{2})$.
 
-\item<5-> Global error: $~h^1$: All points converges to true path.
+\item<4-> We want ``better" (larger $\Delta t$  (fewer steps, fewer calls), same error).
 
-\item<6-> We want ``better" (larger $h$  (fewer steps, fewer calls), same error).
-
-\item<7-> Argument suggests we need $\dot{f}_{ode},\ddot{f}_{ode},\ldots$, we don't!
+\item<5-> Argument suggests we need $\dot{\mathbf{f}}_{ode},\ddot{\mathbf{f}}_{ode},\ldots$, we don't!
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{The Runge Kutta steppers}
+\frametitle{The Runge Kutta steppers.}
 \begin{itemize}
 
 \item<1-> In general:
 
 \begin{equation*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) \only<1-3>{=\int_{t_i}^{t_{i+1}}} \only<1>{\dot{\mathbf{X}}(t) dt}\only<2-3>{f_{ode}(\mathbf{X}(t),t) dt }\only<3->{ = h f_{ode}(\mathbf{X}(\tau),\tau)}.
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) \only<1->{=\int_{t_i}^{t_{i+1}}} \only<1>{\dot{\mathbf{X}}(t) dt}\only<2->{\mathbf{f}_{ode}(\mathbf{X}(t),t) dt }\only<3->{ = \Delta t \mathbf{f}_{ode}(\mathbf{X}(\tau),\tau)}.
 \end{equation*}
 
 \item <3-> \textit{Mean Value theorem for integrals} $t_i\leq \tau\leq t_{i+1}$.
 
-\item<4-> Only possible guess: $\tau=t_i$. Good guess, if $\dot{f}_{ode}\approx 0$.
 
-\item<5-> More generally, (\textit{Explicit} and \textit{single step}), Runge-Kutta family:
+\item<4-> More generally, (\textit{Explicit} and \textit{single step}), Runge-Kutta family:
 
 \begin{align*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \int_{t_i}^{t'} f_{ode}(\mathbf{X}(t),t) dt + \ldots \int_{t^{(m)}}^{t_{i+1}} f_{ode}(\mathbf{X}(t),t) dt \only<6->{,\\ &=  \sum_{j=1}^{m} h_j f_{ode}(\mathbf{X}(\tau_j),\tau_j)}.
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \int_{t_i}^{t'} \mathbf{f}_{ode}(\mathbf{X}(t),t) dt + \ldots \int_{t^{(m)}}^{t_{i+1}} \mathbf{f}_{ode}(\mathbf{X}(t),t) dt \only<5->{,\\ &=  \sum_{j=1}^{m} \Delta t_j \mathbf{f}_{ode}(\mathbf{X}(\tau_j),\tau_j)}.
 \end{align*}
 
-\item<6-> Guess $\tau_1 = t_i$ use $f_{ode}(\mathbf{X}(t_i),t_i)$ to approximate $\mathbf{X}(\tau_2)$ to approximate $\mathbf{X}(\tau_3)$ etc.
+\item<6-> Cant guess anything ... unless $\mathbf{X}(t)$ is polynomial.
 
 
 \item<1-> {\color{gray} L. Zheng, X. Zhang, Modeling and Analysis of Modern Fluid Problems, 2017, chapter 8}:
@@ -402,35 +361,35 @@ auto ODE = [...](const state_type Data, state_type &dDatadt, const double t){
 
 
 \begin{frame}
-\frametitle{Runge Kutta methods}
+\frametitle{Runge Kutta methods.}
 \begin{itemize}
 
 \item<1-> More commonly written:
 
 \begin{equation*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) =  h \sum_{j=1}^{m} b_j \mathbf{K}_j
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) =  \Delta t \sum_{j=1}^{m} b_j \mathbf{K}_j
 \end{equation*}
 
-\item<2-> Estimate $\mathbf{K}_j$:
+\item<2-> Pick $\mathbf{K}_j$ so and pick an $m$:
 
 \begin{align*}
-\mathbf{K}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
-\mathbf{K}_2 &= f_{ode}(\mathbf{X}(t_i)+ha_{21} \mathbf{K}_1,t_i+c_2 h)\\
-\mathbf{K}_3 &= f_{ode}(\mathbf{X}(t_i)+ha_{31} \mathbf{K}_1+ha_{32} \mathbf{K}_2,t_i+c_3 h)\\
+\mathbf{K}_1 &= \mathbf{f}_{ode}(\mathbf{X}(t_i),t_i)\\
+\mathbf{K}_2 &= \mathbf{f}_{ode}(\mathbf{X}(t_i)+\Delta ta_{21} \mathbf{K}_1,t_i+c_2 \Delta t)\\
+\mathbf{K}_3 &= \mathbf{f}_{ode}(\mathbf{X}(t_i)+\Delta ta_{31} \mathbf{K}_1+\Delta ta_{32} \mathbf{K}_2,t_i+c_3 \Delta t)\\
 &\vdots
 \end{align*}
 
-\item<3-> Want exact for $p$'th order polynomial.
+\item<3-> Pick parameters to be \textit{exact} for $p$'th order polynomial.
 
-\item<4-> Taylor series analogy: Local error  $~h^{p+1}$, global $~h^{p}$.
+\item<4-> Taylor series analogy: Local error  $O((\Delta t)^{p+1})$.
 
-\item<1-> {{\color{gray} Martha L. Abell, James P. Braselton, Differential Equations with Mathematica (Fourth Edition), 2016}}:
+\item<1-> {{\color{gray} Martha L. Abell, James P. Braselton, Differential Equations with Mathematica (Fourth Edition), 2016}}.
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{The General explicit Runge Kutta method}
+\frametitle{The General explicit Runge Kutta method.}
 \begin{itemize}
 
 
@@ -451,33 +410,33 @@ $c_n$ & $a_{n1}$ &  $a_{n2}$ & $\hdots$\\
 
 
 \begin{frame}
-\frametitle{Higher order methods}
+\frametitle{Higher order methods.}
 \begin{itemize}
 
 \item<1-> 2nd order (Heun's method):
 
 \begin{align*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \frac{h}{2}(\mathbf{k}_1+\mathbf{k}_2)\\
-\mathbf{k}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
-\mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_1,t_i+h).
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \frac{\Delta t}{2}(\mathbf{K}_1+\mathbf{K}_2),\\
+\mathbf{K}_1 &= \mathbf{f}_{ode}(\mathbf{X}(t_i),t_i),\\
+\mathbf{K}_2 &= \mathbf{f}_{ode}(\mathbf{X}(t_i)+\Delta t\mathbf{K}_1,t_i+\Delta t).
 \end{align*}
 
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Higher order methods}
+\frametitle{Higher order methods.}
 \begin{columns}
 \begin{column}{0.5\linewidth}
 \begin{itemize}
 \item<1-> 4th order, often simply called the Runge Kutta method:
 
 \begin{align*}
-\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \frac{h}{6}(\mathbf{k}_1+2\mathbf{k}_2+2\mathbf{k}_3+\mathbf{k}_4 )\\
-\mathbf{k}_1 &= f_{ode}(\mathbf{X}(t_i),t_i)\\
-\mathbf{k}_2 &= f_{ode}(\mathbf{X}(t_i)+\frac{h}{2}\mathbf{k}_1,t_i+\frac{h}{2})\\
-\mathbf{k}_3 &= f_{ode}(\mathbf{X}(t_i)+\frac{h}{2}\mathbf{k}_2,t_i+\frac{h}{2})\\
-\mathbf{k}_4 &= f_{ode}(\mathbf{X}(t_i)+h\mathbf{k}_3,t_i+h).
+\mathbf{X}(t_{i+1})-\mathbf{X}(t_{i}) &= \frac{\Delta t}{6}(\mathbf{K}_1+2\mathbf{K}_2+2\mathbf{K}_3+\mathbf{K}_4 )\\
+\mathbf{K}_1 &= \mathbf{f}_{ode}(\mathbf{X}(t_i),t_i)\\
+\mathbf{K}_2 &= \mathbf{f}_{ode}(\mathbf{X}(t_i)+\frac{\Delta t}{2}\mathbf{K}_1,t_i+\frac{\Delta t}{2})\\
+\mathbf{K}_3 &= \mathbf{f}_{ode}(\mathbf{X}(t_i)+\frac{\Delta t}{2}\mathbf{K}_2,t_i+\frac{\Delta t}{2})\\
+\mathbf{K}_4 &= \mathbf{f}_{ode}(\mathbf{X}(t_i)+\Delta t\mathbf{K}_3,t_i+\Delta t).
 \end{align*}
 
 \end{itemize}
@@ -490,6 +449,7 @@ $c_n$ & $a_{n1}$ &  $a_{n2}$ & $\hdots$\\
 \end{columns}
 \end{frame}
 
+\ifdraft
 \begin{frame}[fragile]
 \frametitle{Euler Implementations}
 \begin{lstlisting}
@@ -546,7 +506,7 @@ for (size_t i = 1; i < time_res; ++i)
 }
 \end{lstlisting}
 \end{frame}
-
+\fi
 
 %\begin{frame}[fragile]
 %\frametitle{``Correct" way}
@@ -571,32 +531,33 @@ for (size_t i = 1; i < time_res; ++i)
 \subsection{Demonstration, particles in a solenoid}
 
 \begin{frame}
-\frametitle{Does it work}
+\frametitle{Does it work.}
 \begin{itemize}
 
-\item<1-> Test, same proton in a solenoid use $\theta=\ang{60}$ reference, had:
+\item<1-> Test, same proton in a solenoid use same starting conditions with:
 
 \begin{equation*}
-R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\pi}{\omega_c} \approx \SI{10}{\micro\second}.
+R \approx  \SI{0.45}{\meter} \quad T_c=\frac{2\pi}{\omega_c} \approx \SI{10}{\micro\second}.
 \end{equation*}
 
-\item<2-> Compare Analytic, Euler, Runge-Kutta 4.
+\item<2-> Compare Analytic, Euler, Runge-Kutta 4. At different $\Delta t_{equiv}$.
 
-\item<3-> Consider $\theta=\ang{60}$ at different $h$.
+\item<3-> $\Delta t_{equiv}=4\Delta t$ for 4th order method.
 
 \item<4-> Check error on $|\vec{v}|$, $R=\sqrt{y^2+z^2}$.
+
 \end{itemize}
 \end{frame}
 
 
 \makeatletter
 \begin{frame}
-\frametitle{At a glance, 3D view}
+\frametitle{At a glance, 3D view.}
     \global\beamer@shrinktrue
     \gdef\beamer@shrinkframebox{
         \setbox\beamer@framebox=\vbox to\beamer@frametextheight{
             \centering
-            $h=t_{i+1}-t_i=\SI{0.01}{\micro\second}$
+            $\Delta t_{equiv}\approx 1/1000 T_c$
 
             \includegraphics[height=0.9\beamer@frametextheight]{Solenoid_compare001_3D.pdf}
 
@@ -608,12 +569,12 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \makeatletter
 \begin{frame}
-\frametitle{At a glance, 3D view}
+\frametitle{At a glance, 3D view.}
     \global\beamer@shrinktrue
     \gdef\beamer@shrinkframebox{
         \setbox\beamer@framebox=\vbox to\beamer@frametextheight{
             \centering
-            $h=t_{i+1}-t_i=\SI{0.1}{\micro\second}$
+            $\Delta t_{equiv}\approx 1/100 T_c$
 
             \includegraphics[height=0.9\beamer@frametextheight]{Solenoid_compare01_3D.pdf}
 
@@ -625,12 +586,12 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \makeatletter
 \begin{frame}
-\frametitle{At a glance, 3D view}
+\frametitle{At a glance, 3D view.}
     \global\beamer@shrinktrue
     \gdef\beamer@shrinkframebox{
         \setbox\beamer@framebox=\vbox to\beamer@frametextheight{
             \centering
-            $h=t_{i+1}-t_i=\SI{1.0}{\micro\second}$
+            $\Delta t_{equiv}\approx 1/10 T_c$
 
             \includegraphics[height=0.9\beamer@frametextheight]{Solenoid_compare1_3D.pdf}
 
@@ -641,20 +602,13 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \makeatother
 
 \begin{frame}
-\frametitle{At a glance, front view, no border}
+\frametitle{At a glance, front view, no border.}
 \only<1>{\includegraphics[width=\linewidth]{solenoid_euler_yz_view.pdf}}%
 \only<2>{\includegraphics[width=\linewidth]{solenoid_RK_yz_view.pdf}}
 \end{frame}
 
 \begin{frame}
-\frametitle{Constant radius?}
-\only<1>{\includegraphics[width=\linewidth]{solenoid_euler_Rt.pdf}}%
-\only<2>{\includegraphics[width=\linewidth]{solenoid_RK4_Rt.pdf}}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Error as function of $h$}
+\frametitle{Error as function of $\Delta t_{equiv}$.}
 \only<1>{\includegraphics[width=\linewidth]{solenoid_Rh.pdf}}%
 \end{frame}
 
@@ -674,79 +628,29 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 \begin{itemize}
 \item <2-> Usually don't know error.
 
-\item <2-> Hard to pick $h$ , and may change:
+\item <2-> Hard to pick $\Delta t$ , and may change:
 
-\item <3-> Inhomogeneous fields (here, a true dipole)
+\item <3-> Inhomogeneous or time dependent fields (here, a true dipole).
 
-\item <4-> Time dependent fields (here the cyclotron, bad example)
-
-\item <5-> Let the computer pick $h$ for error.
+\item <4-> Let the computer pick $\Delta t$ for error.
 
 \end{itemize}
 \end{column}
 \begin{column}{0.5\linewidth}
 
-
-\only<3,5>{%
+\only<3->{
 \includegraphics[width=\linewidth]{dipole.pdf}
-
-}%
-
-
-\only<4>{%
-\includegraphics[width=\linewidth]{ Cyclotron_patent.png}
-
-{\color{gray} Ernest O. Lawrence, 1934, U.S. Patent 1,948,384; image in Public Domain.}
-}%
-
+}
 \end{column}
 \end{columns}
 \end{frame}
 
-
-\begin{frame}
-\frametitle{Example, magnetic dipole}
-
-\begin{columns}
-\begin{column}{0.5\linewidth}
-\begin{itemize}
-
-\item <1-> True dipole:
-
-\begin{align*}
-\vec{B} = \frac{\mu_0}{4\pi r^3} \left[3 \hat{\vec{r}}(\vec{m}\cdot\hat{\vec{r}} -\vec{m}) \right].
-\end{align*}
-
-\item <2-> Weak field, little change, long steps.
-
-\item <3-> strong field, large change, short steps.
-
-\item <4-> No analytical solution.
-
-
-\end{itemize}
-\end{column}
-\begin{column}{0.5\linewidth}
-
-
-\only<1>{\includegraphics[width=\linewidth]{dipole.pdf}}%
-\only<2->{\includegraphics[width=\linewidth]{dipole6.pdf}
-
-{\color{gray}  Arbitrarily set $\frac{\mu_0}{4\pi}|\vec{m}|= \SI{0.155}{\tesla\per\cubic\meter}$ .
-
- Protons with speed around $\SI{10000}{\meter\per\second}$}
-
-
-}%
-\end{column}
-\end{columns}
-\end{frame}
 
 
 \subsection{Dormand Prince 5 (4) method}
 
 \begin{frame}
-\frametitle{Embedded Runge-Kutta algorithms}
+\frametitle{Embedded Runge-Kutta algorithms.}
 \begin{itemize}
 \item <1-> Need estimate for error.
 
@@ -757,38 +661,36 @@ R \approx \SI{0.5}{\meter}\sin(\theta)\approx \SI{0.45}{\meter} \quad T=\frac{2\
 
 \item <5-> Adjust step size to keep the error(s) small (Implementations differ!).
 
-{\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and AppliMathematics}
-\begin{equation}
-\end{equation}
-
-
+{\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and AppliMathematics.}
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Runge-Kutta Dormand Prince 5 (4)}
+\frametitle{Runge-Kutta Dormand Prince 5 (4).}
 
 \begin{itemize}
 \item <1->\lstinline{ode45} in Matlab, \lstinline{scipy.solve_ivp} in Python , \lstinline{RungeKutta_dopri5} in \lstinline{boost::odeint}.
 
 \begin{align*}
-\mathbf{X}^{(5)}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j^{(5)} \mathbf{k}_j\\
-\mathbf{X}^{(4)}(t_{i+1})-\mathbf{X}(t_{i}) &=  h \sum_{j=1}^{m} b_j^{(4)} \mathbf{k}_j.
+\mathbf{X}^{(5)}(t_{i+1})-\mathbf{X}(t_{i}) &=  \Delta t \sum_{j=1}^{m} b_j^{(5)} \mathbf{K}_j\\
+\mathbf{X}^{(4)}(t_{i+1})-\mathbf{X}(t_{i}) &=  \Delta t \sum_{j=1}^{m} b_j^{(4)} \mathbf{K}_j.
 \end{align*}
 
 \begin{align*}
-\mathbf{k}_j &= f_{ode}(\mathbf{X}(t_i)+h \sum_k^{j-1} a_{kj} \mathbf{k}_j,t_i+c_3 h).
+\mathbf{K}_j &= \mathbf{f}_{ode}(\mathbf{X}(t_i)+\Delta t \sum_k^{j-1} a_{kj} \mathbf{K}_j,t_i+c_3 \Delta t).
 \end{align*}
 
-\item <2-> 7 $\mathbf{k}_j$'s (actually 6 by clever re-usage).
+\item <2-> 7 $\mathbf{K}_j$'s (actually 6 by clever re-usage) (First same as last principle).
 
 {\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Butcher Tableu of Dormand Prince (5) 4}
+\frametitle{Butcher Tableu of Dormand Prince (5) 4.}
+
+{\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{c | @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c @{\quad} c}
 $c_i$ & $a_{ij}$ & $\hdots$\\
 \midrule
@@ -803,28 +705,29 @@ $1$ & $\frac{35}{384}$  & $0$	 & $\frac{500}{1113}$ & $\frac{125}{192}$ & $-\fra
 $/b^{(5)}$  & $\frac{35}{384}$ & $0$ & $\frac{500}{1113}$ & $\frac{125}{192}$ & $-\frac{2187}{6784}$ & $\frac{11}{84}$ & $0$\\
 $/b^{(4)}$ & $\frac{5179}{57600}$ & $0$ & $\frac{7571}{16695}$ & & $\frac{393}{640}$ & $-\frac{92097}{339200}$& $\frac{187}{2100}$ & $\frac{1}{40}$
 \end{tabular}
+}
 \end{frame}
 
 \begin{frame}
-\frametitle{Runge-Kutta Dormand Prince 5 (4)}
+\frametitle{Runge-Kutta Dormand Prince 5 (4).}
 
 \begin{itemize}
-\item <1-> Step size correction (Dormand Prince):
+\item <1-> Adaptive step size (Dormand Prince):
 
 \begin{align*}
-h_{new} = 0.9 h_{old} \left[\frac{\delta }{||\mathrm{E}||}\right]^{\frac{1}{p+1}}
+ \Delta t_{new}  = 0.9  \Delta t_{old}  \left[\frac{\delta }{||\mathrm{E}||}\right]^{\frac{1}{p+1}}
 \end{align*}
 
-\item <2-> Step size correction (Me):
+\item <2-> Adaptive step size (My version):
 
 \begin{align*}
-h_{new} &= \min_j \left(0.9 h_{old} \left[\frac{\delta_j}{\mathrm{E}_{j}}\right]^{\frac{1}{p}}\right), \quad \mathrm{E}_j>\delta_j : \mathrm{reject}\\
-\delta_j &=\min(\delta_{abs},|\mathbf{X}_j(t_{i})|\delta_{rel})\sqrt{\frac{h_{old}}{T}}.
+ \Delta t_{new}  &= \min_j \left(0.9  \Delta t_{old}  \left[\frac{\delta_j}{\mathrm{E}_{j}}\right]^{\frac{1}{p}}\right), \quad \mathrm{E}_j>\delta_j : \mathrm{reject}\\
+\delta_j &=\min(\delta_{abs},|\mathbf{X}_j(t_{i})|\delta_{rel})\sqrt{\frac{ \Delta t_{old} }{T}}.
 \end{align*}
 
-\item <3-> Scale by step size $\frac{h_{old}}{T}$, ``Fail safe" $\sqrt{\ldots}$.
+\item <3-> Scale by step size $\frac{ \Delta t_{old} }{T}$, ``Fail safe" $\sqrt{\ldots}$.
 
-{\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics}
+{\color{gray} Dormand, J. R.; Prince, P. J. (1980), "A family of embedded Runge-Kutta formulae", Journal of Computational and Applied Mathematics.}
 \end{itemize}
 \end{frame}
 
@@ -836,12 +739,13 @@ h_{new} &= \min_j \left(0.9 h_{old} \left[\frac{\delta_j}{\mathrm{E}_{j}}\right]
 \only<1>{%
 \noindent\includegraphics[width=0.8\linewidth]{dipole2.pdf}
 
-My version relative and absolute error $10^{-6}$. 94 steps (+ 14 rejected).
+My version relative and absolute error $10^{-6}$. 313 steps (+ 25 rejected).
+
 }%
 \only<2>{%
 \noindent\includegraphics[width=0.8\linewidth]{dipole3.pdf}
 
-Odeint library relative and absolute error $10^{-7}$. 92 steps.
+Odeint library relative and absolute error $10^{-7}$. 249 steps.
 }%
 \only<3>{%
 \noindent\includegraphics[width=\linewidth]{dipole_R.pdf}}%
@@ -857,59 +761,22 @@ My version, adaptive step size.
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Another curious result}
-\begin{centering}
-\only<1>{%
-\noindent\includegraphics[width=0.8\linewidth]{dipole4.pdf}
-
-$T = \SI{0.2}{\milli\second}$
-}
-\only<2>{%
-\noindent\includegraphics[width=0.8\linewidth]{dipole5.pdf}
-
-$T = \SI{0.3}{\milli\second}$
-
-}%
-\only<3>{%
-\noindent\includegraphics[width=0.8\linewidth]{dipole6.pdf}
-
-$T = \SI{0.6}{\milli\second}$
-
-Magnetic ``mirror" or ``bottle".
-}%
-\only<4>{%
-\noindent\includegraphics[width=\linewidth]{Fields_in_magnetic_bottles.jpg}
-
-{\color{gray} Wikipedia user WikiHelper2134 , Public Domain.}
-}%
-\only<5>{%
-\noindent\includegraphics[width=0.8\linewidth]{magnetic_bottles.jpg}
-
-{\color{gray} Tandem Mirror Experiment, The Lawrence Livermore National Laboratory, 1978.}
-
-}%
-\end{centering}
-\end{frame}
-
 
 \section{Conclusion}
 
 \begin{frame}
-\frametitle{Conclusion }
+\frametitle{Conclusion.}
 \begin{itemize}
 \item<1-> Simulating particles in electric and magnetic fields.
-\item<2-> Numerically solving ordinary differential equations
-\item<2-> Reasonable agreement with known results.
+\item<2-> Numerically solving ordinary differential equations.
 \item<2-> Can easily be generalized to other systems.
-\item<3-> Limitation, simulations are not experiments.
 \end{itemize}
 \end{frame}
 
 %\subsection{If time permits, the cyclotron}
 
 \begin{frame}
-\frametitle{Example, cyclotron}
+\frametitle{Example, cyclotron.}
 \begin{columns}
 \begin{column}{0.5\linewidth}
 \begin{itemize}
@@ -917,12 +784,12 @@ Magnetic ``mirror" or ``bottle".
 
 \item<2-> Single gab, oscillating field.
 
-\item<3-> Uses classical Cyclotron frequency
+\item<3-> Uses classical Cyclotron frequency.
 
 \item<4-> Analytical final speed, in principle path.
 
 \begin{equation*}
-\frac{R|q|B}{m} = v_\perp
+\frac{R|q|B}{m} = v_\perp.
 \end{equation*}
 
 \end{itemize}
@@ -937,17 +804,17 @@ Magnetic ``mirror" or ``bottle".
 
 
 \begin{frame}
-\frametitle{can it be simulated}
+\frametitle{can it be simulated.}
 \begin{columns}
 \begin{column}{0.5\linewidth}
 \begin{itemize}
-\item<1-> with fixed step size, looks bad 4999 points
+\item<1-> with fixed step size, looks bad 4999 points.
 
-\item<2- > my adabtive method, error: $10^{-6}$
+\item<2- > my adabtive method, error: $10^{-6}$.
 
 \item<2- > Looks great but 2 million points.
 
-\item<3-> odeint library
+\item<3-> odeint library.
 
 \item<4-> non-continuous ode are bad.
 

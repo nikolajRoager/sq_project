@@ -1,0 +1,8 @@
+Dato
+ddot{r}
+boldface ddot{f}
+
+Slet nogle figurer (r(T))
+Slet ODeint figur
+
+Forklaring af fejl skal nævne error korrektion først

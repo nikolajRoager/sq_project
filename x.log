@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/Arch Linux) (preloaded format=xelatex 2021.10.11)  7 APR 2022 22:50
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2022.4.16)  1 MAY 2022 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**presentation2.tex
-(/usr/share/texmf-dist/tex/latex/tools/x.tex
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18>
+**presentation_final_draft.tex
+(/usr/share/texlive/texmf-dist/tex/latex/tools/x.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
 ! .
 l.38   \batchmode \errmessage{}
                                \csname @@end\endcsname \end
@@ -16,12 +16,12 @@ and deduce the truth by order and method.
 
  ) 
 Here is how much of TeX's memory you used:
- 17 strings out of 476919
- 398 string characters out of 5827673
- 292912 words of memory out of 5000000
- 20119 multiletter control sequences out of 15000+600000
- 403430 words of font info for 27 fonts, out of 8000000 for 9000
+ 17 strings out of 476190
+ 433 string characters out of 5812094
+ 298145 words of memory out of 5000000
+ 20857 multiletter control sequences out of 15000+600000
+ 469259 words of font info for 28 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 12i,0n,15p,97b,10s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 12i,0n,12p,108b,10s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 No pages of output.

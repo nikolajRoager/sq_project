@@ -1434,7 +1434,7 @@ uint8_t NSTEPS = 128;
     double dt_step = dt;
     for (unsigned short j = 0; j < NSTEPS ; ++j )
     {
-        dt+=dt_step;
+        dt+=dt_step*0.125;
         unsigned short i =0;
 
         //This did not fit into the way it was set up, I wanted to keep it separate, but if I am just using one particle, this is the fastest way to implement this
@@ -1447,7 +1447,7 @@ uint8_t NSTEPS = 128;
         else if (engine_type ==1)
             P.calculate_euler(Field,T_custom[i],dt);
         else if (engine_type ==2)
-            P.calculate_RK4(Field,T_custom[i],dt);
+            P.calculate_RK4(Field,T_custom[i],4*dt);
         else if (engine_type ==3)
             P.calculate_3rdparty_RK4(Field,T_custom[i],dt);
 

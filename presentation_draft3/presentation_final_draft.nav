@@ -5,100 +5,84 @@
 \headcommand {\sectionentry {1}{Introduction}{2}{Introduction}{0}}
 \headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\slideentry {1}{0}{2}{3/6}{}{0}}
-\headcommand {\beamer@framepages {3}{6}}
-\headcommand {\beamer@sectionpages {2}{6}}
-\headcommand {\beamer@subsectionpages {2}{6}}
-\headcommand {\sectionentry {2}{Theory and physical background}{7}{Theory and physical background}{0}}
-\headcommand {\slideentry {2}{0}{1}{7/10}{}{0}}
-\headcommand {\beamer@framepages {7}{10}}
-\headcommand {\slideentry {2}{0}{2}{11/15}{}{0}}
-\headcommand {\beamer@framepages {11}{15}}
-\headcommand {\slideentry {2}{0}{3}{16/19}{}{0}}
-\headcommand {\beamer@framepages {16}{19}}
-\headcommand {\beamer@sectionpages {7}{19}}
-\headcommand {\beamer@subsectionpages {7}{19}}
-\headcommand {\sectionentry {3}{Euler's Method and the 4th order Runge-Kutta Method}{20}{Euler's Method and the 4th order Runge-Kutta Method}{0}}
-\headcommand {\slideentry {3}{0}{1}{20/22}{}{0}}
-\headcommand {\beamer@framepages {20}{22}}
-\headcommand {\slideentry {3}{0}{2}{23/23}{}{0}}
-\headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {3}{0}{3}{24/24}{}{0}}
-\headcommand {\beamer@framepages {24}{24}}
-\headcommand {\beamer@subsectionpages {20}{24}}
+\headcommand {\slideentry {1}{0}{2}{3/8}{}{0}}
+\headcommand {\beamer@framepages {3}{8}}
+\headcommand {\beamer@sectionpages {2}{8}}
+\headcommand {\beamer@subsectionpages {2}{8}}
+\headcommand {\sectionentry {2}{Theory and physical background}{9}{Theory and physical background}{0}}
+\headcommand {\slideentry {2}{0}{1}{9/12}{}{0}}
+\headcommand {\beamer@framepages {9}{12}}
+\headcommand {\slideentry {2}{0}{2}{13/17}{}{0}}
+\headcommand {\beamer@framepages {13}{17}}
+\headcommand {\slideentry {2}{0}{3}{18/21}{}{0}}
+\headcommand {\beamer@framepages {18}{21}}
+\headcommand {\beamer@sectionpages {9}{21}}
+\headcommand {\beamer@subsectionpages {9}{21}}
+\headcommand {\sectionentry {3}{Euler's Method and the 4th order Runge-Kutta Method}{22}{Euler's Method and the 4th order Runge-Kutta Method}{0}}
+\headcommand {\slideentry {3}{0}{1}{22/24}{}{0}}
+\headcommand {\beamer@framepages {22}{24}}
+\headcommand {\beamer@subsectionpages {22}{24}}
 \headcommand {\beamer@subsectionentry {0}{3}{1}{25}{Euler's Method}}
 \headcommand {\slideentry {3}{1}{1}{25/28}{Euler's Method}{0}}
 \headcommand {\beamer@framepages {25}{28}}
-\headcommand {\slideentry {3}{1}{2}{29/35}{Euler's Method}{0}}
-\headcommand {\beamer@framepages {29}{35}}
-\headcommand {\slideentry {3}{1}{3}{36/41}{Euler's Method}{0}}
-\headcommand {\beamer@framepages {36}{41}}
-\headcommand {\slideentry {3}{1}{4}{42/45}{Euler's Method}{0}}
-\headcommand {\beamer@framepages {42}{45}}
-\headcommand {\slideentry {3}{1}{5}{46/46}{Euler's Method}{0}}
+\headcommand {\slideentry {3}{1}{2}{29/33}{Euler's Method}{0}}
+\headcommand {\beamer@framepages {29}{33}}
+\headcommand {\slideentry {3}{1}{3}{34/39}{Euler's Method}{0}}
+\headcommand {\beamer@framepages {34}{39}}
+\headcommand {\slideentry {3}{1}{4}{40/43}{Euler's Method}{0}}
+\headcommand {\beamer@framepages {40}{43}}
+\headcommand {\slideentry {3}{1}{5}{44/44}{Euler's Method}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\beamer@subsectionpages {25}{44}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{45}{Higher order Runge-Kutta methods}}
+\headcommand {\slideentry {3}{2}{1}{45/45}{Higher order Runge-Kutta methods}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {3}{2}{2}{46/46}{Higher order Runge-Kutta methods}{0}}
 \headcommand {\beamer@framepages {46}{46}}
-\headcommand {\beamer@subsectionpages {25}{46}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{47}{Higher order Runge-Kutta methods}}
-\headcommand {\slideentry {3}{2}{1}{47/47}{Higher order Runge-Kutta methods}{0}}
-\headcommand {\beamer@framepages {47}{47}}
-\headcommand {\slideentry {3}{2}{2}{48/48}{Higher order Runge-Kutta methods}{0}}
-\headcommand {\beamer@framepages {48}{48}}
-\headcommand {\slideentry {3}{2}{3}{49/49}{Higher order Runge-Kutta methods}{0}}
-\headcommand {\beamer@framepages {49}{49}}
-\headcommand {\slideentry {3}{2}{4}{50/50}{Higher order Runge-Kutta methods}{0}}
-\headcommand {\beamer@framepages {50}{50}}
-\headcommand {\slideentry {3}{2}{5}{51/51}{Higher order Runge-Kutta methods}{0}}
+\headcommand {\beamer@subsectionpages {45}{46}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{47}{Demonstration, particles in a solenoid}}
+\headcommand {\slideentry {3}{3}{1}{47/50}{Demonstration, particles in a solenoid}{0}}
+\headcommand {\beamer@framepages {47}{50}}
+\headcommand {\slideentry {3}{3}{2}{51/51}{Demonstration, particles in a solenoid}{0}}
 \headcommand {\beamer@framepages {51}{51}}
-\headcommand {\beamer@subsectionpages {47}{51}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{52}{Demonstration, particles in a solenoid}}
-\headcommand {\slideentry {3}{3}{1}{52/55}{Demonstration, particles in a solenoid}{0}}
-\headcommand {\beamer@framepages {52}{55}}
-\headcommand {\slideentry {3}{3}{2}{56/56}{Demonstration, particles in a solenoid}{0}}
+\headcommand {\slideentry {3}{3}{3}{52/52}{Demonstration, particles in a solenoid}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\slideentry {3}{3}{4}{53/53}{Demonstration, particles in a solenoid}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\slideentry {3}{3}{5}{54/55}{Demonstration, particles in a solenoid}{0}}
+\headcommand {\beamer@framepages {54}{55}}
+\headcommand {\slideentry {3}{3}{6}{56/56}{Demonstration, particles in a solenoid}{0}}
 \headcommand {\beamer@framepages {56}{56}}
-\headcommand {\slideentry {3}{3}{3}{57/57}{Demonstration, particles in a solenoid}{0}}
-\headcommand {\beamer@framepages {57}{57}}
-\headcommand {\slideentry {3}{3}{4}{58/58}{Demonstration, particles in a solenoid}{0}}
-\headcommand {\beamer@framepages {58}{58}}
-\headcommand {\slideentry {3}{3}{5}{59/60}{Demonstration, particles in a solenoid}{0}}
-\headcommand {\beamer@framepages {59}{60}}
-\headcommand {\slideentry {3}{3}{6}{61/62}{Demonstration, particles in a solenoid}{0}}
-\headcommand {\beamer@framepages {61}{62}}
-\headcommand {\slideentry {3}{3}{7}{63/63}{Demonstration, particles in a solenoid}{0}}
-\headcommand {\beamer@framepages {63}{63}}
-\headcommand {\beamer@sectionpages {20}{63}}
-\headcommand {\beamer@subsectionpages {52}{63}}
-\headcommand {\sectionentry {4}{Embedded algorithms, and adaptive step size}{64}{Embedded algorithms, and adaptive step size}{0}}
-\headcommand {\slideentry {4}{0}{1}{64/68}{}{0}}
-\headcommand {\beamer@framepages {64}{68}}
-\headcommand {\slideentry {4}{0}{2}{69/72}{}{0}}
-\headcommand {\beamer@framepages {69}{72}}
-\headcommand {\beamer@subsectionpages {64}{72}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{73}{Dormand Prince 5 (4) method}}
-\headcommand {\slideentry {4}{1}{1}{73/77}{Dormand Prince 5 (4) method}{0}}
-\headcommand {\beamer@framepages {73}{77}}
-\headcommand {\slideentry {4}{1}{2}{78/79}{Dormand Prince 5 (4) method}{0}}
-\headcommand {\beamer@framepages {78}{79}}
-\headcommand {\slideentry {4}{1}{3}{80/80}{Dormand Prince 5 (4) method}{0}}
-\headcommand {\beamer@framepages {80}{80}}
-\headcommand {\slideentry {4}{1}{4}{81/83}{Dormand Prince 5 (4) method}{0}}
-\headcommand {\beamer@framepages {81}{83}}
-\headcommand {\beamer@subsectionpages {73}{83}}
-\headcommand {\beamer@subsectionentry {0}{4}{2}{84}{Demonstration: magnetic dipole}}
-\headcommand {\slideentry {4}{2}{1}{84/87}{Demonstration: magnetic dipole}{0}}
-\headcommand {\beamer@framepages {84}{87}}
-\headcommand {\slideentry {4}{2}{2}{88/92}{Demonstration: magnetic dipole}{0}}
-\headcommand {\beamer@framepages {88}{92}}
-\headcommand {\beamer@sectionpages {64}{92}}
-\headcommand {\beamer@subsectionpages {84}{92}}
-\headcommand {\sectionentry {5}{Conclusion}{93}{Conclusion}{0}}
-\headcommand {\slideentry {5}{0}{1}{93/95}{}{0}}
-\headcommand {\beamer@framepages {93}{95}}
-\headcommand {\slideentry {5}{0}{2}{96/99}{}{0}}
-\headcommand {\beamer@framepages {96}{99}}
-\headcommand {\slideentry {5}{0}{3}{100/103}{}{0}}
-\headcommand {\beamer@framepages {100}{103}}
-\headcommand {\beamer@partpages {1}{103}}
-\headcommand {\beamer@subsectionpages {93}{103}}
-\headcommand {\beamer@sectionpages {93}{103}}
-\headcommand {\beamer@documentpages {103}}
-\headcommand {\gdef \inserttotalframenumber {37}}
+\headcommand {\beamer@sectionpages {22}{56}}
+\headcommand {\beamer@subsectionpages {47}{56}}
+\headcommand {\sectionentry {4}{Embedded algorithms, and adaptive step size}{57}{Embedded algorithms, and adaptive step size}{0}}
+\headcommand {\slideentry {4}{0}{1}{57/60}{}{0}}
+\headcommand {\beamer@framepages {57}{60}}
+\headcommand {\beamer@subsectionpages {57}{60}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{61}{Dormand Prince 5 (4) method}}
+\headcommand {\slideentry {4}{1}{1}{61/65}{Dormand Prince 5 (4) method}{0}}
+\headcommand {\beamer@framepages {61}{65}}
+\headcommand {\slideentry {4}{1}{2}{66/67}{Dormand Prince 5 (4) method}{0}}
+\headcommand {\beamer@framepages {66}{67}}
+\headcommand {\slideentry {4}{1}{3}{68/68}{Dormand Prince 5 (4) method}{0}}
+\headcommand {\beamer@framepages {68}{68}}
+\headcommand {\slideentry {4}{1}{4}{69/71}{Dormand Prince 5 (4) method}{0}}
+\headcommand {\beamer@framepages {69}{71}}
+\headcommand {\beamer@subsectionpages {61}{71}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{72}{Demonstration: magnetic dipole}}
+\headcommand {\slideentry {4}{2}{1}{72/75}{Demonstration: magnetic dipole}{0}}
+\headcommand {\beamer@framepages {72}{75}}
+\headcommand {\beamer@sectionpages {57}{75}}
+\headcommand {\beamer@subsectionpages {72}{75}}
+\headcommand {\sectionentry {5}{Conclusion}{76}{Conclusion}{0}}
+\headcommand {\slideentry {5}{0}{1}{76/77}{}{0}}
+\headcommand {\beamer@framepages {76}{77}}
+\headcommand {\slideentry {5}{0}{2}{78/81}{}{0}}
+\headcommand {\beamer@framepages {78}{81}}
+\headcommand {\slideentry {5}{0}{3}{82/85}{}{0}}
+\headcommand {\beamer@framepages {82}{85}}
+\headcommand {\beamer@partpages {1}{85}}
+\headcommand {\beamer@subsectionpages {76}{85}}
+\headcommand {\beamer@sectionpages {76}{85}}
+\headcommand {\beamer@documentpages {85}}
+\headcommand {\gdef \inserttotalframenumber {29}}

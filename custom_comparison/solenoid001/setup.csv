@@ -8,7 +8,7 @@ dt, 0.01
 particles , 3
 name , Analytical
 timesteps , 156
-name , Euler
-timesteps , 261
 name , RK 4
 timesteps , 261
+name , Euler
+timesteps , 299

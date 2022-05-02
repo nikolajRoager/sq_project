@@ -106,6 +106,9 @@ ax.get_yaxis().set_visible(False)
 if (plot_min!=plot_max and plot_lim):#If a set range was given, use it
     ax.set_xlim([plot_min, plot_max])
     ax.set_ylim([plot_min, plot_max ])
+
+#ax.set_xlabel('x/m')
+#ax.set_ylabel('x/m')
 #plt.legend();
 plt.show()
 

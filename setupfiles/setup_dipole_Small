@@ -15,7 +15,7 @@ write_txt
 
 
 #Simulation always starts at t=0, end at time t=T, use either Nt for number of timesteps or dt for length of steps
-T 100
+T 600
 dt 0.1
 
 #Solonoid, though (0,0,0) in the direction (0,0,1) with an internal field calculated to match with 1000 turns per m and current 5 A and radius 5 m
@@ -23,7 +23,7 @@ dt 0.1
 
 field B Earth 1 30
 
-engine RK45lib
+engine RK45
 
 save_dt 0.0
 
@@ -34,8 +34,8 @@ field_res -10 10 11
 #This alternative display method flat out does not work
 #save_field B dipole_field.tsv -0.2 0 0.2
 
-particle 1.0072765472987066 1 -10 0 -5.0 0.03 0.0 -0.0 300 proton
-particle 1.0072765472987066 1 -5 0 -8.0 0.01 0.0 0.01 300 proton
-particle 1.0072765472987066 1 0 0 -8.0 0.0 0.0 0.03 300 proton
+particle 1.0072765472987066 1 -10 0 -5.0 0.03 0.0 -0.0 1800 proton
+particle 1.0072765472987066 1 -5 0 -8.0 0.01 0.0 0.01 1800 proton
+particle 1.0072765472987066 1 0 0 -8.0 0.0 0.0 0.03 1800 proton
 
 

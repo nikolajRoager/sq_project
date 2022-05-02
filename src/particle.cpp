@@ -165,9 +165,16 @@ void particle::calculate_RK4(const composite_field& Fields, double T, double dt)
     state_type temp=Data0;
     state_type K1,K2,K3,K4;
     size_t time_res = T/dt;
-    for (size_t i = 1; i < time_res; ++i)
+    for (size_t i = 1; i <= time_res; ++i)
     {
         double t=i*dt;
+
+        //End it rightly
+        if (i == time_res)
+        {
+            dt = T-t;
+            t = T;
+        }
 
         //substep 1
         ODE(Data,K1,t);
@@ -192,7 +199,7 @@ void particle::calculate_RK4(const composite_field& Fields, double T, double dt)
         for (uint i = 0; i<Data.size(); ++i)
             Data[i]+=dt*(K1[i]+2.0*K2[i]+2.0*K3[i]+K4[i])/6.0;
 
-        save_step( Data , i*dt );
+        save_step( Data , t );
     }
 
     cout<<"Solved in "<<time_res<<" steps (t=0 "<<constants::get_name_time()<<" to t="<<T<<' '<<constants::get_name_time()<<')'<<endl;
@@ -267,15 +274,24 @@ void particle::calculate_euler(const composite_field& Fields, double T, double d
     state_type Data = Data0;
     state_type dDatadt;
     size_t time_res = T/dt;
-    for (size_t i = 1; i < time_res; ++i)
+    for (size_t i = 1; i <= time_res; ++i)
     {
+
         double t=i*dt;
+
+        //End it rightly
+        if (i == time_res)
+        {
+            dt = T-t;
+            t = T;
+        }
+
         ODE(Data,dDatadt,t);
         //Euler time evolution
         //Data +=dt*dDatadt; 1 variable
         for (uint i = 0; i<Data.size(); ++i)
             Data[i]+=dt*dDatadt[i];
-        save_step( Data , i*dt );
+        save_step( Data , t );
     }
 
     cout<<"Solved in "<<time_res<<" steps (t=0 "<<constants::get_name_time()<<" to t="<<T<<' '<<constants::get_name_time()<<')'<<endl;

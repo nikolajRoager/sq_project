@@ -1,10 +1,10 @@
 \beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{Theory and physical background}{7}{0}{2}
-\beamer@sectionintoc {3}{Euler's Method and the 4th order Runge-Kutta Method}{20}{0}{3}
+\beamer@sectionintoc {2}{Theory and physical background}{9}{0}{2}
+\beamer@sectionintoc {3}{Euler's Method and the 4th order Runge-Kutta Method}{22}{0}{3}
 \beamer@subsectionintoc {3}{1}{Euler's Method}{25}{0}{3}
-\beamer@subsectionintoc {3}{2}{Higher order Runge-Kutta methods}{47}{0}{3}
-\beamer@subsectionintoc {3}{3}{Demonstration, particles in a solenoid}{52}{0}{3}
-\beamer@sectionintoc {4}{Embedded algorithms, and adaptive step size}{64}{0}{4}
-\beamer@subsectionintoc {4}{1}{Dormand Prince 5 (4) method}{73}{0}{4}
-\beamer@subsectionintoc {4}{2}{Demonstration: magnetic dipole}{84}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{93}{0}{5}
+\beamer@subsectionintoc {3}{2}{Higher order Runge-Kutta methods}{45}{0}{3}
+\beamer@subsectionintoc {3}{3}{Demonstration, particles in a solenoid}{47}{0}{3}
+\beamer@sectionintoc {4}{Embedded algorithms, and adaptive step size}{57}{0}{4}
+\beamer@subsectionintoc {4}{1}{Dormand Prince 5 (4) method}{61}{0}{4}
+\beamer@subsectionintoc {4}{2}{Demonstration: magnetic dipole}{72}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{76}{0}{5}

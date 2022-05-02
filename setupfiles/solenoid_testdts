@@ -21,8 +21,8 @@ dt 0.01
 #Solonoid, though (0,0,0) in the direction (1,0,0) with an internal field calculated to match with 1000 turns per m and current 5 A and radius 0.5 m
 field B solenoid1 0 0 0 1 0 0 0.6062352745211712 2000000.0
 
-#engine euler
-engine RK45
+engine euler
+#engine RK4
 
 
 save_dt 0.1

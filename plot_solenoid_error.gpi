@@ -5,55 +5,55 @@ set xlabel 'y/m'
 set ylabel 'z/m'
 set key out
 set  title 'Euler method, front-view'
-plot [-1:1][-1:1] 'out/out_euler_timesteps/particles0.tsv' index 0 using 3:4 with lines  title '$h=0.01 \mu s$',\
-'out/out_euler_timesteps/particles24.tsv' index 0 using 3:4 with lines  title '$h=0.25 \mu s$',\
-'out/out_euler_timesteps/particles49.tsv' index 0 using 3:4 with lines  title '$h=0.50 \mu s$',\
-'out/out_euler_timesteps/particles74.tsv' index 0 using 3:4 with lines  title '$h=0.75 \mu s$',\
-'out/out_euler_timesteps/particles99.tsv' index 0 using 3:4 with lines  title '$h=1.00 \mu s$'
+plot [-1:1][-1:1] 'out/out_euler_timesteps/particles0.tsv' index 0 using 3:4 with lines  title '$\\Delta t_{equiv}\approx0.005 T_c$',\
+'out/out_euler_timesteps/particles25.tsv' index 0 using 3:4 with lines  title '$\\Delta t_{equiv} \\approx 0.0125 T_c$',\
+'out/out_euler_timesteps/particles50.tsv' index 0 using 3:4 with lines  title '$\\Delta t_{equiv} \\approx 0.025 T_c$',\
+'out/out_euler_timesteps/particles75.tsv' index 0 using 3:4 with lines  title '$\\Delta t_{equiv} \\approx 0.0375 T_c$',\
+'out/out_euler_timesteps/particles100.tsv' index 0 using 3:4 with lines  title '$\\Delta t_{equiv}\\approx 0.050 T_c$'
 
 
 
 set  title 'RK4, front-view'
 set output 'solenoid_RK_yz_view.pdf'
-plot [-1:1][-1:1] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 3:4 with lines  title '$h=0.01 \mu s$',\
-'out/out_RK4_timesteps/particles24.tsv' index 0 using 3:4 with lines  title '$h=0.25 \mu s$',\
-'out/out_RK4_timesteps/particles49.tsv' index 0 using 3:4 with lines  title '$h=0.50 \mu s$',\
-'out/out_RK4_timesteps/particles74.tsv' index 0 using 3:4 with lines  title '$h=0.75 \mu s$',\
-'out/out_RK4_timesteps/particles99.tsv' index 0 using 3:4 with lines  title '$h=1.00 \mu s$'
+plot [-1:1][-1:1] 'out/out_RK4_timesteps_1/particles0.tsv' index 0 using 3:4 with lines  title '$\\Delta t_{equiv}\approx0.005 T_c$',\
+'out/out_RK4_timesteps_1/particles25.tsv' index 0 using 3:4 with lines  title '$\\Delta t_{equiv}\approx0.0125 T_c$',\
+'out/out_RK4_timesteps_1/particles50.tsv' index 0 using 3:4 with lines  title '$\\Delta t_{equiv}\approx0.025 T_c$',\
+'out/out_RK4_timesteps_1/particles75.tsv' index 0 using 3:4 with lines  title '$\\Delta t_{equiv}\approx0.0375 T_c$',\
+'out/out_RK4_timesteps_1/particles100.tsv' index 0 using 3:4 with lines  title '$\\Delta t_{equiv}\approx0.050 T_c$'
 
 
 set output 'solenoid_RK4_Xt.pdf'
 set ylabel 'x error $/x_{an}$'
-set xlabel '$t/\mu s$'
+set xlabel '$t/T_c$'
 set  title 'Runge Kutta 4 method, V relative error'
-plot [][-1:1] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.01 \mu s$',\
-'out/out_RK4_timesteps/particles24.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1)  with lines  title '$h=0.25 \mu s$',\
-'out/out_RK4_timesteps/particles49.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.50 \mu s$',\
-'out/out_RK4_timesteps/particles74.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.75 \mu s$',\
-'out/out_RK4_timesteps/particles99.tsv' index 0 using 1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=1.00 \mu s$'
+plot [][-1:1] 'out/out_RK4_timesteps_1/particles0.tsv' index 0 using ($1/10.439684835648404):($2/($1*0.1597577737816823-2.5)-1) with lines  title '$\\Delta t_{equiv}\approx0.005 T_c$',\
+'out/out_RK4_timesteps_1/particles25.tsv' index 0 using  ($1/10.439684835648404):($2/($1*0.1597577737816823-2.5)-1)  with lines  title '$\\Delta t_{equiv}\approx0.0125 T_c$',\
+'out/out_RK4_timesteps_1/particles50.tsv' index 0 using  ($1/10.439684835648404):($2/($1*0.1597577737816823-2.5)-1) with lines  title '$\\Delta t_{equiv}\approx0.025 T_c$',\
+'out/out_RK4_timesteps_1/particles75.tsv' index 0 using  ($1/10.439684835648404):($2/($1*0.1597577737816823-2.5)-1) with lines  title '$\\Delta t_{equiv}\approx0.0375 T_c$',\
+'out/out_RK4_timesteps_1/particles100.tsv' index 0 using ($1/10.439684835648404):($2/($1*0.1597577737816823-2.5)-1) with lines  title '$\\Delta t_{equiv}\approx0.10 T_c$'
 
 
 
 set output 'solenoid_RK4_Xt.pdf'
 set ylabel 'x error $/x_{an}$'
-set xlabel '$t/\mu s$'
+set xlabel '$t/T_c$'
 set  title 'Runge Kutta 4 method, x(t) relative error'
-plot [][-0.1:0.1] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.01 \mu s$',\
-'out/out_RK4_timesteps/particles24.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1)  with lines  title '$h=0.25 \mu s$',\
-'out/out_RK4_timesteps/particles49.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.50 \mu s$',\
-'out/out_RK4_timesteps/particles74.tsv' index 0 using  1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=0.75 \mu s$',\
-'out/out_RK4_timesteps/particles99.tsv' index 0 using 1:($2/($1*0.1597577737816823-2.5)-1) with lines  title '$h=1.00 \mu s$'
+plot [][-0.1:0.1] 'out/out_RK4_timesteps_1/particles0.tsv' index 0 using ($1/10.439684835648404):($2/($1*0.1597577737816823-2.5)-1) with lines  title '$\\Delta t_{equiv}\approx0.005 T_c$',\
+'out/out_RK4_timesteps_1/particles25.tsv' index 0 using  ($1/10.439684835648404):($2/($1*0.1597577737816823-2.5)-1)  with lines  title '$\\Delta t_{equiv}\approx0.0125 T_c$',\
+'out/out_RK4_timesteps_1/particles50.tsv' index 0 using  ($1/10.439684835648404):($2/($1*0.1597577737816823-2.5)-1) with lines  title '$\\Delta t_{equiv}\approx0.025 T_c$',\
+'out/out_RK4_timesteps_1/particles75.tsv' index 0 using  ($1/10.439684835648404):($2/($1*0.1597577737816823-2.5)-1) with lines  title '$\\Delta t_{equiv}\approx0.0375 T_c$',\
+'out/out_RK4_timesteps_1/particles100.tsv' index 0 using ($1/10.439684835648404):($2/($1*0.1597577737816823-2.5)-1) with lines  title '$\\Delta t_{equiv}\approx0.10 T_c$'
 
 
 set output 'solenoid_RK4_Xt_abs.pdf'
 set ylabel 'x error $/m$'
-set xlabel '$t/\mu s$'
+set xlabel '$t/T_c$'
 set  title 'Runge Kutta 4 method, x(t) error'
-plot [][-0.1:0.1] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 1:($2-$1*0.1597577737816823+2.5) with lines  title '$h=0.01 \mu s$',\
-'out/out_RK4_timesteps/particles24.tsv' index 0 using  1:($2-$1*0.1597577737816823+2.5)  with lines  title '$h=0.25 \mu s$',\
-'out/out_RK4_timesteps/particles49.tsv' index 0 using  1:($2-$1*0.1597577737816823+2.5) with lines  title '$h=0.50 \mu s$',\
-'out/out_RK4_timesteps/particles74.tsv' index 0 using  1:($2-$1*0.1597577737816823+2.5) with lines  title '$h=0.75 \mu s$',\
-'out/out_RK4_timesteps/particles99.tsv' index 0 using 1:($2-$1*0.1597577737816823+2.5) with lines  title '$h=1.00 \mu s$'
+plot [][-0.1:0.1] 'out/out_RK4_timesteps_1/particles0.tsv' index 0 using ($1/10.439684835648404):($2-$1*0.1597577737816823+2.5) with lines  title '$\\Delta t_{equiv}\approx0.005 T_c$',\
+'out/out_RK4_timesteps_1/particles25.tsv' index 0 using  ($1/10.439684835648404):($2-$1*0.1597577737816823+2.5)  with lines  title '$\\Delta t_{equiv}\approx0.0125 T_c$',\
+'out/out_RK4_timesteps_1/particles50.tsv' index 0 using  ($1/10.439684835648404):($2-$1*0.1597577737816823+2.5) with lines  title '$\\Delta t_{equiv}\approx0.025 T_c$',\
+'out/out_RK4_timesteps_1/particles75.tsv' index 0 using  ($1/10.439684835648404):($2-$1*0.1597577737816823+2.5) with lines  title '$\\Delta t_{equiv}\approx0.0375 T_c$',\
+'out/out_RK4_timesteps_1/particles100.tsv' index 0 using ($1/10.439684835648404):($2-$1*0.1597577737816823+2.5) with lines  title '$\\Delta t_{equiv}\approx0.10 T_c$'
 
 
 
@@ -61,39 +61,42 @@ set size ratio 0.5
 set output 'solenoid_RK4_Rt.pdf'
 set logscale y
 set ylabel 'R error $/R$'
-set xlabel '$t/\mu s$'
+set xlabel '$t/T_c$'
 set  title 'Runge Kutta 4 method, R relative error'
-plot [][] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.01 \mu s$',\
-'out/out_RK4_timesteps/particles24.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1)  with lines  title '$h=0.25 \mu s$',\
-'out/out_RK4_timesteps/particles49.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.50 \mu s$',\
-'out/out_RK4_timesteps/particles74.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.75 \mu s$',\
-'out/out_RK4_timesteps/particles99.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=1.00 \mu s$'
+plot [][1e-7:1000] 'out/out_RK4_timesteps_1/particles0.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$\\Delta t_{equiv}\approx0.0025 T_c$',\
+'out/out_RK4_timesteps_1/particles25.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1)  with lines  title '$\\Delta t_{equiv}\approx0.0063 T_c$',\
+'out/out_RK4_timesteps_1/particles50.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$\\Delta t_{equiv}\approx0.0125 T_c$',\
+'out/out_RK4_timesteps_1/particles75.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$\\Delta t_{equiv}\approx0.0188 T_c$',\
+'out/out_RK4_timesteps_1/particles100.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$\\Delta t_{equiv}\approx0.0250 T_c$'
 set output 'solenoid_euler_Rt.pdf'
 set ylabel 'R error $/R$'
-set xlabel '$t/\mu s$'
+set xlabel '$t/T_c$'
 set  title 'Euler method, R relative error'
-plot [][] 'out/out_euler_timesteps/particles0.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.01 \mu s$',\
-'out/out_euler_timesteps/particles24.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1)  with lines  title '$h=0.25 \mu s$',\
-'out/out_euler_timesteps/particles49.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.50 \mu s$',\
-'out/out_euler_timesteps/particles74.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=0.75 \mu s$',\
-'out/out_euler_timesteps/particles99.tsv' index 0 using 1:abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$h=1.00 \mu s$'
+plot [][1e-7:1000] 'out/out_euler_timesteps/particles0.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$\\Delta t_{equiv}\approx0.0025 T_c$',\
+'out/out_euler_timesteps/particles25.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1)  with lines  title '$\\Delta t_{equiv}\approx0.0063 T_c$',\
+'out/out_euler_timesteps/particles50.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$\\Delta t_{equiv}\approx0.0125 T_c$',\
+'out/out_euler_timesteps/particles75.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$\\Delta t_{equiv}\approx0.0188 T_c$',\
+'out/out_euler_timesteps/particles100.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($4*$4+$3*$3)/0.4597589020078102-1) with lines  title '$\\Delta t_{equiv}\approx0.0250 T_c$'
 
 
 set output 'solenoid_RK4_Vt.pdf'
 set ylabel 'V error $/V_0$'
-set xlabel '$t/\mu s$'
+set xlabel '$t/T_c$'
 set  title 'Runge Kutta 4 method, V relative error'
-plot [][] 'out/out_RK4_timesteps/particles0.tsv' index 0 using 1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.24741554754935053-1) with lines  title '$h=0.01 \mu s$',\
-'out/out_RK4_timesteps/particles24.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.24741554754935053-1)  with lines  title '$h=0.25 \mu s$',\
-'out/out_RK4_timesteps/particles49.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.24741554754935053-1) with lines  title '$h=0.50 \mu s$',\
-'out/out_RK4_timesteps/particles74.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.24741554754935053-1) with lines  title '$h=0.75 \mu s$',\
-'out/out_RK4_timesteps/particles99.tsv' index 0 using 1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.24741554754935053-1) with lines  title '$h=1.00 \mu s$'
+plot [][1e-7:1000] 'out/out_RK4_timesteps_1/particles0.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($5*$5+$6*$6+$7*$7)/0.25751554755035053-1) with lines  title '$\\Delta t_{equiv}\approx0.0025 T_c$',\
+'out/out_RK4_timesteps_1/particles25.tsv' index 0 using  ($1/10.439684835648404):abs(sqrt($5*$5+$6*$6+$7*$7)/0.25751554755035053-1)  with lines  title '$\\Delta t_{equiv}\approx0.0063 T_c$',\
+'out/out_RK4_timesteps_1/particles50.tsv' index 0 using  ($1/10.439684835648404):abs(sqrt($5*$5+$6*$6+$7*$7)/0.25751554755035053-1) with lines  title '$\\Delta t_{equiv}\approx0.0125 T_c$',\
+'out/out_RK4_timesteps_1/particles75.tsv' index 0 using  ($1/10.439684835648404):abs(sqrt($5*$5+$6*$6+$7*$7)/0.25751554755035053-1) with lines  title '$\\Delta t_{equiv}\approx0.0188 T_c$',\
+'out/out_RK4_timesteps_1/particles100.tsv' index 0 using ($1/10.439684835648404):abs(sqrt($5*$5+$6*$6+$7*$7)/0.25751554755035053-1) with lines  title '$\\Delta t_{equiv}\approx0.0250 T_c$'
 set output 'solenoid_euler_Vt.pdf'
 set ylabel 'V error $/V_0$'
-set xlabel '$t/\mu s$'
+set xlabel '$t/T_c$'
 set  title 'Euler method, V relative error'
-plot [][] 'out/out_euler_timesteps/particles0.tsv' index 0 using 1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.24741554754935053-1) with lines  title '$h=0.01 \mu s$',\
-'out/out_euler_timesteps/particles24.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.24741554754935053-1)  with lines  title '$h=0.25 \mu s$',\
-'out/out_euler_timesteps/particles49.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.24741554754935053-1) with lines  title '$h=0.50 \mu s$',\
-'out/out_euler_timesteps/particles74.tsv' index 0 using  1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.24741554754935053-1) with lines  title '$h=0.75 \mu s$',\
-'out/out_euler_timesteps/particles99.tsv' index 0 using 1:abs(sqrt($5*$5+$6*$6+$7*$7)/0.24741554754935053-1) with lines  title '$h=1.00 \mu s$'
+plot [][1e-7:1000] 'out/out_euler_timesteps/particles0.tsv' index 0 using ($1/10.439684835648404):abs(0.25751554755035053/sqrt($5*$5+$6*$6+$7*$7)-1) with lines  title '$\\Delta t_{equiv}\approx0.0025 T_c$',\
+'out/out_euler_timesteps/particles25.tsv' index 0 using  ($1/10.439684835648404):abs(0.25751554755035053/sqrt($5*$5+$6*$6+$7*$7)-1)  with lines  title '$\\Delta t_{equiv}\approx0.0066 T_c$',\
+'out/out_euler_timesteps/particles50.tsv' index 0 using  ($1/10.439684835648404):abs(0.25751554755035053/sqrt($5*$5+$6*$6+$7*$7)-1) with lines  title '$\\Delta t_{equiv}\approx0.0125 T_c$',\
+'out/out_euler_timesteps/particles75.tsv' index 0 using  ($1/10.439684835648404):abs(0.25751554755035053/sqrt($5*$5+$6*$6+$7*$7)-1) with lines  title '$\\Delta t_{equiv}\approx0.0188 T_c$',\
+'out/out_euler_timesteps/particles100.tsv' index 0 using ($1/10.439684835648404):abs(0.25751554755035053/sqrt($5*$5+$6*$6+$7*$7)-1) with lines  title '$\\Delta t_{equiv}\approx0.0250 T_c$'
+
+
+
